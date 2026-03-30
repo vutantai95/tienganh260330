@@ -1,0 +1,1711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mars College — Daily English Lesson</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f5f0e8;
+  --bg-dark: #1a1510;
+  --bg-card: #fff9f0;
+  --text: #2a1f0f;
+  --text-light: #7a6a55;
+  --accent: #c4602a;
+  --accent2: #4a7a4a;
+  --accent3: #3a5f8a;
+  --border: #d4c9b4;
+  --tag-bg: #ede5d4;
+  --summary-bg: #2a3d2a;
+  --summary-text: #e8f0e8;
+  --tab-active: #c4602a;
+  --shadow: 0 2px 16px rgba(42,31,15,0.10);
+  --chunk1: #f0e0c8;
+  --chunk2: #c8dff0;
+  --chunk3: #d0f0d0;
+  --chunk4: #f0d0e0;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Source Serif 4', serif;
+  font-size: 1rem;
+  line-height: 1.75;
+  min-height: 100vh;
+}
+
+/* ── MASTHEAD ── */
+.masthead {
+  background: var(--bg-dark);
+  color: #e8d5b0;
+  padding: 3.5rem 1.5rem 2.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.masthead::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 60% 40%, rgba(196,96,42,0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+.masthead-meta {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #8a7a60;
+  margin-bottom: 1.2rem;
+}
+.masthead-meta span { margin: 0 0.5rem; }
+.masthead h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.6rem, 5vw, 3rem);
+  font-weight: 900;
+  line-height: 1.15;
+  color: #f0e4cc;
+  max-width: 800px;
+  margin: 0 auto 1rem;
+}
+.masthead-subtitle {
+  font-family: 'Source Serif 4', serif;
+  font-style: italic;
+  color: #a89070;
+  font-size: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ── SUMMARY ── */
+.summary-section {
+  background: linear-gradient(to bottom, #211a10, #2e2418);
+  color: #c8b890;
+  padding: 2.5rem 1.5rem;
+  border-bottom: 1px solid #3a2e20;
+}
+.summary-inner {
+  max-width: 760px;
+  margin: 0 auto;
+}
+.summary-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #c4602a;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.summary-text {
+  font-family: 'Source Serif 4', serif;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #c8b890;
+}
+.summary-toggle-btn {
+  margin-top: 1.2rem;
+  background: none;
+  border: 1px solid #4a3a25;
+  color: #8a7a60;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.5rem 1.2rem;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: all 0.2s;
+}
+.summary-toggle-btn:hover { background: #4a3a2530; color: #c8b890; }
+.summary-vi {
+  display: none;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #3a2e20;
+  font-style: italic;
+  color: #8a7a60;
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+.summary-vi.visible { display: block; }
+
+/* ── TABS NAV ── */
+.tabs-nav {
+  background: #211a10;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  overflow-x: auto;
+  scrollbar-width: none;
+  border-bottom: 1px solid #3a2e20;
+}
+.tabs-nav::-webkit-scrollbar { display: none; }
+.tabs-nav-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  padding: 0 1rem;
+}
+.tab-btn {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #7a6a50;
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  padding: 0.85rem 0.75rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+.tab-btn:hover { color: #c8b890; }
+.tab-btn.active { color: #c4602a; border-bottom-color: #c4602a; }
+
+/* ── TAB CONTENT ── */
+.tab-wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+
+/* ── CARDS ── */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1.5rem;
+  margin-bottom: 1.25rem;
+  box-shadow: var(--shadow);
+}
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--border);
+}
+.section-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  margin-bottom: 0.4rem;
+}
+
+/* ── TAB 1: BILINGUAL ── */
+.bilingual-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+@media (max-width: 640px) { .bilingual-pair { grid-template-columns: 1fr; } }
+.bilingual-en {
+  font-size: 0.98rem;
+  line-height: 1.8;
+  color: var(--text);
+  border-left: 3px solid var(--accent);
+  padding-left: 1rem;
+}
+.bilingual-vi {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: #6a5a45;
+  font-style: italic;
+  border-left: 3px solid var(--border);
+  padding-left: 1rem;
+}
+.section-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin: 2rem 0 1rem;
+  font-style: italic;
+}
+
+/* ── TAB 2: VOCAB ── */
+.vocab-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
+.vocab-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1.1rem 1.2rem;
+  box-shadow: var(--shadow);
+}
+.vocab-word {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text);
+}
+.vocab-ipa {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--text-light);
+  margin-top: 0.15rem;
+}
+.vocab-pos {
+  display: inline-block;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: var(--tag-bg);
+  color: var(--accent);
+  border-radius: 3px;
+  padding: 0.15rem 0.5rem;
+  margin: 0.4rem 0;
+}
+.vocab-meaning {
+  font-size: 0.92rem;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+.vocab-example {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  font-style: italic;
+  border-left: 2px solid var(--border);
+  padding-left: 0.6rem;
+}
+
+/* ── TAB 3: GRAMMAR ── */
+.grammar-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1.5rem;
+  margin-bottom: 1.2rem;
+  box-shadow: var(--shadow);
+}
+.grammar-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--accent3);
+  margin-bottom: 0.6rem;
+}
+.grammar-formula {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.78rem;
+  background: #e8f0f8;
+  border: 1px solid #b8d0e8;
+  border-radius: 4px;
+  padding: 0.6rem 0.9rem;
+  margin-bottom: 0.8rem;
+  color: var(--accent3);
+}
+.grammar-example {
+  font-size: 0.95rem;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+  padding-left: 1rem;
+  border-left: 3px solid var(--accent3);
+}
+.grammar-explain {
+  font-size: 0.88rem;
+  color: var(--text-light);
+  font-style: italic;
+}
+
+/* ── TAB 4: EXERCISES ── */
+.exercise-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1.5rem;
+  margin-bottom: 1.2rem;
+  box-shadow: var(--shadow);
+}
+.exercise-type {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+.exercise-q {
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+.options label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  padding: 0.5rem 0.7rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.92rem;
+  margin-bottom: 0.3rem;
+  border: 1px solid transparent;
+  transition: background 0.15s;
+}
+.options label:hover { background: var(--tag-bg); }
+.options input[type=radio] { margin-top: 3px; flex-shrink: 0; }
+.check-btn {
+  margin-top: 0.8rem;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1.2rem;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.check-btn:hover { opacity: 0.85; }
+.feedback-msg {
+  margin-top: 0.8rem;
+  font-size: 0.9rem;
+  padding: 0.6rem 0.9rem;
+  border-radius: 4px;
+  display: none;
+}
+.feedback-msg.correct { background: #d4f0d4; color: #2a6a2a; display: block; }
+.feedback-msg.wrong { background: #f8d8d0; color: #8a2a1a; display: block; }
+.speaking-prompt {
+  background: linear-gradient(135deg, #2a3d2a, #1a2a1a);
+  color: #c4e8c4;
+  border-radius: 6px;
+  padding: 1.5rem;
+}
+.speaking-prompt .exercise-type { color: #88cc88; }
+.speaking-prompt .exercise-q { color: #e0f0e0; }
+.speaking-tips {
+  margin-top: 0.8rem;
+  font-size: 0.85rem;
+  color: #88aa88;
+  font-style: italic;
+}
+
+/* ── TAB 5: DISCUSSION ── */
+.topic-btn {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1rem 1.2rem;
+  margin-bottom: 0.75rem;
+  cursor: pointer;
+  font-family: 'Source Serif 4', serif;
+  font-size: 0.95rem;
+  color: var(--text);
+  transition: all 0.2s;
+  box-shadow: var(--shadow);
+}
+.topic-btn:hover { border-color: var(--accent); color: var(--accent); transform: translateX(4px); }
+.topic-num {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  color: var(--text-light);
+  display: block;
+  margin-bottom: 0.3rem;
+}
+.alex-intro {
+  background: linear-gradient(135deg, #1a1510, #2a1f0f);
+  color: #e8d5b0;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.alex-intro h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+.alex-intro p { font-size: 0.9rem; color: #b8a888; }
+.open-alex-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 0.7rem 1.5rem;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.open-alex-btn:hover { opacity: 0.85; }
+.phrases-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 0.8rem;
+}
+.phrase-pill {
+  background: var(--tag-bg);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.85rem;
+  color: var(--text);
+  cursor: pointer;
+  font-family: 'Source Serif 4', serif;
+  transition: all 0.2s;
+}
+.phrase-pill:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+/* ── TAB 6: SHADOWING ── */
+.shadow-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1.5rem;
+  margin-bottom: 1.25rem;
+  box-shadow: var(--shadow);
+}
+.shadow-num {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  margin-bottom: 0.8rem;
+}
+.shadow-sentence {
+  font-size: 1.05rem;
+  line-height: 2;
+  margin-bottom: 0.8rem;
+}
+.chunk { border-radius: 3px; padding: 2px 4px; }
+.c1 { background: var(--chunk1); }
+.c2 { background: var(--chunk2); }
+.c3 { background: var(--chunk3); }
+.c4 { background: var(--chunk4); }
+.shadow-vi {
+  font-size: 0.88rem;
+  color: var(--text-light);
+  font-style: italic;
+  margin-bottom: 0.8rem;
+}
+.shadow-note {
+  font-size: 0.85rem;
+  color: var(--accent2);
+  background: #f0f8f0;
+  border-left: 3px solid var(--accent2);
+  padding: 0.5rem 0.8rem;
+  border-radius: 0 4px 4px 0;
+  margin-bottom: 0.6rem;
+}
+.shadow-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.8rem; }
+.shadow-tag {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: var(--tag-bg);
+  border: 1px solid var(--border);
+  padding: 0.2rem 0.6rem;
+  border-radius: 3px;
+  color: var(--text-light);
+}
+.ipa-btn {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text-light);
+  padding: 0.3rem 0.8rem;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.ipa-btn:hover { background: var(--tag-bg); }
+.ipa-text {
+  display: none;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.78rem;
+  color: var(--accent3);
+  background: #e8f0f8;
+  border: 1px solid #b8d0e8;
+  border-radius: 4px;
+  padding: 0.5rem 0.9rem;
+  margin-top: 0.6rem;
+}
+.ipa-text.visible { display: block; }
+
+/* ── TAB 7: WRITING ── */
+.writing-prompt-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1.4rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: var(--shadow);
+}
+.writing-prompt-card:hover, .writing-prompt-card.selected {
+  border-color: var(--accent);
+}
+.writing-prompt-card.selected { background: #fff3ec; }
+.writing-type-tag {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: var(--tag-bg);
+  color: var(--accent);
+  padding: 0.2rem 0.6rem;
+  border-radius: 3px;
+  margin-right: 0.5rem;
+}
+.writing-level-tag {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: #e8f0e8;
+  color: var(--accent2);
+  padding: 0.2rem 0.6rem;
+  border-radius: 3px;
+}
+.writing-q-en {
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0.7rem 0 0.3rem;
+}
+.writing-q-vi {
+  font-size: 0.88rem;
+  color: var(--text-light);
+  font-style: italic;
+}
+.editor-area {
+  margin-top: 1.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.editor-header {
+  background: var(--bg-dark);
+  color: #c8b890;
+  padding: 0.7rem 1.2rem;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.word-count { color: #88aa88; }
+.phrase-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  padding: 0.8rem 1rem;
+  background: #f5efdf;
+  border-bottom: 1px solid var(--border);
+}
+.toolbar-phrase {
+  font-size: 0.8rem;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 0.25rem 0.6rem;
+  cursor: pointer;
+  color: var(--text-light);
+  transition: all 0.15s;
+  font-family: 'Source Serif 4', serif;
+}
+.toolbar-phrase:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+#writing-textarea {
+  width: 100%;
+  min-height: 200px;
+  padding: 1.2rem;
+  border: none;
+  font-family: 'Source Serif 4', serif;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--text);
+  background: var(--bg-card);
+  resize: vertical;
+  outline: none;
+}
+.submit-writing {
+  display: block;
+  width: 100%;
+  margin-top: 1rem;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 0.9rem;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.submit-writing:hover { opacity: 0.85; }
+#feedback-display { display: none; margin-top: 1rem; border-radius: 6px; border: 1px solid var(--border); }
+#feedback-display.visible { display: block; }
+
+/* ── TAB 8: FLASHCARD ── */
+.fc-controls {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.2rem;
+  align-items: center;
+}
+.fc-btn {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text-light);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.fc-btn:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+.fc-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+.fc-stats {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--text-light);
+  margin-left: auto;
+}
+.fc-stage {
+  perspective: 1200px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+.fc-card-wrap {
+  width: 100%;
+  max-width: 500px;
+  height: 280px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease;
+  cursor: pointer;
+}
+.fc-card-wrap.flipped { transform: rotateY(180deg); }
+.fc-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 4px 24px rgba(42,31,15,0.15);
+}
+.fc-front {
+  background: var(--bg-dark);
+  color: #f0e4cc;
+}
+.fc-back {
+  background: #fff9f0;
+  border: 2px solid var(--border);
+  color: var(--text);
+  transform: rotateY(180deg);
+}
+.fc-word {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.fc-ipa-front {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.75rem;
+  color: #8a7a60;
+  margin-bottom: 0.8rem;
+}
+.fc-pos-front {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #c4602a;
+  background: #3a2a1a;
+  padding: 0.2rem 0.8rem;
+  border-radius: 3px;
+}
+.fc-hint {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #5a4a35;
+  margin-top: 1.2rem;
+  opacity: 0.6;
+}
+.fc-meaning {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.6rem;
+}
+.fc-example {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  font-style: italic;
+  max-width: 380px;
+}
+.fc-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.fc-nav-btn {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text-light);
+  padding: 0.5rem 1.2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.fc-nav-btn:hover { background: var(--tag-bg); }
+.fc-counter {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.78rem;
+  color: var(--text-light);
+  min-width: 60px;
+  text-align: center;
+}
+.fc-know-btns {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.fc-know-btn {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.5rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s;
+}
+.fc-know { background: #d4f0d4; color: #2a6a2a; }
+.fc-know:hover { background: #2a6a2a; color: #fff; }
+.fc-dunno { background: #f8d8d0; color: #8a2a1a; }
+.fc-dunno:hover { background: #8a2a1a; color: #fff; }
+
+/* ── TOAST ── */
+.toast {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background: var(--bg-dark);
+  color: #e8d5b0;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  opacity: 0;
+  transition: all 0.3s;
+  z-index: 999;
+  pointer-events: none;
+}
+.toast.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<header class="masthead">
+  <div class="masthead-meta">
+    <span>📰 Báo chí · Xã hội</span>
+    <span>·</span>
+    <span>Amanda Ulrich · The Guardian</span>
+    <span>·</span>
+    <span>29 Mar 2026</span>
+    <span>·</span>
+    <span>Level B2</span>
+  </div>
+  <h1>No tuition, no grades, no power grid: why are people flocking to a 'college' in the middle of the desert?</h1>
+  <p class="masthead-subtitle">Two hundred miles from LA, an off-grid community with roots in Burning Man offers an unorthodox educational experience — is Mars College the future?</p>
+</header>
+
+<!-- 1-MINUTE SUMMARY -->
+<section class="summary-section">
+  <div class="summary-inner">
+    <div class="summary-label">⏱ 1-minute summary — giới thiệu với người khác</div>
+    <p class="summary-text">
+      Mars College is a highly unconventional learning community located in the California desert, roughly 200 miles from Los Angeles near a small settlement called Bombay Beach. Unlike traditional universities, it charges no tuition, issues no grades, and has no mandatory attendance. Power comes from solar panels, and students live in trailers, sheds, and tents. Each year from January to April, temporary buildings are constructed from plywood and metal frames, classes are held — covering everything from creative writing to AI art — and then the entire campus is torn down again. The community was co-founded by Gene Kogan, a mathematician turned AI artist, and Freeman, a Silicon Valley engineer who originally built structures for Burning Man. With rising college tuition costs and long-term unemployment among graduates, Mars College positions itself not as a replacement for traditional education, but as a radical alternative — a place where people of all ages come to live off the grid, learn from each other, and think seriously about the future of artificial intelligence.
+    </p>
+    <button class="summary-toggle-btn" id="summary-toggle">🇻🇳 Xem bản dịch tiếng Việt</button>
+    <div class="summary-vi" id="summary-vi">
+      Mars College là một cộng đồng học tập rất độc đáo nằm ở sa mạc California, cách Los Angeles khoảng 320 km, gần một khu định cư nhỏ tên là Bombay Beach. Không giống các trường đại học truyền thống, nơi này không thu học phí, không có điểm số và không bắt buộc điểm danh. Điện được cung cấp từ tấm pin mặt trời, và học viên sống trong nhà kéo, nhà kho và lều. Mỗi năm từ tháng 1 đến tháng 4, các tòa nhà tạm được dựng lên từ ván gỗ và khung kim loại, các lớp học được tổ chức — từ viết sáng tạo đến nghệ thuật AI — rồi toàn bộ khuôn viên bị phá dỡ. Cộng đồng được đồng sáng lập bởi Gene Kogan, một nhà toán học chuyển sang làm nghệ sĩ AI, và Freeman, một kỹ sư Thung lũng Silicon từng xây công trình cho lễ hội Burning Man. Với chi phí học đại học ngày càng tăng, Mars College tự định vị không phải là sự thay thế cho giáo dục truyền thống, mà là một lựa chọn thay thế triệt để — nơi người ở mọi lứa tuổi đến để sống tự cung tự cấp và suy nghĩ nghiêm túc về tương lai của trí tuệ nhân tạo.
+    </div>
+  </div>
+</section>
+
+<!-- TABS NAV -->
+<nav class="tabs-nav">
+  <div class="tabs-nav-inner">
+    <button class="tab-btn active" data-tab="0">📰 Bài viết</button>
+    <button class="tab-btn" data-tab="1">📚 Từ vựng</button>
+    <button class="tab-btn" data-tab="2">✏️ Ngữ pháp</button>
+    <button class="tab-btn" data-tab="3">🎯 Bài tập</button>
+    <button class="tab-btn" data-tab="4">💬 Thảo luận</button>
+    <button class="tab-btn" data-tab="5">🎙️ Shadowing</button>
+    <button class="tab-btn" data-tab="6">✍️ Writing</button>
+    <button class="tab-btn" data-tab="7">🃏 Flashcard</button>
+  </div>
+</nav>
+
+<div class="tab-wrap">
+
+<!-- ════════════════════════════════════════ TAB 0: BILINGUAL ════ -->
+<div class="tab-content active" id="tab-0">
+  <h2 class="section-title">📰 Bài viết song ngữ</h2>
+
+  <div class="bilingual-pair">
+    <div class="bilingual-en">A dozen writing students perched around a collection of weather-beaten couches, laptops balancing on their knees, ready to discuss their work. Next up to read was Ira Birch, a poet sporting black boots and a shag haircut.</div>
+    <div class="bilingual-vi">Khoảng chục học viên viết văn ngồi quanh một bộ ghế sofa cũ kỹ vì thời tiết, laptop đặt trên đầu gối, sẵn sàng thảo luận về bài của mình. Người tiếp theo đọc là Ira Birch, một nhà thơ mang giày bốt đen và kiểu tóc shag.</div>
+  </div>
+
+  <div class="bilingual-pair">
+    <div class="bilingual-en">"I told myself I was gonna share today," Birch said nervously, looking around the circle. "But there are a lot more people here."</div>
+    <div class="bilingual-vi">"Tôi tự nhủ hôm nay mình sẽ chia sẻ," Birch nói một cách lo lắng, nhìn quanh vòng tròn. "Nhưng ở đây có nhiều người hơn tôi nghĩ."</div>
+  </div>
+
+  <div class="bilingual-pair">
+    <div class="bilingual-en">The leader of the workshop, Amy Brown Carver, stepped in to help, reading a few of Birch's poems aloud for them. After the reading, there was clapping — someone muttered the word "amazing" — and words of encouragement. As they chatted and critiqued, the writers sipped tea from porcelain cups.</div>
+    <div class="bilingual-vi">Người dẫn dắt workshop, Amy Brown Carver, bước vào giúp đỡ, đọc to một vài bài thơ của Birch. Sau khi đọc xong, có tiếng vỗ tay — ai đó thì thầm từ "tuyệt vời" — và những lời động viên. Khi trò chuyện và góp ý, các nhà văn nhâm nhi trà từ những chiếc tách sứ.</div>
+  </div>
+
+  <div class="bilingual-pair">
+    <div class="bilingual-en">It was a scene reminiscent of any creative writing brainstorm happening on any given college campus across the country. But zoom out from the immediate circle of couches, and the gathering's true setting was a barren, windswept plot in the middle of the California desert, roughly 200 miles from Los Angeles, 40 miles from the nearest grocery store and a mile from the tiny settlement of Bombay Beach.</div>
+    <div class="bilingual-vi">Đây là khung cảnh gợi nhớ đến bất kỳ buổi động não viết sáng tạo nào diễn ra trên khuôn viên đại học. Nhưng nếu nhìn rộng ra khỏi vòng tròn ghế sofa đó, khung cảnh thực sự của buổi tụ họp là một mảnh đất hoang, gió lộng giữa sa mạc California, cách Los Angeles khoảng 320 km, cách siêu thị gần nhất 64 km và cách khu định cư nhỏ Bombay Beach 1,6 km.</div>
+  </div>
+
+  <div class="section-heading">'It kind of looks like Mars out here'</div>
+
+  <div class="bilingual-pair">
+    <div class="bilingual-en">At Mars, unlike a real college, there are no grades, degrees or mandatory attendance. There are no tuition fees or trained professors or even public utilities, like electricity or indoor plumbing. Most power to the camp comes from a towering wall of solar panels.</div>
+    <div class="bilingual-vi">Tại Mars, không giống một trường đại học thật sự, không có điểm số, bằng cấp hay điểm danh bắt buộc. Không có học phí, giáo sư được đào tạo hay thậm chí tiện ích công cộng như điện hay hệ thống ống nước trong nhà. Phần lớn điện cho trại đến từ một bức tường pin mặt trời khổng lồ.</div>
+  </div>
+
+  <div class="bilingual-pair">
+    <div class="bilingual-en">But there are daily classes taught by anyone who has something to teach, ranging from the writers' workshop, to the mathematical theory of shapes, to the proper way to install solar panels, to the creation of AI-inspired art. All classes are held within a cluster of plywood-and-metal structures, which are built right before the beginning of the "semester" in January, and then torn down again every year in April.</div>
+    <div class="bilingual-vi">Nhưng có các lớp học hàng ngày do bất kỳ ai có điều gì đó để dạy, từ workshop viết văn, lý thuyết toán học về hình học, cách lắp đặt pin mặt trời đúng cách, đến việc tạo ra nghệ thuật lấy cảm hứng từ AI. Tất cả các lớp học được tổ chức trong một cụm công trình bằng ván gỗ và kim loại, được xây ngay trước kỳ học bắt đầu vào tháng 1, rồi lại bị phá dỡ vào tháng 4 mỗi năm.</div>
+  </div>
+
+  <div class="section-heading">'You can't take anything for granted'</div>
+
+  <div class="bilingual-pair">
+    <div class="bilingual-en">Mars College may have lofty goals, but the day-to-day living conditions for students aren't for the faint of heart. When the wind whips through the desert, spawning sandstorms that can last hours, a thick film of dust settles over the open campsite. Tanks of drinking water have to be driven in, and trash has to be driven out. And during the spring months, temperatures in the California desert start reliably climbing into the triple digits.</div>
+    <div class="bilingual-vi">Mars College có thể có những mục tiêu cao cả, nhưng điều kiện sống hàng ngày cho học viên không phải dành cho người yếu tim. Khi gió quét qua sa mạc, tạo ra những cơn bão cát kéo dài hàng giờ, một lớp bụi dày phủ lên toàn bộ khu cắm trại. Các bình nước uống phải được chở vào, và rác phải được chở ra. Trong những tháng xuân, nhiệt độ ở sa mạc California bắt đầu leo thang đáng tin cậy lên ba chữ số (°F).</div>
+  </div>
+
+  <div class="bilingual-pair">
+    <div class="bilingual-en">The seed for Mars College was planted years ago at an event with a much bigger profile, tens of thousands more attendees, and far more parties: Burning Man. It was at the Nevada desert festival that a former Silicon Valley software engineer and entrepreneur started building huge, temporary structures out of pallet racks. So in 2019, he bought a cheap 20-acre plot of desert for about $20,000 near Bombay Beach. And if Freeman brought the building materials, Kogan, his co-founder, brought the people.</div>
+    <div class="bilingual-vi">Hạt giống của Mars College được gieo từ nhiều năm trước tại một sự kiện nổi tiếng hơn nhiều, có hàng chục nghìn người tham dự và nhiều bữa tiệc hơn: Burning Man. Chính tại lễ hội sa mạc Nevada đó, một cựu kỹ sư phần mềm và doanh nhân Thung lũng Silicon bắt đầu xây dựng những công trình tạm thời khổng lồ từ giá pallet. Vì vậy vào năm 2019, ông mua một mảnh đất sa mạc rộng 20 mẫu Anh với giá khoảng 20.000 USD gần Bombay Beach. Nếu Freeman mang đến vật liệu xây dựng, thì Kogan, đồng sáng lập của ông, mang đến con người.</div>
+  </div>
+
+  <div class="section-heading">A broad cohort</div>
+
+  <div class="bilingual-pair">
+    <div class="bilingual-en">Today, those who make the trek out to Mars College come from many different backgrounds: some have advanced degrees, while some didn't finish high school. There are about 60 students in total: the largest group that the experimental college has seen thus far. The youngest is 25, the oldest 60. There have been attendees from Brazil, India, China, different parts of Europe and every corner of the US.</div>
+    <div class="bilingual-vi">Ngày nay, những người vượt đường xa đến Mars College đến từ nhiều hoàn cảnh khác nhau: một số có bằng sau đại học, trong khi một số chưa tốt nghiệp phổ thông. Có khoảng 60 học viên tất cả: nhóm lớn nhất mà trường thực nghiệm này từng có. Người trẻ nhất 25 tuổi, người lớn tuổi nhất 60. Đã có người tham dự từ Brazil, Ấn Độ, Trung Quốc, nhiều vùng của châu Âu và mọi ngóc ngách của nước Mỹ.</div>
+  </div>
+
+  <div class="section-heading">Grappling with the future</div>
+
+  <div class="bilingual-pair">
+    <div class="bilingual-en">Still, Mars is grappling with some of the same broader, philosophical questions facing college students everywhere: namely, how AI will, or should, shape the future. Because of the founders' experience in tech, artificial intelligence influences many aspects of the school, including its dedicated "AI Camp." There are classes on "vibe coding" and "creative AI", and dedicated AI agents control the lights in the main auditorium and even help organize things in the communal kitchen.</div>
+    <div class="bilingual-vi">Dù vậy, Mars vẫn đang vật lộn với những câu hỏi triết học sâu rộng hơn mà sinh viên đại học ở khắp nơi đang đối mặt: cụ thể là AI sẽ hoặc nên định hình tương lai như thế nào. Do kinh nghiệm của những người sáng lập trong lĩnh vực công nghệ, trí tuệ nhân tạo ảnh hưởng đến nhiều khía cạnh của trường, bao gồm cả "Trại AI" chuyên biệt. Có các lớp học về "lập trình vibe" và "AI sáng tạo", và các tác nhân AI chuyên dụng điều khiển đèn trong hội trường chính và thậm chí giúp tổ chức mọi thứ trong nhà bếp công cộng.</div>
+  </div>
+
+  <div class="bilingual-pair">
+    <div class="bilingual-en">For now, at least, the future of Mars College and its educational offerings are once again unknown. In a few weeks, all of the carefully constructed classrooms and buildings will be torn down, as they are every April, and the students will pack up their trailers and RVs and head back to their normal lives. The landscape will return to being just a vast expanse of open desert. And next year, they'll build it all back up again.</div>
+    <div class="bilingual-vi">Ít nhất là hiện tại, tương lai của Mars College và các chương trình giáo dục của nó vẫn còn bí ẩn. Trong vài tuần nữa, tất cả các lớp học và tòa nhà được xây dựng cẩn thận sẽ bị phá dỡ, như mọi năm vào tháng 4, và các học viên sẽ đóng gói nhà kéo và xe RV rồi trở về cuộc sống bình thường. Cảnh quan sẽ trở lại là một vùng sa mạc rộng lớn trống trải. Và năm sau, họ sẽ xây lại tất cả từ đầu.</div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════ TAB 1: VOCAB ════════ -->
+<div class="tab-content" id="tab-1">
+  <h2 class="section-title">📚 Từ vựng</h2>
+  <div class="vocab-grid" id="vocab-grid"></div>
+</div>
+
+<!-- ════════════════════════════════════════ TAB 2: GRAMMAR ══════ -->
+<div class="tab-content" id="tab-2">
+  <h2 class="section-title">✏️ Ngữ pháp nổi bật</h2>
+  <div id="grammar-list"></div>
+</div>
+
+<!-- ════════════════════════════════════════ TAB 3: EXERCISES ════ -->
+<div class="tab-content" id="tab-3">
+  <h2 class="section-title">🎯 Bài tập tương tác</h2>
+  <div id="exercises-list"></div>
+</div>
+
+<!-- ════════════════════════════════════════ TAB 4: DISCUSSION ═══ -->
+<div class="tab-content" id="tab-4">
+  <h2 class="section-title">💬 Thảo luận</h2>
+  <div class="alex-intro">
+    <h3>Nói chuyện với Alex — gia sư tiếng Anh AI của bạn</h3>
+    <p>Chọn một chủ đề bên dưới để mở cuộc trò chuyện với Alex trên Claude.ai. Alex sẽ phản hồi ý kiến của bạn, sửa lỗi nhẹ nhàng và đặt câu hỏi tiếp theo.</p>
+    <button class="open-alex-btn" id="open-alex-general">💬 Mở chat với Alex →</button>
+  </div>
+  <div id="topic-btns"></div>
+  <div class="card" style="margin-top:2rem;">
+    <div class="section-label">12 Useful Phrases — nhấn để copy</div>
+    <div class="phrases-grid" id="phrases-grid"></div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════ TAB 5: SHADOWING ════ -->
+<div class="tab-content" id="tab-5">
+  <h2 class="section-title">🎙️ Shadowing — Luyện phát âm</h2>
+  <div id="shadow-list"></div>
+</div>
+
+<!-- ════════════════════════════════════════ TAB 6: WRITING ══════ -->
+<div class="tab-content" id="tab-6">
+  <h2 class="section-title">✍️ Writing</h2>
+  <p style="margin-bottom:1.2rem;color:var(--text-light);font-size:0.9rem;">Chọn một đề bài, viết bài của bạn, rồi nhận feedback từ AI trên Claude.ai.</p>
+  <div id="writing-prompts"></div>
+  <div class="editor-area" id="editor-area" style="display:none;">
+    <div class="editor-header">
+      <span id="editor-title">Writing Editor</span>
+      <span class="word-count"><span id="wc">0</span> words</span>
+    </div>
+    <div class="phrase-toolbar" id="phrase-toolbar"></div>
+    <textarea id="writing-textarea" placeholder="Bắt đầu viết ở đây..."></textarea>
+    <div style="padding:1rem;">
+      <button class="submit-writing" id="submit-writing">🚀 Nhận AI Feedback trên Claude.ai →</button>
+    </div>
+  </div>
+  <div id="feedback-display"></div>
+</div>
+
+<!-- ════════════════════════════════════════ TAB 7: FLASHCARD ════ -->
+<div class="tab-content" id="tab-7">
+  <h2 class="section-title">🃏 Flashcard</h2>
+  <div class="fc-controls">
+    <button class="fc-btn active" id="fc-mode-en">EN → VN</button>
+    <button class="fc-btn" id="fc-mode-vi">VN → EN</button>
+    <button class="fc-btn" id="fc-shuffle">🔀 Shuffle</button>
+    <button class="fc-btn" id="fc-reset">↺ Reset</button>
+    <div class="fc-stats" id="fc-stats">✅ 0 · ❌ 0 · Còn lại: 20</div>
+  </div>
+  <div class="fc-stage">
+    <div class="fc-card-wrap" id="fc-card-wrap">
+      <div class="fc-face fc-front" id="fc-front">
+        <div class="fc-word" id="fc-word">—</div>
+        <div class="fc-ipa-front" id="fc-ipa">—</div>
+        <div class="fc-pos-front" id="fc-pos">—</div>
+        <div class="fc-hint">Nhấn để lật thẻ</div>
+      </div>
+      <div class="fc-face fc-back" id="fc-back">
+        <div class="fc-meaning" id="fc-meaning">—</div>
+        <div class="fc-example" id="fc-example">—</div>
+      </div>
+    </div>
+  </div>
+  <div class="fc-nav">
+    <button class="fc-nav-btn" id="fc-prev">← Trước</button>
+    <div class="fc-counter" id="fc-counter">1 / 20</div>
+    <button class="fc-nav-btn" id="fc-next">Tiếp →</button>
+  </div>
+  <div class="fc-know-btns" id="fc-know-btns" style="display:none;">
+    <button class="fc-know-btn fc-know" id="fc-know">✅ Thuộc rồi</button>
+    <button class="fc-know-btn fc-dunno" id="fc-dunno">❌ Chưa thuộc</button>
+  </div>
+</div>
+
+</div><!-- end .tab-wrap -->
+
+<div class="toast" id="toast"></div>
+
+<script>
+// ─── DATA ────────────────────────────────────────────────────────────────────
+
+const ARTICLE_CONTEXT = "Mars College is an off-grid experimental learning community in the California desert near Bombay Beach, founded by Gene Kogan and Freeman. It has no tuition, grades, or mandatory attendance — students live in trailers and tents, power comes from solar panels, and temporary plywood buildings are built each January and torn down in April. Classes cover everything from creative writing to AI art and solar panel installation.";
+const ARTICLE_LEVEL = "B2";
+
+const VOCAB = [
+  { word: "perch", ipa: "/pɜːrtʃ/", pos: "v", meaning: "ngồi chênh vênh / đậu trên", example: "Students perched around a collection of weather-beaten couches." },
+  { word: "weather-beaten", ipa: "/ˈweðər ˌbiːtən/", pos: "adj", meaning: "bị thời tiết làm cũ kỹ / phong trần", example: "The furniture was old and weather-beaten from years of outdoor use." },
+  { word: "reminiscent", ipa: "/ˌremɪˈnɪsənt/", pos: "adj", meaning: "gợi nhớ / có nét giống", example: "The scene was reminiscent of any college campus writing workshop." },
+  { word: "barren", ipa: "/ˈbærən/", pos: "adj", meaning: "hoang vắng / cằn cỗi", example: "Outside, open desert stretched across a barren, windswept landscape." },
+  { word: "windswept", ipa: "/ˈwɪndswept/", pos: "adj", meaning: "bị gió quét qua / đầy gió", example: "The windswept plot in the desert had no shelter from the elements." },
+  { word: "unorthodox", ipa: "/ʌnˈɔːrθədɒks/", pos: "adj", meaning: "không theo truyền thống / độc đáo", example: "Mars offers an unorthodox educational experience unlike any university." },
+  { word: "utility", ipa: "/juːˈtɪlɪti/", pos: "n", meaning: "tiện ích công cộng (điện, nước)", example: "There are no public utilities like electricity or indoor plumbing at Mars." },
+  { word: "mandatory", ipa: "/ˈmændəˌtɔːri/", pos: "adj", meaning: "bắt buộc", example: "Unlike traditional schools, attendance is not mandatory at Mars College." },
+  { word: "spawn", ipa: "/spɔːn/", pos: "v", meaning: "tạo ra / gây ra (thường xấu)", example: "The wind whipped through the desert, spawning sandstorms that lasted hours." },
+  { word: "lofty", ipa: "/ˈlɔːfti/", pos: "adj", meaning: "cao cả / tham vọng lớn", example: "Mars College may have lofty goals, but daily life is extremely tough." },
+  { word: "faint of heart", ipa: "/feɪnt əv hɑːrt/", pos: "phrase", meaning: "người yếu tim / thiếu can đảm", example: "Desert living is not for the faint of heart." },
+  { word: "trek", ipa: "/trek/", pos: "v/n", meaning: "hành trình dài và vất vả", example: "Those who make the trek out to Mars come from many different backgrounds." },
+  { word: "cohort", ipa: "/ˈkoʊhɔːrt/", pos: "n", meaning: "nhóm / khóa học", example: "The first cohort was mostly made up of Kogan's personal friends." },
+  { word: "grapple with", ipa: "/ˈɡræpəl wɪð/", pos: "phrasal v", meaning: "vật lộn với / đấu tranh với vấn đề", example: "Mars is grappling with philosophical questions about AI and the future." },
+  { word: "collegiate", ipa: "/kəˈliːdʒɪət/", pos: "adj", meaning: "thuộc về đại học / theo kiểu đại học", example: "Mars is clearly not collegiate in a traditional sense." },
+  { word: "experimental", ipa: "/ɪkˌsperɪˈmentl/", pos: "adj", meaning: "thực nghiệm / mang tính thử nghiệm", example: "It functions more as an experimental community than a real university." },
+  { word: "soar", ipa: "/sɔːr/", pos: "v", meaning: "tăng vọt / bay lên", example: "As the price of college tuition continues to soar, people seek alternatives." },
+  { word: "pallet rack", ipa: "/ˈpælɪt ræk/", pos: "n", meaning: "giá đỡ pallet (dùng trong kho hàng)", example: "Freeman built huge temporary structures out of pallet racks at Burning Man." },
+  { word: "renounce", ipa: "/rɪˈnaʊns/", pos: "v", meaning: "từ bỏ / khước từ chính thức", example: "John Scott renounced all financial benefit from the Guardian." },
+  { word: "deliberate", ipa: "/dɪˈlɪbəreɪt/", pos: "v", meaning: "cân nhắc / suy xét kỹ lưỡng", example: "Mars students deliberately consider the best way to incorporate AI into creative work." },
+];
+
+const GRAMMAR = [
+  {
+    title: "1. Passive Voice — Bị động thì hiện tại đơn & tương lai",
+    formula: "S + is/are + V3/ed — S + will be + V3/ed",
+    example: "All classes are held within a cluster of plywood structures. Buildings will be torn down again every April.",
+    explain: "Bài sử dụng bị động rất nhiều khi miêu tả quy trình lặp lại (build → tear down → rebuild). Lưu ý: khi tác nhân không quan trọng hoặc không biết, bị động tự nhiên hơn chủ động."
+  },
+  {
+    title: "2. Participle Phrases — Cụm phân từ bổ nghĩa",
+    formula: "V-ing/V3 + phrase (đứng đầu câu hoặc giữa câu)",
+    example: "Perched around a collection of weather-beaten couches, students were ready to discuss their work. | Spawning sandstorms that can last hours, the wind whips through the desert.",
+    explain: "Cụm phân từ V-ing đứng đầu câu thay thế mệnh đề trạng ngữ (while sitting / as it spawns). Đây là cấu trúc B2–C1 giúp văn viết trở nên ngắn gọn và chuyên nghiệp hơn."
+  },
+  {
+    title: "3. Zoom metaphor — Cấu trúc 'zoom out from'",
+    formula: "zoom out from [close view] → [wider reality]",
+    example: "But zoom out from the immediate circle of couches, and the gathering's true setting was a barren, windswept plot in the middle of the desert.",
+    explain: "Cấu trúc mệnh lệnh + and (imperative + and) diễn đạt điều kiện: 'nếu bạn nhìn rộng ra... thì...'. Đây là một trick ngôn ngữ báo chí để tạo hiệu ứng bất ngờ."
+  },
+  {
+    title: "4. Contrast with 'unlike' — Cấu trúc tương phản",
+    formula: "Unlike + noun phrase, S + V...",
+    example: "At Mars, unlike a real college, there are no grades, degrees or mandatory attendance.",
+    explain: "'Unlike' (không giống như) đứng đầu cụm danh từ, không phải mệnh đề. Phân biệt với 'although' / 'even though' + mệnh đề có chủ-vị đầy đủ."
+  },
+  {
+    title: "5. Negative list — Chuỗi phủ định liên tiếp",
+    formula: "There are no A, (no) B or (even) C.",
+    example: "There are no tuition fees or trained professors or even public utilities, like electricity or indoor plumbing.",
+    explain: "Tác giả dùng chuỗi 'no... or... or even...' để tăng dần mức độ bất ngờ. 'Even' ở cuối nhấn mạnh điều tưởng như tối thiểu nhất cũng không có."
+  },
+  {
+    title: "6. Reporting verb + quote — Trích dẫn gián tiếp và trực tiếp",
+    formula: "S + said/admitted/noted + (that) + clause / [direct quote]",
+    example: "Kogan admits that the admission process is 'very self-selective'. | 'Here, you can't take anything for granted,' Kogan said.",
+    explain: "Trong văn báo chí, reporting verbs đa dạng (said, noted, admitted, maintained, argued) giúp truyền đạt thái độ của người nói. 'Admit' ngụ ý thừa nhận điều hơi khó chấp nhận."
+  },
+];
+
+const EXERCISES = [
+  {
+    type: "Comprehension",
+    q: "According to the article, what happens to the Mars College campus every April?",
+    options: ["Students graduate and receive degrees", "The buildings are torn down and the land returns to desert", "The campus expands to include new permanent structures", "Students vote on which buildings to keep"],
+    correct: 1,
+    explain: "The article states: 'all of the carefully constructed classrooms and buildings will be torn down, as they are every April.'"
+  },
+  {
+    type: "Comprehension",
+    q: "What was Freeman doing at Burning Man that eventually led to Mars College?",
+    options: ["Teaching software engineering courses", "Running an art gallery", "Building huge temporary structures from pallet racks", "Organizing communal meals for festival-goers"],
+    correct: 2,
+    explain: "The article says Freeman 'starting building huge, temporary structures out of pallet racks' at Burning Man, which gave him the leftover materials and idea for Mars College."
+  },
+  {
+    type: "Vocabulary",
+    q: "In the sentence 'The day-to-day living conditions aren't for the faint of heart,' what does 'faint of heart' mean?",
+    options: ["People with heart disease", "People who are timid or easily discouraged", "People who rarely exercise", "People who sleep too much"],
+    correct: 1,
+    explain: "'Faint of heart' is an idiom meaning people who lack courage or are easily frightened by difficult situations."
+  },
+  {
+    type: "Grammar",
+    q: "Which sentence uses a participle phrase correctly to describe a simultaneous action?",
+    options: [
+      "Spawning sandstorms, the wind whips through the desert.",
+      "The wind is spawning sandstorms, it whips through the desert.",
+      "When it was spawning sandstorms, the wind whipped the desert.",
+      "The wind spawned sandstorms and whipped through the desert."
+    ],
+    correct: 0,
+    explain: "Option A uses a present participle phrase (Spawning sandstorms) to describe what the wind is doing simultaneously — this is correct B2+ sentence structure."
+  },
+  {
+    type: "Inference",
+    q: "What can we infer about Gene Kogan's view of the traditional university system?",
+    options: [
+      "He believes universities are perfect as they are",
+      "He thinks universities are too focused on the arts",
+      "He doubts universities can sustain their current model long-term",
+      "He wants to work as a professor at a real university"
+    ],
+    correct: 2,
+    explain: "Kogan said: 'In the future, I don't see how the university system as it is now can sustain itself' — this directly implies doubt about traditional universities' long-term viability."
+  },
+  {
+    type: "Speaking Prompt",
+    q: "Think about your own learning experience. Would you ever attend a place like Mars College? What would be the biggest challenge for you personally? Use phrases like: 'Personally, I think...', 'The most challenging aspect would be...', 'On the other hand...'",
+    isSpeaking: true
+  }
+];
+
+const TOPICS = [
+  { question: "Mars College has no grades, degrees, or tuition. Do you think this model could work in Vietnam? What would be the biggest challenges?" },
+  { question: "The article mentions that college tuition keeps soaring. Do you think a university degree is still worth the cost in today's world? Why or why not?" },
+  { question: "Mars College uses AI in many aspects of its curriculum. How do you feel about AI being used in education? Is it helpful or harmful?" },
+  { question: "Would you be able to live off-grid for 3 months in a desert with no electricity, indoor plumbing, or grocery stores nearby? What would be hardest for you?" },
+  { question: "The article says people 'of all ages are looking for new, adventurous ways to keep learning.' How do you personally prefer to learn new things outside of school?" },
+  { question: "Mars College describes itself as 'a college for the end of the world.' What do you think this phrase means? Is it an exaggeration or an accurate description?" },
+];
+
+const PHRASES = [
+  "Personally, I think...",
+  "On the other hand...",
+  "It's worth noting that...",
+  "One could argue that...",
+  "What strikes me most is...",
+  "In contrast to traditional...",
+  "This raises the question of...",
+  "I'd like to push back on...",
+  "Building on that idea...",
+  "To put it differently...",
+  "The implications of this are...",
+  "What I find fascinating is...",
+];
+
+const SHADOW_SENTENCES = [
+  {
+    chunks: [
+      { text: "A dozen writing students", cls: "c1" },
+      { text: " perched around", cls: "c2" },
+      { text: " a collection of weather-beaten couches,", cls: "c3" },
+      { text: " laptops balancing on their knees,", cls: "c4" },
+      { text: " ready to discuss their work.", cls: "c1" }
+    ],
+    vi: "Khoảng chục học viên viết văn ngồi chênh vênh quanh bộ ghế sofa phong trần, laptop đặt trên đầu gối, sẵn sàng thảo luận về bài của mình.",
+    note: "Stress 'WEA-ther-BEA-ten' (2 trọng âm). 'Laptops balancing' → linking /s b/. Giọng nhẹ dần ở cuối: 'ready to discuss their work.'",
+    ipa: "/ə ˌdʌzən ˈraɪtɪŋ ˈstjuːdənts pɜːrtʃt əˈraʊnd ə kəˌlekʃən əv ˈweðər ˌbiːtən ˈkaʊtʃɪz, ˈlæptɒps ˈbælənsɪŋ ɒn ðeər niːz, ˈredi tə dɪˈskʌs ðeər wɜːrk/",
+    tags: ["Rhythm", "Linking"]
+  },
+  {
+    chunks: [
+      { text: "But zoom out", cls: "c2" },
+      { text: " from the immediate circle of couches,", cls: "c1" },
+      { text: " and the gathering's true setting", cls: "c3" },
+      { text: " was a barren, windswept plot", cls: "c4" },
+      { text: " in the middle of the California desert.", cls: "c2" }
+    ],
+    vi: "Nhưng nếu nhìn rộng ra khỏi vòng tròn ghế sofa, khung cảnh thực sự của buổi tụ họp là một mảnh đất hoang giữa sa mạc California.",
+    note: "Câu dài — chia thành 2 nhịp thở: sau 'couches' có micro-pause. 'zoom OUT' → 'out' được nhấn. 'BAR-ren, WIND-swept' — cả hai tính từ đều có trọng âm.",
+    ipa: "/bʌt zuːm aʊt frəm ði ɪˈmiːdiət ˈsɜːrkəl əv ˈkaʊtʃɪz, ænd ðə ˈɡæðərɪŋz truː ˈsetɪŋ wəz ə ˈbærən ˈwɪndswept plɒt ɪn ðə ˈmɪdəl əv ðə kæˈlɪfɔːrniə ˈdezərt/",
+    tags: ["Intonation", "Contrast"]
+  },
+  {
+    chunks: [
+      { text: "Here, you can't", cls: "c1" },
+      { text: " take anything for granted,", cls: "c3" },
+      { text: "\" Kogan said.", cls: "c2" }
+    ],
+    vi: "\"Ở đây, bạn không thể coi bất cứ điều gì là đương nhiên,\" Kogan nói.",
+    note: "'take ANYthing for GRANTed' → stress 'ANY' và 'GRANT'. Schwa trong 'for' → /fər/. Giọng xuống dần ở 'Kogan said' (reporting clause không nhấn).",
+    ipa: "/hɪr, juː kɑːnt teɪk ˈeniˌθɪŋ fər ˈɡræntɪd, ˈkoʊɡən sed/",
+    tags: ["Schwa", "Quotation"]
+  },
+  {
+    chunks: [
+      { text: "As the price of college tuition", cls: "c1" },
+      { text: " continues to soar,", cls: "c4" },
+      { text: " and the college-educated now", cls: "c2" },
+      { text: " see more long-term unemployment", cls: "c3" },
+      { text: " than in decades past,", cls: "c1" },
+      { text: " people of all ages are looking for new,", cls: "c4" },
+      { text: " adventurous ways to keep learning.", cls: "c2" }
+    ],
+    vi: "Khi học phí đại học tiếp tục tăng vọt, và những người có bằng đại học ngày nay phải đối mặt với tình trạng thất nghiệp dài hạn nhiều hơn trong các thập kỷ trước, người ở mọi lứa tuổi đang tìm kiếm những cách mới, táo bạo để tiếp tục học hỏi.",
+    note: "Câu rất dài — có 3 phần: 'As...soar' (tăng dần), 'and...past' (đỉnh điểm), 'people...learning' (kết luận). Cần ngắt hơi sau mỗi dấu phẩy.",
+    ipa: "/æz ðə praɪs əv ˈkɒlɪdʒ tjuˈɪʃən kənˈtɪnjuːz tə sɔːr, ænd ðə ˈkɒlɪdʒ ˌedjʊˈkeɪtɪd naʊ siː mɔːr ˌlɒŋ ˈtɜːrm ˌʌnɪmˈplɔɪmənt ðæn ɪn ˈdekɪdz pɑːst/",
+    tags: ["Rhythm", "Intonation"]
+  },
+  {
+    chunks: [
+      { text: "In the age of the internet,", cls: "c2" },
+      { text: " you can get educational content for free,", cls: "c1" },
+      { text: "\" Kogan said.", cls: "c3" },
+      { text: " \"But the thing that you can't get for free,", cls: "c4" },
+      { text: " or the thing that college still does,", cls: "c2" },
+      { text: " is provide a place", cls: "c1" },
+      { text: " for young people", cls: "c3" },
+      { text: " to go through this youth learning phase together.", cls: "c4" }
+    ],
+    vi: "\"Trong thời đại internet, bạn có thể tìm được nội dung giáo dục miễn phí,\" Kogan nói. \"Nhưng điều bạn không thể có được miễn phí, hay điều mà đại học vẫn làm được, là tạo ra một nơi để những người trẻ cùng nhau trải qua giai đoạn học tập thanh xuân này.\"",
+    note: "Đây là câu có cấu trúc 'cleft' (nhấn mạnh): 'the thing that...IS...' → 'IS' được nhấn rất mạnh. Giọng ngụ ý đồng tình khi nói về giá trị của trải nghiệm sống chung.",
+    ipa: "/ɪn ði eɪdʒ əv ði ˈɪntərnet, juː kæn ɡet ˌedjʊˈkeɪʃənl ˈkɒntent fər friː... bʌt ðə θɪŋ ðæt juː kɑːnt ɡet fər friː... ɪz prəˈvaɪd ə pleɪs fər jʌŋ ˈpiːpəl tə ɡoʊ θruː ðɪs juːθ ˈlɜːrnɪŋ feɪz təˈɡeðər/",
+    tags: ["Stress", "Contrast"]
+  },
+];
+
+const WRITING_PROMPTS = [
+  {
+    type: "Opinion",
+    level: "B2",
+    words: "180–250",
+    en: "Do you think a place like Mars College — with no tuition, no grades, and no formal teachers — could be considered a real educational institution? Why or why not?",
+    vi: "Bạn có nghĩ rằng một nơi như Mars College — không học phí, không điểm số, không giáo viên chính quy — có thể được coi là một tổ chức giáo dục thực sự không? Tại sao?"
+  },
+  {
+    type: "Argument",
+    level: "B2",
+    words: "200–280",
+    en: "The article suggests that traditional university education may not be sustainable in the future. Write an argument either defending the value of traditional universities or arguing that alternative models like Mars College are needed.",
+    vi: "Bài báo gợi ý rằng giáo dục đại học truyền thống có thể không bền vững trong tương lai. Hãy viết một bài lập luận bảo vệ giá trị của đại học truyền thống hoặc lập luận rằng cần có các mô hình thay thế như Mars College."
+  },
+  {
+    type: "Describe",
+    level: "B1",
+    words: "150–200",
+    en: "Imagine you are a student at Mars College for one week. Describe what a typical day would look like — what would you do, eat, learn, and feel?",
+    vi: "Hãy tưởng tượng bạn là học viên tại Mars College trong một tuần. Hãy mô tả một ngày điển hình sẽ trông như thế nào — bạn sẽ làm gì, ăn gì, học gì và cảm thấy gì?"
+  }
+];
+
+const TOOLBAR_PHRASES = [
+  "In my opinion,", "However,", "On the other hand,", "Furthermore,",
+  "This suggests that", "It is worth noting that", "In contrast to", "To conclude,"
+];
+
+// ─── RENDER VOCAB ─────────────────────────────────────────────────────────────
+function renderVocab() {
+  const grid = document.getElementById('vocab-grid');
+  VOCAB.forEach(v => {
+    const card = document.createElement('div');
+    card.className = 'vocab-card';
+    card.innerHTML = `
+      <div class="vocab-word">${v.word}</div>
+      <div class="vocab-ipa">${v.ipa}</div>
+      <span class="vocab-pos">${v.pos}</span>
+      <div class="vocab-meaning">${v.meaning}</div>
+      <div class="vocab-example">${v.example}</div>
+    `;
+    grid.appendChild(card);
+  });
+}
+
+// ─── RENDER GRAMMAR ───────────────────────────────────────────────────────────
+function renderGrammar() {
+  const list = document.getElementById('grammar-list');
+  GRAMMAR.forEach(g => {
+    const el = document.createElement('div');
+    el.className = 'grammar-item';
+    el.innerHTML = `
+      <div class="grammar-title">${g.title}</div>
+      <div class="grammar-formula">${g.formula}</div>
+      <div class="grammar-example">📌 ${g.example}</div>
+      <div class="grammar-explain">💡 ${g.explain}</div>
+    `;
+    list.appendChild(el);
+  });
+}
+
+// ─── RENDER EXERCISES ─────────────────────────────────────────────────────────
+function renderExercises() {
+  const list = document.getElementById('exercises-list');
+  EXERCISES.forEach((ex, i) => {
+    const el = document.createElement('div');
+    el.className = 'exercise-item' + (ex.isSpeaking ? ' speaking-prompt' : '');
+    if (ex.isSpeaking) {
+      el.innerHTML = `
+        <div class="exercise-type">🎤 Speaking Prompt</div>
+        <div class="exercise-q">Q${i+1}. ${ex.q}</div>
+        <div class="speaking-tips">💡 Gợi ý: Luyện nói 1–2 phút không nhìn giấy. Ghi âm lại và nghe.</div>
+      `;
+    } else {
+      const optionsHtml = ex.options.map((opt, j) => `
+        <label><input type="radio" name="ex${i}" value="${j}"> ${opt}</label>
+      `).join('');
+      el.innerHTML = `
+        <div class="exercise-type">${ex.type}</div>
+        <div class="exercise-q">Q${i+1}. ${ex.q}</div>
+        <div class="options">${optionsHtml}</div>
+        <button class="check-btn" data-idx="${i}">Kiểm tra</button>
+        <div class="feedback-msg" id="fb${i}"></div>
+      `;
+    }
+    list.appendChild(el);
+  });
+  document.querySelectorAll('.check-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const idx = parseInt(this.dataset.idx);
+      const selected = document.querySelector(`input[name=ex${idx}]:checked`);
+      const fb = document.getElementById(`fb${idx}`);
+      if (!selected) { showToast('Hãy chọn một đáp án!'); return; }
+      const val = parseInt(selected.value);
+      if (val === EXERCISES[idx].correct) {
+        fb.className = 'feedback-msg correct';
+        fb.textContent = '✅ Chính xác! ' + EXERCISES[idx].explain;
+      } else {
+        fb.className = 'feedback-msg wrong';
+        fb.textContent = '❌ Chưa đúng. ' + EXERCISES[idx].explain;
+      }
+    });
+  });
+}
+
+// ─── RENDER DISCUSSION ────────────────────────────────────────────────────────
+function openAlexChat(topicQuestion = null) {
+  const systemContext = `You are Alex, a warm encouraging English discussion tutor.
+Student: Vietnamese learner, level ${ARTICLE_LEVEL}.
+Context: ${ARTICLE_CONTEXT}
+Each reply: (1) respond to ideas 2-3 sentences, (2) correct errors gently format 💬 "X" → better: "Y" + brief Vietnamese hint, (3) praise something specific, (4) ask one follow-up question.
+Max 180 words. English only, corrections may use Vietnamese.`;
+
+  const openingMessage = topicQuestion
+    ? `[Context for Alex — please keep this role]\n${systemContext}\n\n---\n\nI'd like to discuss this topic: ${topicQuestion}`
+    : `[Context for Alex — please keep this role]\n${systemContext}\n\n---\n\nHi Alex! I just finished reading the article about Mars College. Can we talk about it?`;
+
+  const url = `https://claude.ai/new?q=${encodeURIComponent(openingMessage)}`;
+  window.open(url, '_blank');
+}
+
+function renderDiscussion() {
+  const container = document.getElementById('topic-btns');
+  TOPICS.forEach((t, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'topic-btn';
+    btn.dataset.question = t.question;
+    btn.innerHTML = `<span class="topic-num">TOPIC ${String(i+1).padStart(2,'0')}</span>${t.question}`;
+    container.appendChild(btn);
+  });
+  document.querySelectorAll('.topic-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      openAlexChat(this.dataset.question);
+    });
+  });
+  document.getElementById('open-alex-general').addEventListener('click', () => openAlexChat(null));
+
+  const phraseGrid = document.getElementById('phrases-grid');
+  function renderPhrases() {
+    PHRASES.forEach(phrase => {
+      const btn = document.createElement('button');
+      btn.className = 'phrase-pill';
+      btn.textContent = phrase + ' 📋';
+      btn.addEventListener('click', function() {
+        copyPhrase(phrase, this);
+      });
+      phraseGrid.appendChild(btn);
+    });
+  }
+  renderPhrases();
+}
+
+function copyPhrase(text, btn) {
+  navigator.clipboard.writeText(text).then(() => {
+    const orig = btn.innerHTML;
+    btn.textContent = '✓ Copied!';
+    setTimeout(() => { btn.innerHTML = orig; }, 1500);
+  }).catch(() => showToast('Không copy được, thử lại!'));
+}
+
+// ─── RENDER SHADOWING ─────────────────────────────────────────────────────────
+function renderShadowing() {
+  const list = document.getElementById('shadow-list');
+  SHADOW_SENTENCES.forEach((s, i) => {
+    const el = document.createElement('div');
+    el.className = 'shadow-item';
+    const chunksHtml = s.chunks.map(c => `<span class="chunk ${c.cls}">${c.text}</span>`).join('');
+    const tagsHtml = s.tags.map(t => `<span class="shadow-tag">${t}</span>`).join('');
+    el.innerHTML = `
+      <div class="shadow-num">Câu ${i+1} / ${SHADOW_SENTENCES.length}</div>
+      <div class="shadow-sentence">${chunksHtml}</div>
+      <div class="shadow-vi">${s.vi}</div>
+      <div class="shadow-note">🎯 ${s.note}</div>
+      <div class="shadow-tags">${tagsHtml}</div>
+      <button class="ipa-btn" data-ipa="${i}">Show IPA</button>
+      <div class="ipa-text" id="ipa-${i}">${s.ipa}</div>
+    `;
+    list.appendChild(el);
+  });
+  document.querySelectorAll('.ipa-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const id = this.dataset.ipa;
+      const ipaEl = document.getElementById(`ipa-${id}`);
+      ipaEl.classList.toggle('visible');
+      this.textContent = ipaEl.classList.contains('visible') ? 'Hide IPA' : 'Show IPA';
+    });
+  });
+}
+
+// ─── RENDER WRITING ───────────────────────────────────────────────────────────
+let selectedWritingPrompt = null;
+
+function renderWriting() {
+  const container = document.getElementById('writing-prompts');
+  WRITING_PROMPTS.forEach((p, i) => {
+    const card = document.createElement('div');
+    card.className = 'writing-prompt-card';
+    card.dataset.idx = i;
+    card.innerHTML = `
+      <span class="writing-type-tag">${p.type}</span>
+      <span class="writing-level-tag">${p.level} · ${p.words} words</span>
+      <div class="writing-q-en">${p.en}</div>
+      <div class="writing-q-vi">${p.vi}</div>
+    `;
+    card.addEventListener('click', function() {
+      document.querySelectorAll('.writing-prompt-card').forEach(c => c.classList.remove('selected'));
+      this.classList.add('selected');
+      selectedWritingPrompt = parseInt(this.dataset.idx);
+      document.getElementById('editor-area').style.display = 'block';
+      document.getElementById('editor-title').textContent = WRITING_PROMPTS[selectedWritingPrompt].type + ' Writing';
+      document.getElementById('editor-area').scrollIntoView({ behavior: 'smooth' });
+    });
+    container.appendChild(card);
+  });
+
+  const toolbar = document.getElementById('phrase-toolbar');
+  TOOLBAR_PHRASES.forEach(ph => {
+    const btn = document.createElement('button');
+    btn.className = 'toolbar-phrase';
+    btn.textContent = ph;
+    btn.addEventListener('click', function() {
+      const ta = document.getElementById('writing-textarea');
+      const pos = ta.selectionStart;
+      ta.value = ta.value.slice(0, pos) + ph + ' ' + ta.value.slice(pos);
+      ta.focus();
+      updateWC();
+    });
+    toolbar.appendChild(btn);
+  });
+
+  const ta = document.getElementById('writing-textarea');
+  ta.addEventListener('input', updateWC);
+
+  document.getElementById('submit-writing').addEventListener('click', submitWriting);
+}
+
+function updateWC() {
+  const val = document.getElementById('writing-textarea').value.trim();
+  const wc = val ? val.split(/\s+/).length : 0;
+  document.getElementById('wc').textContent = wc;
+}
+
+function submitWriting() {
+  const essay = document.getElementById('writing-textarea').value.trim();
+  if (!essay || essay.length < 30) { showToast('Vui lòng viết ít nhất vài câu trước!'); return; }
+  const promptIdx = selectedWritingPrompt !== null ? selectedWritingPrompt : 0;
+  const prompt = WRITING_PROMPTS[promptIdx];
+
+  const feedbackPrompt = `You are an expert English writing tutor. Please give detailed feedback on the following student essay.
+
+WRITING PROMPT (${prompt.type}, Level ${prompt.level}, target ${prompt.words} words):
+${prompt.en}
+
+STUDENT'S ESSAY:
+"""
+${essay}
+"""
+
+Please provide feedback in the following format:
+
+📊 SCORES (out of 10)
+Content: X/10
+Vocabulary: X/10
+Grammar: X/10
+Structure: X/10
+Overall: X/10
+
+💪 STRENGTHS
+Quote 1-2 specific sentences from the essay that are particularly good, and explain why they work well.
+
+🔧 GRAMMAR FIXES (max 3)
+❌ [original sentence or phrase] → ✅ [corrected version]
+💡 Giải thích ngắn bằng tiếng Việt: [Vietnamese explanation]
+
+📖 VOCABULARY UPGRADES (2-3 suggestions)
+[basic word used] → [stronger alternative] — example sentence using the upgrade
+
+🏗️ STRUCTURE COMMENT
+One paragraph on how well the essay is organized and how to improve it.
+
+💬 ENCOURAGEMENT
+End with one warm, specific sentence of encouragement in English.`;
+
+  const url = `https://claude.ai/new?q=${encodeURIComponent(feedbackPrompt)}`;
+  window.open(url, '_blank');
+
+  const div = document.getElementById('feedback-display');
+  div.classList.add('visible');
+  div.innerHTML = `
+    <div style="text-align:center;padding:1.5rem;background:var(--bg-card);border:1px solid var(--border);border-radius:6px;">
+      <div style="font-size:2rem;margin-bottom:0.8rem;">🚀</div>
+      <div style="font-family:'Space Mono',monospace;font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-light);margin-bottom:0.5rem;">Đã mở Claude.ai trong tab mới</div>
+      <p style="font-size:0.9rem;color:var(--text);line-height:1.6;">Bài viết của bạn đã được nhúng sẵn vào prompt.<br>Claude sẽ cho feedback ngay — chuyển sang tab mới để xem! 👆</p>
+      <p style="font-size:0.78rem;color:var(--text-light);margin-top:0.8rem;font-style:italic;">Nếu tab không mở được, hãy cho phép popup từ file này trong trình duyệt.</p>
+    </div>
+  `;
+}
+
+// ─── FLASHCARD ────────────────────────────────────────────────────────────────
+let fcMode = 'en'; // 'en' or 'vi'
+let fcIndex = 0;
+let fcCards = [...VOCAB];
+let fcKnown = 0;
+let fcDunno = 0;
+let fcFlipped = false;
+
+function fcRender() {
+  const card = fcCards[fcIndex];
+  const wrap = document.getElementById('fc-card-wrap');
+  wrap.classList.remove('flipped');
+  fcFlipped = false;
+  document.getElementById('fc-know-btns').style.display = 'none';
+
+  if (fcMode === 'en') {
+    document.getElementById('fc-word').textContent = card.word;
+    document.getElementById('fc-ipa').textContent = card.ipa;
+    document.getElementById('fc-pos').textContent = card.pos;
+    document.getElementById('fc-meaning').textContent = card.meaning;
+    document.getElementById('fc-example').textContent = card.example;
+  } else {
+    document.getElementById('fc-word').textContent = card.meaning;
+    document.getElementById('fc-ipa').textContent = card.pos;
+    document.getElementById('fc-pos').textContent = 'VN → EN';
+    document.getElementById('fc-meaning').textContent = card.word;
+    document.getElementById('fc-example').textContent = card.ipa;
+  }
+
+  document.getElementById('fc-counter').textContent = `${fcIndex + 1} / ${fcCards.length}`;
+  fcUpdateStats();
+}
+
+function fcUpdateStats() {
+  const remain = fcCards.length - fcIndex;
+  document.getElementById('fc-stats').textContent = `✅ ${fcKnown} · ❌ ${fcDunno} · Còn lại: ${remain}`;
+}
+
+document.getElementById('fc-card-wrap').addEventListener('click', function() {
+  this.classList.toggle('flipped');
+  fcFlipped = !fcFlipped;
+  if (fcFlipped) {
+    document.getElementById('fc-know-btns').style.display = 'flex';
+  } else {
+    document.getElementById('fc-know-btns').style.display = 'none';
+  }
+});
+
+document.getElementById('fc-prev').addEventListener('click', () => {
+  if (fcIndex > 0) { fcIndex--; fcRender(); }
+});
+document.getElementById('fc-next').addEventListener('click', () => {
+  if (fcIndex < fcCards.length - 1) { fcIndex++; fcRender(); }
+});
+document.getElementById('fc-know').addEventListener('click', () => {
+  fcKnown++; 
+  if (fcIndex < fcCards.length - 1) fcIndex++;
+  fcRender();
+});
+document.getElementById('fc-dunno').addEventListener('click', () => {
+  fcDunno++;
+  if (fcIndex < fcCards.length - 1) fcIndex++;
+  fcRender();
+});
+document.getElementById('fc-shuffle').addEventListener('click', () => {
+  fcCards = [...fcCards].sort(() => Math.random() - 0.5);
+  fcIndex = 0; fcKnown = 0; fcDunno = 0; fcRender();
+});
+document.getElementById('fc-reset').addEventListener('click', () => {
+  fcCards = [...VOCAB]; fcIndex = 0; fcKnown = 0; fcDunno = 0; fcRender();
+});
+document.getElementById('fc-mode-en').addEventListener('click', function() {
+  fcMode = 'en';
+  this.classList.add('active');
+  document.getElementById('fc-mode-vi').classList.remove('active');
+  fcIndex = 0; fcKnown = 0; fcDunno = 0; fcRender();
+});
+document.getElementById('fc-mode-vi').addEventListener('click', function() {
+  fcMode = 'vi';
+  this.classList.add('active');
+  document.getElementById('fc-mode-en').classList.remove('active');
+  fcIndex = 0; fcKnown = 0; fcDunno = 0; fcRender();
+});
+
+// ─── SUMMARY TOGGLE ───────────────────────────────────────────────────────────
+document.getElementById('summary-toggle').addEventListener('click', function() {
+  const vi = document.getElementById('summary-vi');
+  vi.classList.toggle('visible');
+  this.textContent = vi.classList.contains('visible') ? '🙈 Ẩn bản dịch' : '🇻🇳 Xem bản dịch tiếng Việt';
+});
+
+// ─── TAB SWITCHING ────────────────────────────────────────────────────────────
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    const idx = this.dataset.tab;
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+    this.classList.add('active');
+    document.getElementById(`tab-${idx}`).classList.add('active');
+  });
+});
+
+// ─── TOAST ────────────────────────────────────────────────────────────────────
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2500);
+}
+
+// ─── INIT ─────────────────────────────────────────────────────────────────────
+renderVocab();
+renderGrammar();
+renderExercises();
+renderDiscussion();
+renderShadowing();
+renderWriting();
+fcRender();
+</script>
+</body>
+</html>
