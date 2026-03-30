@@ -1,1214 +1,999 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>English Lesson · Marolles, Brussels · The Guardian</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-<style>
-:root {
-  --accent: #9b2335;
-  --accent-light: #f5dede;
-  --bg: #fdf5f5;
-  --bg-alt: #f5e8e8;
-  --text: #2e0a0d;
-  --text-light: #8a4a52;
-  --border: #e0b8bc;
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mars College - English Lesson</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:ital,wght@0,400;0,500;0,600;1,400&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      /* Palette: 🏜️ Desert / Barren / Alternative Living */
+      --accent: #b5541c;         
+      --accent-light: #f7e6dc;   
+      --bg: #faf6f0;             
+      --bg-alt: #f0e8d8;         
+      --text: #2e1f0a;           
+      --text-light: #705537;     
+      --border: #e6d5bd;         
+      
+      --nav-height: 48px;
+    }
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: 'Source Serif 4', serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
 
-body {
-  font-family: 'Source Serif 4', serif;
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.7;
-}
+    /* --- HERO SECTION --- */
+    .hero-bg {
+      /* Direct Unsplash URL for Desert theme */
+      background-image: url('https://images.unsplash.com/photo-1509316785289-025f5b846b35?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+    }
 
-/* ═══ HERO ═══ */
-.hero-bg {
-  background-image: url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1600&q=80');
-  background-size: cover;
-  background-position: center;
-}
-.hero-overlay {
-  background: linear-gradient(
-    to bottom,
-    rgba(45,5,10,0.50) 0%,
-    rgba(45,5,10,0.40) 40%,
-    rgba(45,5,10,0.62) 80%,
-    rgba(45,5,10,0.75) 100%
-  );
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
+    .hero-overlay {
+      background: linear-gradient(
+        to bottom,
+        rgba(40,20,5,0.50) 0%,   
+        rgba(40,20,5,0.40) 40%,
+        rgba(40,20,5,0.60) 80%,
+        rgba(40,20,5,0.72) 100%
+      );
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
 
-/* MASTHEAD */
-.masthead { padding: 3rem 1.5rem 2rem; }
-.masthead-inner { max-width: 900px; margin: 0 auto; }
-.meta-tag {
-  font-family: 'Space Mono', monospace;
-  font-size: 0.7rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.65);
-  margin-bottom: 1rem;
-}
-.article-title {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(1.8rem, 5vw, 3.2rem);
-  font-weight: 700;
-  color: #fff;
-  line-height: 1.2;
-  margin-bottom: 1rem;
-}
-.subtitle {
-  font-family: 'Source Serif 4', serif;
-  font-size: 1.05rem;
-  color: rgba(255,255,255,0.8);
-  max-width: 680px;
-  line-height: 1.6;
-}
+    /* MASTHEAD */
+    .masthead { padding: 3rem 1.5rem 2rem; }
+    .masthead-inner { max-width: 900px; margin: 0 auto; }
+    
+    .meta-tag {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 1rem;
+    }
+    
+    .article-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 5vw, 3.2rem);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    
+    .subtitle {
+      font-family: 'Source Serif 4', serif;
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.8);
+      max-width: 680px;
+      line-height: 1.6;
+    }
 
-/* 1-MINUTE SUMMARY */
-.one-minute { padding: 0 1.5rem 3rem; }
-.one-minute-inner {
-  max-width: 900px;
-  margin: 0 auto;
-  background: rgba(255,255,255,0.1);
-  backdrop-filter: blur(4px);
-  border: 1px solid rgba(255,255,255,0.15);
-  border-radius: 8px;
-  padding: 1.5rem 2rem;
-  transition: background 0.3s ease, border-color 0.3s ease;
-  overflow: hidden;
-  box-sizing: border-box;
-}
-.one-minute-inner.vi-open {
-  background: rgba(255,255,255,0.22);
-  border-color: rgba(255,255,255,0.35);
-}
-.one-minute-label {
-  font-family: 'Space Mono', monospace;
-  font-size: 0.65rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.6);
-  margin-bottom: 0.75rem;
-}
-.one-minute-text {
-  font-family: 'Source Serif 4', serif;
-  font-size: 0.97rem;
-  color: rgba(255,255,255,0.92);
-  line-height: 1.7;
-  margin-bottom: 1rem;
-}
-.toggle-vi {
-  font-family: 'Space Mono', monospace;
-  font-size: 0.65rem;
-  letter-spacing: 0.06em;
-  background: rgba(255,255,255,0.12);
-  color: rgba(255,255,255,0.85);
-  border: 1px solid rgba(255,255,255,0.25);
-  border-radius: 4px;
-  padding: 0.4rem 0.9rem;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-.toggle-vi:hover { background: rgba(255,255,255,0.2); }
-.one-minute-vi {
-  color: rgba(255,255,255,0.9);
-  font-family: 'Source Serif 4', serif;
-  font-size: 0.95rem;
-  line-height: 1.7;
-  margin-top: 0.75rem;
-  padding-top: 0.75rem;
-  border-top: 1px solid rgba(255,255,255,0.2);
-  width: 100%;
-  word-break: break-word;
-  overflow-wrap: break-word;
-}
+    /* 1-MINUTE SUMMARY */
+    .one-minute { padding: 0 1.5rem 3rem; }
+    .one-minute-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 8px;
+      padding: 1.5rem 2rem;
+      transition: background 0.3s ease, border-color 0.3s ease;
+      overflow: hidden;
+      box-sizing: border-box;
+    }
+    .one-minute-inner.vi-open {
+      background: rgba(255,255,255,0.22);
+      border-color: rgba(255,255,255,0.35);
+    }
+    .one-minute-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 0.8rem;
+    }
+    .one-minute-text {
+      color: #fff;
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+    .toggle-vi {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.7rem;
+      background: none;
+      border: 1px solid rgba(255,255,255,0.4);
+      color: rgba(255,255,255,0.9);
+      padding: 0.4rem 0.8rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .toggle-vi:hover { background: rgba(255,255,255,0.1); }
+    .one-minute-vi {
+      display: none;
+      color: rgba(255,255,255,0.9);
+      font-family: 'Source Serif 4', serif;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-top: 0.75rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid rgba(255,255,255,0.2);
+      width: 100%;
+      word-break: break-word;
+      overflow-wrap: break-word;
+    }
 
-/* NAV */
-.tabs-nav {
-  position: sticky;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  background: transparent;
-  overflow-x: auto;
-  scrollbar-width: none;
-  transition: background 0.3s ease, box-shadow 0.3s ease;
-  margin-top: auto;
-}
-.tabs-nav::-webkit-scrollbar { display: none; }
-.tabs-nav.is-fixed {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  bottom: auto;
-  background: rgba(45,5,10,0.96);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  box-shadow: 0 2px 12px rgba(0,0,0,0.25);
-}
-.tabs-nav.vi-hidden {
-  opacity: 0;
-  pointer-events: none;
-  visibility: hidden;
-  transition: opacity 0.2s ease, visibility 0.2s ease;
-}
-.tabs-nav-inner {
-  max-width: 900px;
-  margin: 0 auto;
-  display: flex;
-  padding: 0 1.5rem;
-}
-.tab-btn {
-  font-family: 'Space Mono', monospace;
-  font-size: 0.65rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.65);
-  background: none;
-  border: none;
-  border-bottom: 2px solid transparent;
-  padding: 0.9rem 0.9rem;
-  cursor: pointer;
-  white-space: nowrap;
-  transition: all 0.2s;
-}
-.tab-btn:hover { color: rgba(255,255,255,0.9); }
-.tab-btn.active { color: #fff; border-bottom-color: rgba(255,255,255,0.8); }
+    /* NAV BAR */
+    .tabs-nav {
+      position: sticky;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: transparent;
+      overflow-x: auto;
+      scrollbar-width: none;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+      margin-top: auto;
+    }
+    .tabs-nav::-webkit-scrollbar { display: none; }
+    
+    .tabs-nav.is-fixed {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      bottom: auto;
+      background: rgba(40,20,5,0.96); 
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+    }
+    
+    .nav-spacer { height: 44px; }
+    
+    .tabs-nav.vi-hidden {
+      opacity: 0;
+      pointer-events: none;
+      visibility: hidden;
+      transition: opacity 0.2s ease, visibility 0.2s ease;
+    }
 
-.nav-spacer { height: 44px; }
+    .tabs-nav-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      padding: 0 1.5rem;
+    }
+    
+    .tab-btn {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.65);
+      background: none;
+      border: none;
+      border-bottom: 2px solid transparent;
+      padding: 0.9rem 0.9rem;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s;
+    }
+    .tab-btn:hover { color: rgba(255,255,255,0.9); }
+    .tab-btn.active { color: #fff; border-bottom-color: rgba(255,255,255,0.8); }
 
-/* ═══ TAB WRAP ═══ */
-.tab-wrap { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
-.tab-content { display: none; }
-.tab-content.active { display: block; }
+    /* TAB CONTENT WRAPPER */
+    .tab-wrap {
+      max-width: 900px;
+      margin: 2rem auto 4rem;
+      padding: 0 1.5rem;
+    }
+    .tab-content { display: none; animation: fadeIn 0.3s ease; }
+    .tab-content.active { display: block; }
+    
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
 
-/* section header */
-.section-title {
-  font-family: 'Space Mono', monospace;
-  font-size: 0.65rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--text-light);
-  border-bottom: 1px solid var(--border);
-  padding-bottom: 0.5rem;
-  margin: 2rem 0 1.25rem;
-}
-.section-title:first-child { margin-top: 0; }
+    /* GENERAL TYPOGRAPHY & LAYOUT */
+    h2 { font-family: 'Playfair Display', serif; color: var(--accent); margin-bottom: 1.5rem; font-size: 1.8rem; }
+    h3 { font-family: 'Space Mono', monospace; font-size: 1rem; color: var(--text); margin-top: 1.5rem; margin-bottom: 0.5rem; text-transform: uppercase; }
+    
+    /* TAB 1: BILINGUAL READING */
+    .bilingual-para {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    @media(min-width: 640px) {
+      .bilingual-para { flex-direction: row; gap: 2rem; }
+      .para-en, .para-vi { flex: 1; }
+    }
+    .para-en { font-size: 1.05rem; color: var(--text); }
+    .para-vi { font-size: 1rem; color: var(--text-light); font-style: italic; }
+    .highlight { background-color: var(--accent-light); color: var(--accent); padding: 0 0.2rem; border-radius: 2px; }
 
-/* ═══ TAB 1 — BILINGUAL ═══ */
-.bilingual-block { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem; }
-.bilingual-block .en, .bilingual-block .vi {
-  font-size: 0.97rem; line-height: 1.75;
-}
-.bilingual-block .en { color: var(--text); }
-.bilingual-block .vi { color: var(--text-light); font-style: italic; }
-@media (max-width: 640px) { .bilingual-block { grid-template-columns: 1fr; gap: 0.75rem; } }
+    /* TAB 2: VOCABULARY */
+    .vocab-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; }
+    .vocab-card {
+      background: var(--bg-alt);
+      padding: 1.2rem;
+      border-radius: 6px;
+      border-left: 3px solid var(--accent);
+    }
+    .v-word { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; color: var(--accent); margin-bottom: 0.3rem; }
+    .v-ipa { font-family: 'Space Mono', monospace; font-size: 0.8rem; color: var(--text-light); margin-bottom: 0.5rem; }
+    .v-type { font-size: 0.8rem; background: var(--border); padding: 0.1rem 0.4rem; border-radius: 3px; margin-right: 0.5rem; }
+    .v-meaning { font-weight: 600; font-size: 0.95rem; }
+    .v-example { margin-top: 0.8rem; font-size: 0.9rem; font-style: italic; color: var(--text-light); }
 
-/* ═══ TAB 2 — VOCABULARY ═══ */
-.vocab-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
-.vocab-card {
-  background: white;
-  border: 1px solid var(--border);
-  border-left: 3px solid var(--accent);
-  border-radius: 6px;
-  padding: 1rem 1.25rem;
-}
-.vocab-word { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--accent); }
-.vocab-ipa { font-family: 'Space Mono', monospace; font-size: 0.68rem; color: var(--text-light); margin: 0.15rem 0 0.25rem; }
-.vocab-pos { font-family: 'Space Mono', monospace; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-light); }
-.vocab-meaning { font-size: 0.92rem; color: var(--text); margin-top: 0.4rem; font-weight: 600; }
-.vocab-example { font-size: 0.87rem; color: var(--text-light); margin-top: 0.3rem; font-style: italic; line-height: 1.5; }
+    /* TAB 3: GRAMMAR */
+    .grammar-block { background: var(--bg-alt); padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem; }
+    .g-title { font-weight: 700; color: var(--accent); margin-bottom: 0.5rem; font-size: 1.1rem; }
+    .g-explain { margin-bottom: 1rem; font-size: 0.95rem; }
+    .g-example { background: var(--bg); padding: 1rem; border-left: 2px solid var(--border); font-family: 'Source Serif 4', serif; font-size: 0.95rem; }
+    .g-example strong { color: var(--accent); }
 
-/* ═══ TAB 3 — GRAMMAR ═══ */
-.grammar-block {
-  background: white;
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 1.25rem 1.5rem;
-  margin-bottom: 1.25rem;
-}
-.grammar-title { font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.5rem; }
-.grammar-formula { font-family: 'Space Mono', monospace; font-size: 0.8rem; background: var(--bg-alt); color: var(--text); padding: 0.5rem 0.9rem; border-radius: 4px; margin: 0.5rem 0; }
-.grammar-example { font-style: italic; font-size: 0.93rem; color: var(--text); border-left: 2px solid var(--accent); padding-left: 0.75rem; margin: 0.5rem 0; line-height: 1.6; }
-.grammar-note { font-size: 0.88rem; color: var(--text-light); line-height: 1.6; margin-top: 0.4rem; }
+    /* TAB 4: QUIZ */
+    .quiz-question { margin-bottom: 2rem; }
+    .q-text { font-weight: 600; margin-bottom: 0.8rem; }
+    .q-options { list-style: none; }
+    .q-options li {
+      background: var(--bg-alt);
+      margin-bottom: 0.5rem;
+      padding: 0.8rem 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      border: 1px solid var(--border);
+      transition: 0.2s;
+    }
+    .q-options li:hover { background: var(--accent-light); border-color: var(--accent); }
+    .q-options li.correct { background: #d4edda; border-color: #c3e6cb; color: #155724; }
+    .q-options li.wrong { background: #f8d7da; border-color: #f5c6cb; color: #721c24; }
 
-/* ═══ TAB 4 — EXERCISES ═══ */
-.exercise-block {
-  background: white;
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 1.25rem 1.5rem;
-  margin-bottom: 1.25rem;
-}
-.exercise-num { font-family: 'Space Mono', monospace; font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-light); margin-bottom: 0.5rem; }
-.exercise-q { font-size: 0.97rem; color: var(--text); margin-bottom: 0.9rem; line-height: 1.6; }
-.options label { display: block; font-size: 0.93rem; color: var(--text); padding: 0.4rem 0; cursor: pointer; }
-.options label input { margin-right: 0.5rem; accent-color: var(--accent); }
-.check-btn {
-  font-family: 'Space Mono', monospace; font-size: 0.65rem; letter-spacing: 0.06em;
-  background: var(--accent); color: white; border: none; border-radius: 4px;
-  padding: 0.5rem 1.1rem; cursor: pointer; margin-top: 0.6rem; transition: opacity 0.2s;
-}
-.check-btn:hover { opacity: 0.85; }
-.feedback-msg { font-size: 0.88rem; margin-top: 0.6rem; padding: 0.5rem 0.9rem; border-radius: 4px; display: none; }
-.feedback-msg.correct { background: #d4edda; color: #155724; }
-.feedback-msg.wrong { background: #f8d7da; color: #721c24; }
+    /* TAB 5: DISCUSSION */
+    .topic-grid { display: grid; gap: 0.8rem; margin-bottom: 2rem; }
+    .topic-btn {
+      text-align: left;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      padding: 1rem 1.2rem;
+      border-radius: 6px;
+      font-family: 'Source Serif 4', serif;
+      font-size: 1rem;
+      color: var(--text);
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .topic-btn:hover { border-color: var(--accent); background: var(--bg-alt); }
+    .topic-num { font-family: 'Space Mono', monospace; font-size: 0.65rem; color: var(--accent); display: block; margin-bottom: 0.4rem; }
+    .topic-btn.selected { border-color: var(--accent); background: var(--bg-alt); color: var(--accent); font-weight: 600; }
+    
+    .topic-confirm-area { margin: 0.5rem 0 0.5rem 0; animation: fadeSlide 0.2s ease; }
+    .topic-confirm-inner { background: var(--bg-alt); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 0 6px 6px 0; padding: 1rem 1.4rem; }
+    .topic-confirm-label { font-family: 'Space Mono', monospace; font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-light); margin-bottom: 0.35rem; }
+    .topic-confirm-question { font-family: 'Source Serif 4', serif; font-size: 0.92rem; color: var(--text); line-height: 1.5; margin-bottom: 0.8rem; font-style: italic; }
+    .btn-start-discussion { font-family: 'Space Mono', monospace; font-size: 0.72rem; letter-spacing: 0.05em; background: var(--accent); color: white; border: none; border-radius: 5px; padding: 0.6rem 1.3rem; cursor: pointer; transition: opacity 0.2s; }
+    .btn-start-discussion:hover { opacity: 0.85; }
+    .topic-confirm-hint { font-family: 'Space Mono', monospace; font-size: 0.6rem; color: var(--text-light); margin-top: 0.5rem; }
 
-/* ═══ TAB 5 — DISCUSSION ═══ */
-.topic-grid { display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.5rem; }
-.topic-btn {
-  background: white; border: 1px solid var(--border); border-radius: 6px; padding: 0.9rem 1.2rem;
-  text-align: left; cursor: pointer; font-family: 'Source Serif 4', serif; font-size: 0.95rem; color: var(--text);
-  line-height: 1.5; transition: all 0.2s; display: flex; gap: 0.75rem; align-items: flex-start;
-}
-.topic-btn:hover { border-color: var(--accent); background: var(--accent-light); }
-.topic-btn.selected { border-color: var(--accent); background: var(--bg-alt); color: var(--accent); }
-.topic-num { font-family: 'Space Mono', monospace; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-light); white-space: nowrap; padding-top: 0.2rem; min-width: 56px; }
-.topic-confirm-area { margin: 0.5rem 0 0.5rem 0; animation: fadeSlide 0.2s ease; }
-.topic-confirm-inner { background: var(--bg-alt); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 0 6px 6px 0; padding: 1rem 1.4rem; }
-.topic-confirm-label { font-family: 'Space Mono', monospace; font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-light); margin-bottom: 0.35rem; }
-.topic-confirm-question { font-family: 'Source Serif 4', serif; font-size: 0.92rem; color: var(--text); line-height: 1.5; margin-bottom: 0.8rem; font-style: italic; }
-.btn-start-discussion {
-  font-family: 'Space Mono', monospace; font-size: 0.72rem; letter-spacing: 0.05em;
-  background: var(--accent); color: white; border: none; border-radius: 5px;
-  padding: 0.6rem 1.3rem; cursor: pointer; transition: opacity 0.2s;
-}
-.btn-start-discussion:hover { opacity: 0.85; }
-.topic-confirm-hint { font-family: 'Space Mono', monospace; font-size: 0.6rem; color: var(--text-light); margin-top: 0.5rem; }
-.phrases-section-title { font-family: 'Space Mono', monospace; font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-light); margin-bottom: 0.75rem; }
-.phrases-grid { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-.phrase-pill {
-  font-family: 'Source Serif 4', serif; font-size: 0.85rem; font-style: italic;
-  background: white; border: 1px solid var(--border); border-radius: 20px;
-  padding: 0.35rem 0.9rem; cursor: pointer; color: var(--text); transition: all 0.2s;
-}
-.phrase-pill:hover { background: var(--accent-light); border-color: var(--accent); }
-@keyframes fadeSlide { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
+    .phrases-grid { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+    .phrase-pill {
+      background: var(--bg-alt); border: 1px solid var(--border); font-size: 0.8rem;
+      padding: 0.4rem 0.8rem; border-radius: 20px; cursor: pointer; transition: 0.2s;
+    }
+    .phrase-pill:hover { background: var(--accent-light); border-color: var(--accent); color: var(--accent); }
 
-/* ═══ TAB 6 — WRITING ═══ */
-.writing-prompts { display: flex; flex-direction: column; gap: 0.75rem; }
-.writing-prompt-card {
-  background: white; border: 1px solid var(--border); border-radius: 6px; padding: 1rem 1.25rem; cursor: pointer; transition: all 0.2s;
-}
-.writing-prompt-card:hover { border-color: var(--accent); }
-.writing-prompt-card.selected { border-color: var(--accent); background: var(--bg-alt); }
-.wp-meta { font-family: 'Space Mono', monospace; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.07em; color: var(--text-light); margin-bottom: 0.4rem; }
-.wp-en { font-size: 0.97rem; color: var(--text); font-weight: 600; margin-bottom: 0.3rem; }
-.wp-vi { font-size: 0.9rem; color: var(--text-light); font-style: italic; }
-.writing-editor {
-  background: white; border: 1px solid var(--border); border-radius: 6px; padding: 1.25rem; margin-top: 0.5rem;
-}
-.editor-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.6rem; }
-.editor-label { font-family: 'Space Mono', monospace; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.07em; color: var(--text-light); }
-.word-counter { font-family: 'Space Mono', monospace; font-size: 0.65rem; color: var(--text-light); }
-.toolbar { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.75rem; }
-.toolbar-phrase {
-  font-family: 'Source Serif 4', serif; font-size: 0.8rem; font-style: italic;
-  background: var(--bg-alt); border: 1px solid var(--border); border-radius: 4px;
-  padding: 0.25rem 0.7rem; cursor: pointer; color: var(--text); transition: all 0.15s;
-}
-.toolbar-phrase:hover { background: var(--accent-light); border-color: var(--accent); }
-#writing-textarea {
-  width: 100%; min-height: 180px; font-family: 'Source Serif 4', serif; font-size: 0.97rem;
-  color: var(--text); border: 1px solid var(--border); border-radius: 5px; padding: 0.9rem 1rem;
-  resize: vertical; background: var(--bg); line-height: 1.7;
-}
-.submit-writing {
-  font-family: 'Space Mono', monospace; font-size: 0.72rem; letter-spacing: 0.05em;
-  background: var(--accent); color: white; border: none; border-radius: 5px;
-  padding: 0.65rem 1.4rem; cursor: pointer; margin-top: 0.8rem; transition: opacity 0.2s;
-}
-.submit-writing:hover { opacity: 0.85; }
+    /* TAB 6: WRITING */
+    .wp-card-wrap { display: flex; flex-direction: column; gap: 1rem; }
+    .writing-prompt-card {
+      background: var(--bg); border: 1px solid var(--border); border-left: 3px solid transparent;
+      padding: 1.2rem; border-radius: 6px; cursor: pointer; transition: 0.2s;
+    }
+    .writing-prompt-card:hover { border-color: var(--border); background: var(--bg-alt); }
+    .writing-prompt-card.selected { border-color: var(--accent); background: var(--bg-alt); }
+    .wp-meta { font-family: 'Space Mono', monospace; font-size: 0.65rem; color: var(--accent); text-transform: uppercase; margin-bottom: 0.5rem; }
+    .wp-en { font-weight: 600; margin-bottom: 0.5rem; font-size: 1.05rem; }
+    .wp-vi { font-size: 0.9rem; color: var(--text-light); font-style: italic; }
 
-/* ═══ TAB 7 — SHADOWING ═══ */
-.shadow-card { background: white; border: 1px solid var(--border); border-radius: 6px; padding: 1.25rem 1.5rem; margin-bottom: 1.25rem; }
-.shadow-tags { display: flex; gap: 0.4rem; margin-bottom: 0.75rem; }
-.shadow-tag { font-family: 'Space Mono', monospace; font-size: 0.58rem; text-transform: uppercase; letter-spacing: 0.06em; background: var(--bg-alt); color: var(--text-light); padding: 0.2rem 0.6rem; border-radius: 3px; }
-.shadow-sentence { font-size: 1.05rem; line-height: 1.8; margin-bottom: 0.5rem; }
-.chunk { padding: 0 2px; border-radius: 2px; }
-.chunk-1 { background: #fde8d8; }
-.chunk-2 { background: #d8edd8; }
-.chunk-3 { background: #d8e8fd; }
-.chunk-4 { background: #fdd8f5; }
-.shadow-vi { font-size: 0.9rem; color: var(--text-light); font-style: italic; margin-bottom: 0.6rem; }
-.shadow-notes { font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--text-light); margin-bottom: 0.5rem; line-height: 1.5; }
-.btn-ipa { font-family: 'Space Mono', monospace; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.06em; background: none; border: 1px solid var(--border); border-radius: 4px; padding: 0.25rem 0.7rem; cursor: pointer; color: var(--text-light); transition: all 0.2s; }
-.btn-ipa:hover { border-color: var(--accent); color: var(--accent); }
-.ipa-block { font-family: 'Space Mono', monospace; font-size: 0.78rem; color: var(--text-light); background: var(--bg-alt); padding: 0.5rem 0.9rem; border-radius: 4px; margin-top: 0.5rem; display: none; line-height: 1.7; }
+    .writing-editor { margin: 0.5rem 0; animation: fadeSlide 0.2s ease; background: var(--bg-alt); padding: 1.2rem; border-radius: 6px; border: 1px solid var(--border); }
+    .editor-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; }
+    .editor-label { font-family: 'Space Mono', monospace; font-size: 0.7rem; text-transform: uppercase; color: var(--text-light); }
+    .word-counter { font-family: 'Space Mono', monospace; font-size: 0.7rem; background: var(--bg); padding: 0.2rem 0.5rem; border-radius: 4px; border: 1px solid var(--border); }
+    .toolbar { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.8rem; }
+    .toolbar-phrase { background: var(--bg); border: 1px solid var(--border); font-size: 0.75rem; padding: 0.3rem 0.6rem; border-radius: 3px; cursor: pointer; transition: 0.2s; }
+    .toolbar-phrase:hover { background: var(--accent-light); color: var(--accent); }
+    #writing-textarea { width: 100%; height: 200px; padding: 1rem; border: 1px solid var(--border); border-radius: 4px; font-family: 'Source Serif 4', serif; font-size: 1rem; resize: vertical; margin-bottom: 1rem; background: #fff; }
+    #writing-textarea:focus { outline: none; border-color: var(--accent); }
+    .submit-writing { display: block; width: 100%; background: var(--accent); color: white; border: none; padding: 0.8rem; border-radius: 4px; font-family: 'Space Mono', monospace; font-size: 0.8rem; text-transform: uppercase; cursor: pointer; transition: 0.2s; }
+    .submit-writing:hover { opacity: 0.9; }
+    #feedback-display { display: none; }
 
-/* ═══ TAB 8 — FLASHCARD ═══ */
-.fc-controls { display: flex; gap: 0.75rem; margin-bottom: 1.5rem; flex-wrap: wrap; align-items: center; }
-.fc-btn {
-  font-family: 'Space Mono', monospace; font-size: 0.65rem; letter-spacing: 0.06em; text-transform: uppercase;
-  background: white; border: 1px solid var(--border); border-radius: 5px;
-  padding: 0.45rem 1rem; cursor: pointer; color: var(--text); transition: all 0.2s;
-}
-.fc-btn:hover { border-color: var(--accent); color: var(--accent); }
-.fc-btn.active { background: var(--accent); color: white; border-color: var(--accent); }
-.fc-stats { font-family: 'Space Mono', monospace; font-size: 0.65rem; color: var(--text-light); margin-left: auto; }
-.fc-wrap { perspective: 1000px; margin-bottom: 1.25rem; }
-.fc-card {
-  width: 100%; min-height: 220px; position: relative;
-  transform-style: preserve-3d; transition: transform 0.5s;
-  cursor: pointer;
-}
-.fc-card.flipped { transform: rotateY(180deg); }
-.fc-face {
-  position: absolute; width: 100%; min-height: 220px;
-  backface-visibility: hidden;
-  background: white; border: 1px solid var(--border);
-  border-top: 4px solid var(--accent);
-  border-radius: 8px; padding: 2rem 2rem;
-  display: flex; flex-direction: column; justify-content: center; align-items: center;
-  text-align: center;
-}
-.fc-face.back { transform: rotateY(180deg); }
-.fc-word { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--accent); margin-bottom: 0.5rem; }
-.fc-ipa { font-family: 'Space Mono', monospace; font-size: 0.75rem; color: var(--text-light); margin-bottom: 0.3rem; }
-.fc-pos { font-family: 'Space Mono', monospace; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-light); }
-.fc-meaning { font-size: 1.1rem; color: var(--text); font-weight: 600; margin-bottom: 0.5rem; }
-.fc-example { font-size: 0.9rem; color: var(--text-light); font-style: italic; line-height: 1.5; }
-.fc-hint { font-family: 'Space Mono', monospace; font-size: 0.6rem; color: rgba(155,35,53,0.4); margin-top: 1rem; }
-.fc-actions { display: flex; gap: 1rem; justify-content: center; margin-top: 0.75rem; }
-.fc-action {
-  font-family: 'Space Mono', monospace; font-size: 0.68rem; letter-spacing: 0.05em;
-  padding: 0.5rem 1.4rem; border-radius: 5px; cursor: pointer; border: none; transition: opacity 0.2s;
-}
-.fc-action.know { background: #2d6a4f; color: white; }
-.fc-action.dont { background: #9b2335; color: white; }
-.fc-action:hover { opacity: 0.85; }
-.fc-nav { display: flex; gap: 0.75rem; justify-content: center; }
-.fc-progress { font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--text-light); text-align: center; margin-bottom: 0.5rem; }
-</style>
+    /* TAB 7: SHADOWING */
+    .shadowing-card { background: var(--bg-alt); padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem; }
+    .s-tags { margin-bottom: 0.8rem; }
+    .s-tag { display: inline-block; background: var(--bg); border: 1px solid var(--border); font-family: 'Space Mono', monospace; font-size: 0.6rem; padding: 0.2rem 0.4rem; border-radius: 3px; margin-right: 0.4rem; text-transform: uppercase; color: var(--text-light); }
+    .s-sentence { font-size: 1.2rem; line-height: 1.8; margin-bottom: 1rem; }
+    .chunk-1 { color: #b5541c; } .chunk-2 { color: #1c6e43; } .chunk-3 { color: #354a85; } .chunk-4 { color: #7a3268; }
+    .s-vi { font-style: italic; color: var(--text-light); margin-bottom: 1rem; font-size: 0.95rem; }
+    .s-notes { background: rgba(255,255,255,0.5); padding: 0.8rem; border-radius: 4px; font-size: 0.85rem; border-left: 2px solid var(--accent); margin-bottom: 1rem; }
+    .btn-ipa { background: none; border: 1px solid var(--border); padding: 0.3rem 0.6rem; font-family: 'Space Mono', monospace; font-size: 0.7rem; cursor: pointer; border-radius: 3px; }
+    .s-ipa-text { display: none; font-family: 'Space Mono', monospace; font-size: 0.9rem; margin-top: 0.8rem; color: var(--accent); background: var(--bg); padding: 0.5rem; border-radius: 4px; }
+
+    /* TAB 8: FLASHCARD */
+    .fc-container { perspective: 1000px; width: 100%; max-width: 400px; height: 260px; margin: 0 auto 2rem; }
+    .fc-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.6s; transform-style: preserve-3d; cursor: pointer; }
+    .fc-inner.is-flipped { transform: rotateY(180deg); }
+    .fc-front, .fc-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+    .fc-front { background: white; border: 2px solid var(--border); }
+    .fc-back { background: var(--bg-alt); color: var(--text); transform: rotateY(180deg); border: 2px solid var(--accent-light); }
+    .fc-word { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--accent); margin-bottom: 0.5rem; }
+    .fc-ipa { font-family: 'Space Mono', monospace; color: var(--text-light); font-size: 0.9rem; }
+    .fc-meaning { font-size: 1.4rem; font-weight: 600; margin-bottom: 1rem; }
+    .fc-example { font-size: 0.9rem; font-style: italic; color: var(--text-light); }
+    .fc-controls { display: flex; justify-content: center; gap: 1rem; margin-bottom: 2rem; }
+    .btn-fc { background: var(--bg-alt); border: 1px solid var(--border); padding: 0.6rem 1.2rem; border-radius: 6px; cursor: pointer; font-family: 'Space Mono', monospace; font-size: 0.8rem; transition: 0.2s; }
+    .btn-fc:hover { background: var(--accent-light); color: var(--accent); }
+    
+    .fc-status { display: none; justify-content: center; gap: 1rem; margin-top: -1rem; margin-bottom: 2rem; }
+    .btn-fc-status { padding: 0.5rem 1rem; border: none; border-radius: 4px; cursor: pointer; font-family: 'Space Mono', monospace; font-size: 0.8rem; color: white; }
+    .btn-known { background: #28a745; } .btn-unknown { background: #dc3545; }
+    
+    @keyframes fadeSlide { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
+
+  </style>
 </head>
 <body>
 
-<!-- HERO BG -->
-<div class="hero-bg" id="hero-bg">
-  <div class="hero-overlay">
+  <div class="hero-bg" id="hero-bg">
+    <div class="hero-overlay">
 
-    <!-- MASTHEAD -->
-    <header class="masthead">
-      <div class="masthead-inner">
-        <p class="meta-tag">Travel · Culture · The Guardian · 30 Mar 2026 · B2</p>
-        <h1 class="article-title">Zoning in on Marolles, Brussels: 'A friendly, cosmopolitan village where everyone is welcome'</h1>
-        <p class="subtitle">Beyond the Belgian capital's more obvious sights lies a thriving district known for its classic Belgian cuisine, alternative art scene and gigantic flea market.</p>
+      <header class="masthead">
+        <div class="masthead-inner">
+          <p class="meta-tag">Journalism · The Guardian · B2-C1</p>
+          <h1 class="article-title">No tuition, no grades, no power grid: why are people flocking to a 'college' in the middle of the desert?</h1>
+          <p class="subtitle">Two hundred miles from LA, an off-grid community with roots in Burning Man offers an unorthodox educational experience.</p>
+        </div>
+      </header>
+
+      <section class="one-minute">
+        <div class="one-minute-inner" id="one-minute-inner">
+          <p class="one-minute-label">⏱ 1-minute summary</p>
+          <p class="one-minute-text">Mars College is not your typical university. Located in the barren California desert, this off-grid community offers an unorthodox, tuition-free educational experience. Founded by tech enthusiasts with roots in Burning Man, the "college" lacks traditional grades, mandatory classes, or even indoor plumbing. Instead, around 60 diverse students live in temporary structures powered by solar panels for three months a year. They learn everything from creative writing to artificial intelligence and survival skills. While the harsh desert conditions—complete with intense heat and dust storms—are not for the faint of heart, the community provides an antidote to soaring college tuitions. It serves as an experimental space where people gather to explore alternative living, coding, and the future of AI before the campus is entirely dismantled every April.</p>
+          <button class="toggle-vi" id="toggle-vi-btn">Xem bản dịch tiếng Việt ▾</button>
+          <p class="one-minute-vi" id="one-minute-vi">Mars College không phải là một trường đại học bình thường. Nằm ở vùng sa mạc cằn cỗi của California, cộng đồng sống tách biệt khỏi lưới điện này mang đến trải nghiệm giáo dục phi truyền thống, miễn học phí. Được thành lập bởi những người đam mê công nghệ từ lễ hội Burning Man, trường không có điểm số, lớp học bắt buộc hay ống nước trong nhà. Thay vào đó, khoảng 60 sinh viên sống trong các cấu trúc tạm thời chạy bằng năng lượng mặt trời trong 3 tháng mỗi năm. Họ học viết sáng tạo, AI và kỹ năng sinh tồn. Dù điều kiện khắc nghiệt (nắng nóng, bão cát) không dành cho người yếu tim, đây là giải pháp cho học phí đắt đỏ, một không gian thử nghiệm về lối sống thay thế và tương lai của AI trước khi bị tháo dỡ vào mỗi tháng Tư.</p>
+        </div>
+      </section>
+
+      <nav class="tabs-nav" id="tabs-nav">
+        <div class="tabs-nav-inner">
+          <button class="tab-btn active" data-tab="1">1. Bài viết</button>
+          <button class="tab-btn" data-tab="2">2. Từ vựng</button>
+          <button class="tab-btn" data-tab="3">3. Ngữ pháp</button>
+          <button class="tab-btn" data-tab="4">4. Bài tập</button>
+          <button class="tab-btn" data-tab="5">5. Thảo luận</button>
+          <button class="tab-btn" data-tab="6">6. Writing</button>
+          <button class="tab-btn" data-tab="7">7. Shadowing</button>
+          <button class="tab-btn" data-tab="8">8. Flashcard</button>
+        </div>
+      </nav>
+
+    </div></div><div class="nav-spacer" id="nav-spacer" style="display:none;"></div>
+
+  <main class="tab-wrap">
+    
+    <section id="tab-1" class="tab-content active">
+      <h2>Article: Mars College</h2>
+      <div id="bilingual-content">
+        </div>
+    </section>
+
+    <section id="tab-2" class="tab-content">
+      <h2>Key Vocabulary</h2>
+      <div class="vocab-grid" id="vocab-grid">
+        </div>
+    </section>
+
+    <section id="tab-3" class="tab-content">
+      <h2>Grammar & Structures</h2>
+      
+      <div class="grammar-block">
+        <div class="g-title">1. Phân từ hiện tại (Present Participle) chỉ trạng thái</div>
+        <div class="g-explain">Dùng V-ing để miêu tả các hành động xảy ra đồng thời hoặc trạng thái của sự vật trong bối cảnh miêu tả.</div>
+        <div class="g-example">"A dozen writing students perched around a collection of weather-beaten couches, <strong>laptops balancing</strong> on their knees, ready to discuss their work."</div>
       </div>
-    </header>
 
-    <!-- 1-MINUTE SUMMARY -->
-    <section class="one-minute">
-      <div class="one-minute-inner" id="one-minute-inner">
-        <p class="one-minute-label">⏱ 1-minute summary — introduce this article to someone</p>
-        <p class="one-minute-text">This Guardian travel article introduces the Marolles — a historic working-class neighbourhood in central Brussels with roots stretching back to the Middle Ages. Unlike the city's famous Grand-Place and Manneken-Pis, the Marolles offers a different, more lived-in experience: vintage fashion boutiques and antique emporiums, provocative street art, cooperative breweries, and traditional estaminets serving hearty Belgian dishes like stoemp and chicons. The neighbourhood is proudly multi-ethnic, with Iraqi, Moroccan, and vegetarian eateries sitting alongside Belgian institutions. Shoppers flock to the legendary Jeu de Balle flea market, open every day of the year. The article recommends where to eat, what to see — including comic strip murals and the outsider-art museum Art et Marges — where to stay, and how to experience the Marolles as locals do.</p>
-        <button class="toggle-vi" id="toggle-vi-btn">Xem bản dịch tiếng Việt ▾</button>
-        <p class="one-minute-vi" id="one-minute-vi" style="display:none;">Bài báo du lịch của The Guardian giới thiệu khu Marolles — một khu lao động lịch sử ở trung tâm Brussels với lịch sử từ thời Trung Cổ. Không giống các điểm du lịch nổi tiếng như Grand-Place hay tượng Manneken-Pis, Marolles mang lại trải nghiệm gần gũi và đời thường hơn: các boutique thời trang vintage và cửa hàng đồ cổ, nghệ thuật đường phố sáng tạo, các xưởng bia hợp tác xã, và những quán estaminet truyền thống phục vụ các món Bỉ đậm đà như stoemp và chicons. Khu phố tự hào với sự đa sắc tộc, với các quán ăn Iraq, Marốc và chay cùng tồn tại bên cạnh những cơ sở ẩm thực Bỉ lâu đời. Khách mua sắm đổ về chợ trời Jeu de Balle huyền thoại, mở cửa 365 ngày mỗi năm. Bài viết gợi ý nơi ăn, nơi tham quan — gồm các bức tranh tường họa tiết truyện tranh và bảo tàng nghệ thuật ngoại vi Art et Marges — nơi lưu trú và cách khám phá Marolles như người dân địa phương.</p>
+      <div class="grammar-block">
+        <div class="g-title">2. Cấu trúc ghép "Noun-free" & "Off-Noun"</div>
+        <div class="g-explain">Tiếng Anh thường tạo tính từ ghép bằng cách dùng <strong>-free</strong> (không có gì đó) hoặc <strong>off-</strong> (nằm ngoài hệ thống).</div>
+        <div class="g-example">
+          - "A <strong>tuition-free</strong> desert 'school' with no plumbing..." (Trường học miễn học phí)<br>
+          - "...an <strong>off-grid</strong> community with roots in Burning Man..." (Cộng đồng tự cung tự cấp/ngoài lưới điện)
+        </div>
+      </div>
+
+      <div class="grammar-block">
+        <div class="g-title">3. Đảo ngữ với "Not only... but also" hoặc Cấu trúc Phủ định liệt kê</div>
+        <div class="g-explain">Sử dụng để nhấn mạnh sự thiếu thốn các tiện nghi cơ bản nhưng lại đem tới giá trị khác.</div>
+        <div class="g-example">"At Mars, unlike a real college, there are <strong>no grades, degrees or mandatory attendance</strong>. There are <strong>no tuition fees or trained professors or even public utilities</strong>..."</div>
       </div>
     </section>
 
-    <!-- NAV -->
-    <nav class="tabs-nav" id="tabs-nav">
-      <div class="tabs-nav-inner">
-        <button class="tab-btn active" data-tab="0">📰 Bài viết</button>
-        <button class="tab-btn" data-tab="1">📚 Từ vựng</button>
-        <button class="tab-btn" data-tab="2">✏️ Ngữ pháp</button>
-        <button class="tab-btn" data-tab="3">🎯 Bài tập</button>
-        <button class="tab-btn" data-tab="4">💬 Thảo luận</button>
-        <button class="tab-btn" data-tab="5">✍️ Writing</button>
-        <button class="tab-btn" data-tab="6">🎙️ Shadowing</button>
-        <button class="tab-btn" data-tab="7">🃏 Flashcard</button>
+    <section id="tab-4" class="tab-content">
+      <h2>Reading Comprehension Quiz</h2>
+      <div id="quiz-container">
+        </div>
+    </section>
+
+    <section id="tab-5" class="tab-content">
+      <h2>Discussion Topics</h2>
+      <p style="margin-bottom: 1rem;">Chọn một chủ đề bạn quan tâm để thảo luận tiếng Anh cùng AI Tutor (Alex).</p>
+      <div class="topic-grid" id="topic-btns">
+        </div>
+      
+      <h3 style="margin-top: 3rem;">Useful Phrases for Discussion</h3>
+      <div class="phrases-grid" id="phrases-grid">
+        </div>
+    </section>
+
+    <section id="tab-6" class="tab-content">
+      <h2>Writing Practice</h2>
+      <p style="margin-bottom: 1rem;">Chọn một đề bài dưới đây và viết một đoạn ngắn. Hệ thống sẽ kết nối với AI để chấm điểm từ vựng, ngữ pháp cho bạn.</p>
+      <div class="wp-card-wrap" id="writing-prompts">
+        </div>
+    </section>
+
+    <section id="tab-7" class="tab-content">
+      <h2>Pronunciation & Shadowing</h2>
+      <p style="margin-bottom: 1.5rem;">Luyện đọc theo các câu có nhịp điệu (rhythm) và cụm từ (chunk) hay nhất trong bài.</p>
+      <div id="shadowing-container">
+        </div>
+    </section>
+
+    <section id="tab-8" class="tab-content">
+      <h2>Vocabulary Flashcards</h2>
+      
+      <div class="fc-container" id="fc-container">
+        <div class="fc-inner" id="fc-inner">
+          <div class="fc-front">
+            <div class="fc-word" id="fc-word">unorthodox</div>
+            <div class="fc-ipa" id="fc-ipa">/ʌnˈɔːr.θə.dɑːks/</div>
+            <p style="font-size: 0.8rem; color: #888; margin-top: 1rem;">Click to flip</p>
+          </div>
+          <div class="fc-back">
+            <div class="fc-meaning" id="fc-meaning">phi truyền thống, khác thường</div>
+            <div class="fc-example" id="fc-example">"an unorthodox educational experience"</div>
+          </div>
+        </div>
       </div>
-    </nav>
-
-  </div>
-</div>
-
-<div class="nav-spacer" id="nav-spacer" style="display:none;"></div>
-
-<!-- TAB CONTENT -->
-<main class="tab-wrap">
-
-  <!-- ══ TAB 0: BILINGUAL ══ -->
-  <section class="tab-content active" id="tab-0">
-    <p class="section-title">Giới thiệu</p>
-    <div class="bilingual-block">
-      <div class="en">The Brusseleir dialect that's still spoken in much of the Marolles dates back to the Middle Ages, a symbol of the independence of this proudly working-class neighbourhood in central Brussels. Located between the Palace of Justice and Halle Gate, it's always been an inclusive refuge for immigrants from Europe and north Africa.</div>
-      <div class="vi">Phương ngữ Brusseleir vẫn còn được sử dụng ở nhiều nơi trong khu Marolles có nguồn gốc từ thời Trung Cổ, biểu tượng cho tính độc lập của khu phố lao động đáng tự hào này ở trung tâm Brussels. Nằm giữa Cung điện Tư pháp và Cổng Halle, nơi đây luôn là một nơi nương náu bao dung cho người nhập cư từ châu Âu và Bắc Phi.</div>
-    </div>
-    <div class="bilingual-block">
-      <div class="en">The must-see Brussels tourist attractions of the Grand-Place central square and Mannekin-Pis statue are within walking distance, but the Marolles offers a very different experience: fashion, antiques and bric-a-brac shopping; alternative creative centres and provocative graffiti; characteristic estaminets (hybrid pub, cafe, bistros) specialising in hearty local dishes; and artisan breweries.</div>
-      <div class="vi">Các điểm thu hút khách du lịch nổi tiếng của Brussels như quảng trường Grand-Place và tượng Manneken-Pis đều nằm trong khoảng cách đi bộ, nhưng Marolles mang đến một trải nghiệm rất khác biệt: mua sắm thời trang, đồ cổ và đồ linh tinh; các trung tâm sáng tạo thay thế và graffiti khiêu khích; những quán estaminet đặc trưng (kết hợp giữa quán pub, café, bistro) chuyên phục vụ các món ăn địa phương đậm đà; và các xưởng bia thủ công.</div>
-    </div>
-
-    <p class="section-title">Where to Eat — Nơi ăn uống</p>
-    <div class="bilingual-block">
-      <div class="en">The splendid art nouveau Les Brigittines is a Belgian culinary institution, where chef Dirk Myny has overseen the kitchen for 35 years. He daringly reinterprets classic Flemish recipes with dishes such as smoked eel mousse and succulent pork belly with a tart cherry ale vinaigrette, or pig's trotter, coddled egg, capers and gherkins. The three-course €38 lunch menu is a steal.</div>
-      <div class="vi">Nhà hàng Les Brigittines tuyệt đẹp theo phong cách art nouveau là một cơ sở ẩm thực Bỉ lâu đời, nơi đầu bếp Dirk Myny đã quản lý bếp suốt 35 năm. Ông dũng cảm tái diễn giải các công thức Flemish cổ điển với các món như mousse lươn hun khói và thịt heo ba chỉ mọng nước với nước sốt vinaigrette bia cherry chua, hoặc chân heo, trứng hấp, cáo bể và dưa chuột nhỏ. Thực đơn bữa trưa 3 món giá €38 thật sự là một món hời.</div>
-    </div>
-    <div class="bilingual-block">
-      <div class="en">A more modern estaminet is Mazette!, a cooperative microbrewery of 900 members who make more than 20 beers, mill an organic flour and bake their own bread, pizza and focaccia. Cantillon, on nearby Rue Gheude, is the last Brussels lambic (traditional wild-yeast fermented) brewery and worth a visit for its gueuze beer.</div>
-      <div class="vi">Một quán estaminet hiện đại hơn là Mazette! — một xưởng bia nhỏ theo mô hình hợp tác xã với 900 thành viên, sản xuất hơn 20 loại bia, xay bột hữu cơ và tự làm bánh mì, pizza và focaccia. Cantillon, trên phố Rue Gheude gần đó, là xưởng bia lambic cuối cùng ở Brussels (lên men bằng men dại truyền thống) và đáng ghé thăm vì loại bia gueuze nổi tiếng.</div>
-    </div>
-    <div class="bilingual-block">
-      <div class="en">The Marolles is proudly multi-ethnic. Try My Day, opened by Iraqi refugee Yousif Alsaleh, which serves home-cooked dishes such as maqluba, a pilaf-style spicy rice dish with chicken, lamb or roasted vegetables. Alternatively, there's Flower Food for a Moroccan beldi breakfast of semolina crepes and flatbreads with eggs, smoked beef, honey and dates.</div>
-      <div class="vi">Marolles tự hào về sự đa dạng sắc tộc. Hãy thử quán My Day, do người tị nạn Iraq Yousif Alsaleh mở, phục vụ các món nấu kiểu nhà như maqluba — một món cơm cay kiểu pilaf với gà, thịt cừu hoặc rau củ nướng. Ngoài ra, có Flower Food phục vụ bữa sáng Marốc kiểu beldi gồm bánh crepe làm từ bột semolina và bánh dẹp với trứng, thịt bò hun khói, mật ong và chà là.</div>
-    </div>
-
-    <p class="section-title">What to See and Do — Điểm tham quan</p>
-    <div class="bilingual-block">
-      <div class="en">While the headline Magritte and Fine Arts museums are in the centre of Brussels, the Marolles offers a vibrant and challenging counter-culture scene. Dotted around the backstreets, street art enthusiasts can track down 16 of the city's iconic comic strip murals; sadly, no Tintin, but rather local heroes such as Spirou, Blake & Mortimer, and Le Chat, a beloved cat cartoon.</div>
-      <div class="vi">Trong khi các bảo tàng nổi tiếng như Magritte và Mỹ thuật nằm ở trung tâm Brussels, Marolles mang đến một không gian văn hóa phản kháng sôi động và thách thức. Rải rác quanh các con phố nhỏ, những người yêu thích nghệ thuật đường phố có thể tìm thấy 16 bức tranh tường truyện tranh biểu tượng của thành phố; đáng tiếc là không có Tintin, nhưng thay vào đó là các nhân vật địa phương như Spirou, Blake & Mortimer và Le Chat — một nhân vật mèo được yêu mến.</div>
-    </div>
-    <div class="bilingual-block">
-      <div class="en">Be sure to go right to the end of Rue Haute, to discover the remarkable Art et Marges museum, which for 40 years has been a cutting-edge centre presenting art brut, outsider art produced by self-taught artists outside the contemporary circuit.</div>
-      <div class="vi">Hãy chắc chắn đi đến tận cuối phố Rue Haute để khám phá bảo tàng Art et Marges đáng chú ý — trong 40 năm qua, đây là một trung tâm tiên phong trưng bày nghệ thuật thô (art brut), tức nghệ thuật ngoài lề được sáng tác bởi các nghệ sĩ tự học nằm ngoài dòng chảy nghệ thuật đương đại.</div>
-    </div>
-
-    <p class="section-title">Where to Shop — Mua sắm</p>
-    <div class="bilingual-block">
-      <div class="en">The Marolles is vintage shopping heaven, attracting fashionistas hunting down rare outfits, interior design fans looking for art deco lamps and Murano mirrors, and bargain hunters searching for collectibles in the sprawling Jeu de Balle flea market. Bernard Gavilan is the neighbourhood's undisputed fashion guru; he opened his first boutique here in 2011, an Aladdin's cave of vintage clothes and accessories.</div>
-      <div class="vi">Marolles là thiên đường mua sắm đồ cổ điển, thu hút các tín đồ thời trang đang săn lùng trang phục hiếm, những người yêu thiết kế nội thất tìm kiếm đèn art deco và gương Murano, cùng những người săn hàng rẻ tìm đồ sưu tầm tại chợ trời Jeu de Balle rộng lớn. Bernard Gavilan là tay thời trang không thể tranh cãi của khu phố; ông mở boutique đầu tiên tại đây năm 2011 — một hang động Aladdin chứa đầy quần áo và phụ kiện vintage.</div>
-    </div>
-
-    <p class="section-title">Don't Miss — Không nên bỏ qua</p>
-    <div class="bilingual-block">
-      <div class="en">The vibrant heart of the neighbourhood is the Marolle's monster Jeu de Balle flea market, open 365 days of the year but with the best bargains on Sundays. At midday, head to Centro Cabraliego, a social club for generations of immigrants from Spain's Asturias, where local people cook up a copious lunch of chorizo, ribs and calamari with wine or cider for under €20.</div>
-      <div class="vi">Trái tim sôi động của khu phố là chợ trời Jeu de Balle khổng lồ, mở cửa 365 ngày trong năm nhưng có nhiều món hời nhất vào các ngày Chủ nhật. Vào buổi trưa, hãy ghé Centro Cabraliego — một câu lạc bộ xã hội dành cho nhiều thế hệ người nhập cư từ Asturias, Tây Ban Nha — nơi người dân địa phương nấu bữa trưa thịnh soạn với chorizo, sườn nướng và mực với rượu vang hoặc xia-đê dưới €20.</div>
-    </div>
-
-    <p class="section-title">Where to Stay — Nơi lưu trú</p>
-    <div class="bilingual-block">
-      <div class="en">On bustling Rue Haute, La Maison Haute is a chic boutique place with room-only doubles from €120. A budget alternative at the edge of the Marolles is Ibis Brussels, with spacious doubles from around €90, right opposite the Eurostar station.</div>
-      <div class="vi">Trên con phố tấp nập Rue Haute, La Maison Haute là một boutique hotel sang trọng với phòng đôi chỉ phòng từ €120. Lựa chọn bình dân hơn ở rìa khu Marolles là Ibis Brussels, với phòng đôi rộng rãi từ khoảng €90, ngay đối diện ga Eurostar.</div>
-    </div>
-  </section>
-
-  <!-- ══ TAB 1: VOCABULARY ══ -->
-  <section class="tab-content" id="tab-1">
-    <p class="section-title">18 từ vựng quan trọng từ bài</p>
-    <div class="vocab-grid" id="vocab-grid"></div>
-  </section>
-
-  <!-- ══ TAB 2: GRAMMAR ══ -->
-  <section class="tab-content" id="tab-2">
-    <p class="section-title">Điểm ngữ pháp nổi bật</p>
-    <div id="grammar-blocks"></div>
-  </section>
-
-  <!-- ══ TAB 3: EXERCISES ══ -->
-  <section class="tab-content" id="tab-3">
-    <p class="section-title">6 bài tập tương tác</p>
-    <div id="exercise-blocks"></div>
-  </section>
-
-  <!-- ══ TAB 4: DISCUSSION ══ -->
-  <section class="tab-content" id="tab-4">
-    <p class="section-title">6 chủ đề thảo luận</p>
-    <div class="topic-grid" id="topic-btns"></div>
-    <p class="section-title">12 Useful Phrases — click để copy</p>
-    <div class="phrases-grid" id="phrases-grid"></div>
-  </section>
-
-  <!-- ══ TAB 5: WRITING ══ -->
-  <section class="tab-content" id="tab-5">
-    <p class="section-title">3 đề writing</p>
-    <div class="writing-prompts" id="writing-prompts"></div>
-  </section>
-
-  <!-- ══ TAB 6: SHADOWING ══ -->
-  <section class="tab-content" id="tab-6">
-    <p class="section-title">5 câu shadowing từ bài</p>
-    <div id="shadow-cards"></div>
-  </section>
-
-  <!-- ══ TAB 7: FLASHCARD ══ -->
-  <section class="tab-content" id="tab-7">
-    <div class="fc-controls" id="fc-controls">
-      <button class="fc-btn active" id="btn-en-vi">EN → VN</button>
-      <button class="fc-btn" id="btn-vi-en">VN → EN</button>
-      <button class="fc-btn" id="btn-shuffle">🔀 Shuffle</button>
-      <button class="fc-btn" id="btn-reset">↺ Reset</button>
-      <span class="fc-stats" id="fc-stats">0 / 0 thuộc</span>
-    </div>
-    <p class="fc-progress" id="fc-progress">Card 1 / 18</p>
-    <div class="fc-wrap">
-      <div class="fc-card" id="fc-card">
-        <div class="fc-face front" id="fc-front"></div>
-        <div class="fc-face back" id="fc-back"></div>
+      
+      <div class="fc-status" id="fc-status">
+        <button class="btn-fc-status btn-unknown" id="btn-fc-unknown">❌ Chưa thuộc</button>
+        <button class="btn-fc-status btn-known" id="btn-fc-known">✅ Thuộc rồi</button>
       </div>
-    </div>
-    <div class="fc-actions">
-      <button class="fc-action know" id="fc-know">✅ Thuộc rồi</button>
-      <button class="fc-action dont" id="fc-dont">❌ Chưa thuộc</button>
-    </div>
-    <div class="fc-nav" style="margin-top:0.75rem;">
-      <button class="fc-btn" id="fc-prev">← Trước</button>
-      <button class="fc-btn" id="fc-next">Tiếp →</button>
-    </div>
-  </section>
 
-</main>
+      <div class="fc-controls">
+        <button class="btn-fc" id="btn-fc-prev">← Previous</button>
+        <button class="btn-fc" id="btn-fc-shuffle">🔀 Shuffle</button>
+        <button class="btn-fc" id="btn-fc-next">Next →</button>
+      </div>
+    </section>
 
-<script>
-// ═══ DATA ═══
+  </main>
 
-const ARTICLE_CONTEXT = "A Guardian travel piece about the Marolles, Brussels's proudly working-class neighbourhood. The article covers estaminets serving hearty Belgian dishes, a cooperative microbrewery, multi-ethnic restaurants, the Jeu de Balle flea market, comic-strip murals, and the Art et Marges outsider-art museum.";
-const ARTICLE_LEVEL = "B2";
+  <script>
+    // HARDCODED VARIABLES
+    const ARTICLE_CONTEXT = "Mars College is an off-grid, tuition-free experimental community in the California desert. Students live in temporary structures, using solar power to study subjects like AI and writing, acting as an alternative to expensive traditional colleges.";
+    const ARTICLE_LEVEL = "B2";
 
-const vocabData = [
-  { word: "cosmopolitan", ipa: "/ˌkɒz.məˈpɒl.ɪ.tən/", pos: "adj", meaning: "Đa văn hóa, quốc tế", example: "The Marolles is a friendly, cosmopolitan village where everyone is welcome." },
-  { word: "estaminet", ipa: "/ˌes.tæm.ɪˈneɪ/", pos: "n", meaning: "Quán kết hợp giữa pub, café và bistro (từ tiếng Bỉ)", example: "Traditional estaminets specialise in hearty local dishes like stoemp and chicons." },
-  { word: "bric-a-brac", ipa: "/ˈbrɪk.ə.bræk/", pos: "n", meaning: "Đồ lặt vặt, đồ linh tinh (thường là đồ cũ có giá trị)", example: "The market stalls overflow with fashion, antiques and bric-a-brac." },
-  { word: "provocative", ipa: "/prəˈvɒk.ə.tɪv/", pos: "adj", meaning: "Khiêu khích, gây tranh cãi", example: "Wander through streets filled with provocative graffiti and alternative art." },
-  { word: "reinterpret", ipa: "/ˌriː.ɪnˈtɜː.prɪt/", pos: "v", meaning: "Tái diễn giải, hiểu theo cách mới", example: "Chef Dirk Myny daringly reinterprets classic Flemish recipes." },
-  { word: "succulent", ipa: "/ˈsʌk.jʊ.lənt/", pos: "adj", meaning: "Mọng nước, ngon miệng (về thức ăn)", example: "He serves succulent pork belly with a tart cherry ale vinaigrette." },
-  { word: "lambic", ipa: "/ˈlæm.bɪk/", pos: "n", meaning: "Loại bia lên men tự nhiên bằng men dại của Bỉ", example: "Cantillon is the last Brussels lambic brewery." },
-  { word: "maqluba", ipa: "/mɑːkˈluː.bə/", pos: "n", meaning: "Món cơm lật ngược kiểu Trung Đông với thịt và rau", example: "My Day serves maqluba, a pilaf-style spicy rice dish with chicken or lamb." },
-  { word: "art brut", ipa: "/ˌɑːt ˈbruːt/", pos: "n", meaning: "Nghệ thuật thô — do người ngoài dòng chảy nghệ thuật chính thống tạo ra", example: "Art et Marges has presented art brut and outsider art for 40 years." },
-  { word: "counter-culture", ipa: "/ˈkaʊn.tə ˌkʌl.tʃər/", pos: "n", meaning: "Văn hóa phản kháng, đi ngược lại chủ đạo", example: "The Marolles offers a vibrant and challenging counter-culture scene." },
-  { word: "sprawling", ipa: "/ˈsprɔː.lɪŋ/", pos: "adj", meaning: "Trải rộng, không có hình dạng rõ ràng", example: "Bargain hunters search for collectibles in the sprawling Jeu de Balle flea market." },
-  { word: "undisputed", ipa: "/ˌʌn.dɪˈspjuː.tɪd/", pos: "adj", meaning: "Không thể tranh cãi, được công nhận rộng rãi", example: "Bernard Gavilan is the neighbourhood's undisputed fashion guru." },
-  { word: "copious", ipa: "/ˈkəʊ.pi.əs/", pos: "adj", meaning: "Dồi dào, phong phú, nhiều", example: "Local people cook up a copious lunch of chorizo, ribs and calamari." },
-  { word: "labyrinthine", ipa: "/ˌlæb.ɪˈrɪn.θaɪn/", pos: "adj", meaning: "Mê cung, phức tạp như mê cung", example: "Passage 125 has been transformed into a labyrinthine antiques emporium." },
-  { word: "emporium", ipa: "/ɪmˈpɔː.ri.əm/", pos: "n", meaning: "Cửa hàng lớn bán nhiều mặt hàng đa dạng", example: "The ancient textile warehouse is now a labyrinthine antiques emporium." },
-  { word: "tart", ipa: "/tɑːt/", pos: "adj", meaning: "Chua (vị), chát", example: "The pork belly is served with a tart cherry ale vinaigrette." },
-  { word: "vintage", ipa: "/ˈvɪn.tɪdʒ/", pos: "adj", meaning: "Đồ cũ có chất lượng, đồ cổ điển có giá trị", example: "The Marolles is vintage shopping heaven for rare clothes from the 1900s." },
-  { word: "inclusive", ipa: "/ɪnˈkluː.sɪv/", pos: "adj", meaning: "Bao dung, chào đón tất cả mọi người", example: "The Marolles has always been an inclusive refuge for immigrants." }
-];
-
-const grammarData = [
-  {
-    title: "Present Perfect as historical background",
-    formula: "Subject + has/have + past participle",
-    example: '"It\'s always been an inclusive refuge for immigrants from Europe and north Africa."',
-    note: "Dùng Present Perfect (has been) để nói về điều đúng từ quá khứ đến hiện tại, không xác định thời điểm cụ thể. Từ 'always' nhấn mạnh tính liên tục. So với Simple Past ('was a refuge'), Present Perfect nhấn mạnh rằng tình trạng này vẫn đang tiếp diễn."
-  },
-  {
-    title: "Participial phrase — kiểu mô tả nhanh",
-    formula: "V-ing phrase + , + main clause (hoặc ngược lại)",
-    example: '"Dotted around the backstreets, street art enthusiasts can track down 16 of the city\'s iconic comic strip murals."',
-    note: "Cụm phân từ 'Dotted around the backstreets' đứng đầu câu như một trạng ngữ, mô tả đặc điểm địa lý. Đây là kiểu câu phổ biến trong văn báo chí tiếng Anh — giúp câu gọn hơn thay vì 'The murals are dotted around the backstreets, and street art enthusiasts can...'"
-  },
-  {
-    title: "Appositive (đồng vị ngữ) để giải thích thuật ngữ nước ngoài",
-    formula: "foreign term + (explanation in parentheses or after comma)",
-    example: '"characteristic estaminets (hybrid pub, cafe, bistros) specialising in hearty local dishes"',
-    note: "Trong văn du lịch và báo chí, từ ngữ nước ngoài thường được giải thích ngay sau bằng từ trong ngoặc hoặc sau dấu phẩy. Ví dụ khác từ bài: 'lambic (traditional wild-yeast fermented) brewery', 'maqluba, a pilaf-style spicy rice dish'."
-  },
-  {
-    title: "Idiom: 'a steal' — không phải 'ăn trộm'",
-    formula: "It's a steal = It's very cheap for what you get",
-    example: '"The three-course €38 lunch menu is a steal."',
-    note: "'A steal' là thành ngữ nghĩa là một món hời — giá rẻ bất ngờ so với chất lượng hoặc giá trị thực tế. Ví dụ: 'At $50, that jacket is a steal!' Đây là cách nói thông dụng trong tiếng Anh Anh và Mỹ, thường gặp trong bài về mua sắm hoặc du lịch."
-  },
-  {
-    title: "Adverb of manner với động từ sáng tạo: 'daringly'",
-    formula: "Subject + adverb + verb + object",
-    example: '"He daringly reinterprets classic Flemish recipes with dishes such as smoked eel mousse..."',
-    note: "'Daringly' (một cách dũng cảm/táo bạo) là trạng từ chỉ cách thức, đứng trước động từ để bổ nghĩa. Các trạng từ kiểu này làm cho câu sinh động hơn: 'boldly redesigns', 'cleverly combines', 'beautifully balances'. Đây là đặc điểm ngôn ngữ của báo chí chất lượng cao."
-  },
-  {
-    title: "Reduced relative clause: '...hunting down / looking for / searching for'",
-    formula: "noun + V-ing phrase (reduced from 'who are V-ing')",
-    example: '"The Marolles is vintage shopping heaven, attracting fashionistas hunting down rare outfits, interior design fans looking for art deco lamps..."',
-    note: "Đây là mệnh đề quan hệ rút gọn: 'fashionistas hunting down' = 'fashionistas who are hunting down'. Cách này phổ biến trong báo chí để liệt kê nhiều loại người/sự vật một cách mượt mà mà không lặp 'who are' nhiều lần."
-  }
-];
-
-const exerciseData = [
-  {
-    type: "Comprehension",
-    q: "According to the article, what makes the Marolles different from tourist attractions like the Grand-Place?",
-    options: ["It is further from the city centre", "It offers fashion, antiques, alternative art and local cuisine instead of typical sights", "It has more expensive restaurants and hotels", "It is only accessible by public transport"],
-    correct: 1,
-    explanation: "The article states the Marolles offers 'a very different experience: fashion, antiques and bric-a-brac shopping; alternative creative centres... estaminets... artisan breweries' — contrasting with the typical tourist circuit."
-  },
-  {
-    type: "Comprehension",
-    q: "What is special about the Jeu de Balle flea market?",
-    options: ["It only opens on Sundays", "It sells exclusively Belgian antiques", "It is open every day of the year, with the best bargains on Sundays", "It was founded by Iraqi refugee Yousif Alsaleh"],
-    correct: 2,
-    explanation: "The article says it is 'open 365 days of the year but with the best bargains on Sundays'."
-  },
-  {
-    type: "Vocabulary",
-    q: "In the sentence 'The three-course €38 lunch menu is a steal', what does 'a steal' mean?",
-    options: ["Something that was taken illegally", "A very cheap deal for the quality offered", "A type of Belgian dessert", "An expensive and exclusive option"],
-    correct: 1,
-    explanation: "'A steal' is an idiom meaning excellent value for money — surprisingly cheap given the quality."
-  },
-  {
-    type: "Grammar",
-    q: "Choose the correct form: 'The Marolles _____ always _____ a refuge for immigrants.'",
-    options: ["was ... being", "has ... been", "is ... being", "had ... been"],
-    correct: 1,
-    explanation: "Present Perfect 'has always been' is correct — it expresses a state that started in the past and continues to the present day."
-  },
-  {
-    type: "Inference",
-    q: "Based on the article, what can you infer about the identity of the Marolles?",
-    options: ["It is closely tied to Belgian national politics and Flemish culture", "It is an area that resists political labels and celebrates outsider, inclusive culture", "It is mainly popular with wealthy European tourists", "It has recently lost its working-class character due to gentrification"],
-    correct: 1,
-    explanation: "The owner Eddy Aslan says the Marolles is 'outside Belgian politics, neither Flemish nor Walloon but genuinely Bruxellois' — suggesting an identity rooted in independence and inclusion."
-  },
-  {
-    type: "Speaking Prompt",
-    q: "🗣 Speaking prompt: Describe a neighbourhood or market in your city that you love. What makes it special? What would you recommend to a visitor?",
-    options: ["My neighbourhood has amazing food stalls with local specialities.", "There is a weekly market where you can find antiques and handmade goods.", "The streets are full of murals and street art that tell local stories.", "It's a place where different cultures and generations mix naturally."],
-    correct: -1,
-    explanation: "All options are valid starting points! Use them as inspiration for your spoken answer."
-  }
-];
-
-const topicsData = [
-  { question: "The article describes the Marolles as 'outside Belgian politics, neither Flemish nor Walloon but genuinely Bruxellois.' What does this tell us about how place identity can be formed, and do you think your own city has neighbourhoods with a distinct identity like this?" },
-  { question: "The Marolles is home to art brut — art made by self-taught artists outside the mainstream. Do you think outsider art deserves the same recognition as art from trained artists in formal institutions? Why or why not?" },
-  { question: "The article highlights that the Marolles has 'always been an inclusive refuge for immigrants.' In what ways can a neighbourhood's cultural diversity become both an attraction for tourists and a strength for local residents?" },
-  { question: "Bernard Gavilan distinguishes between 'by-the-kilo' second-hand clothes stores and genuine vintage shops selling items back to 1900. How do you feel about the growing popularity of vintage and second-hand shopping? Is it sustainable fashion or a passing trend?" },
-  { question: "Chef Dirk Myny 'daringly reinterprets classic Flemish recipes.' When chefs modernise traditional dishes, do you think they are honouring or betraying culinary heritage? Where should the line be drawn?" },
-  { question: "The Jeu de Balle flea market is open 365 days a year. What is the appeal of flea markets compared to modern shopping malls? Have you ever found something special at a market or second-hand shop?" }
-];
-
-const phrasesData = [
-  "What struck me most was...",
-  "I can see both sides of the argument, but...",
-  "That's a really interesting point. I'd add that...",
-  "To give a concrete example from the article...",
-  "I'm not sure I fully agree, because...",
-  "This reminds me of something similar in Vietnam...",
-  "From a cultural perspective,...",
-  "One thing I find fascinating is...",
-  "It's worth considering that...",
-  "In my experience,...",
-  "That raises an important question about...",
-  "On balance, I think..."
-];
-
-const writingPromptsData = [
-  {
-    type: "Opinion Essay · B2",
-    target: "200–250 words",
-    en: "The article suggests that authentic neighbourhood culture is being threatened by gentrification and mainstream tourism. Do you agree that cities should actively protect working-class areas like the Marolles from change? Give reasons and examples.",
-    vi: "Bài báo gợi ý rằng văn hóa khu phố đích thực đang bị đe dọa bởi sự cải tạo đô thị và du lịch đại trà. Bạn có đồng ý rằng các thành phố nên chủ động bảo vệ các khu lao động như Marolles khỏi sự thay đổi không? Hãy đưa ra lý do và ví dụ.",
-    level: "B2"
-  },
-  {
-    type: "Descriptive Travel Writing · B2",
-    target: "180–220 words",
-    en: "Write a short travel piece (in the style of the Guardian article) about a neighbourhood, market, or local area in Vietnam that deserves more attention. Describe what makes it special using vivid language.",
-    vi: "Viết một bài du lịch ngắn (theo phong cách bài báo Guardian) về một khu phố, khu chợ, hoặc địa điểm địa phương ở Việt Nam đáng được chú ý hơn. Mô tả điều gì làm nó đặc biệt bằng ngôn ngữ sinh động.",
-    level: "B2"
-  },
-  {
-    type: "Comparative Essay · C1",
-    target: "250–300 words",
-    en: "Compare the role of street markets in Belgian and Vietnamese culture, drawing on the Jeu de Balle flea market as described in the article and a market you know well from Vietnam. Consider their social, economic, and cultural functions.",
-    vi: "So sánh vai trò của chợ đường phố trong văn hóa Bỉ và Việt Nam, dựa trên chợ trời Jeu de Balle được mô tả trong bài và một khu chợ bạn quen thuộc ở Việt Nam. Xem xét các chức năng xã hội, kinh tế và văn hóa của chúng.",
-    level: "C1"
-  }
-];
-
-const toolbarPhrases = [
-  "In my opinion,", "For instance,", "On the other hand,", "It is worth noting that", "This suggests that", "As a result,"
-];
-
-const shadowData = [
-  {
-    tags: ["Rhythm", "Linking"],
-    chunks: [
-      { text: "The Brusseleir dialect", cls: "chunk-1" },
-      { text: " that's still spoken", cls: "chunk-2" },
-      { text: " in much of the Marolles", cls: "chunk-3" },
-      { text: " dates back to the Middle Ages,", cls: "chunk-4" },
-      { text: " a symbol of independence.", cls: "chunk-1" }
-    ],
-    vi: "Phương ngữ Brusseleir vẫn còn được sử dụng ở nhiều nơi trong Marolles có nguồn gốc từ thời Trung Cổ — biểu tượng của tính độc lập.",
-    notes: "Stress: BRUSseleir / DATES back / MID.dle AGES. Linking: 'that's still' → /ðæts stɪl/. Rhythm: 4 main beats per clause.",
-    ipa: "/ðə ˈbrʌs.ə.lɪr ˌdaɪ.ə.lekt | ðæts stɪl ˈspəʊ.kən ɪn mʌtʃ əv ðə məˈrɒlz | deɪts bæk tə ðə ˈmɪd.l̩ eɪdʒɪz | ə ˈsɪm.bəl əv ˌɪn.dɪˈpen.dəns/"
-  },
-  {
-    tags: ["Intonation", "Contrast"],
-    chunks: [
-      { text: "He daringly reinterprets", cls: "chunk-1" },
-      { text: " classic Flemish recipes", cls: "chunk-2" },
-      { text: " with dishes such as", cls: "chunk-3" },
-      { text: " smoked eel mousse", cls: "chunk-4" },
-      { text: " and succulent pork belly.", cls: "chunk-1" }
-    ],
-    vi: "Ông táo bạo tái diễn giải các công thức Flemish cổ điển với các món như mousse lươn hun khói và thịt ba chỉ mọng nước.",
-    notes: "Key stress: DARingly / REinterprets / SMOKed EEL / SUCculent PORK. Intonation: rising on 'such as', falling on final item. 'Daringly' — /ˈdeər.ɪŋ.li/.",
-    ipa: "/hiː ˈdeər.ɪŋ.li ˌriːɪnˈtɜː.prɪts ˌklæs.ɪk ˈflem.ɪʃ ˈres.ɪ.pɪz | wɪð ˈdɪʃ.ɪz sʌtʃ əz | ˌsməʊkt ˈiːl muːs | ænd ˈsʌk.jʊ.lənt ˈpɔːk ˈbel.i/"
-  },
-  {
-    tags: ["Schwa", "Stress"],
-    chunks: [
-      { text: "The Marolles is", cls: "chunk-1" },
-      { text: " vintage shopping heaven,", cls: "chunk-2" },
-      { text: " attracting fashionistas", cls: "chunk-3" },
-      { text: " hunting down rare outfits.", cls: "chunk-4" }
-    ],
-    vi: "Marolles là thiên đường mua sắm đồ vintage, thu hút những tín đồ thời trang đang săn lùng trang phục hiếm.",
-    notes: "Schwa: 'a' in 'attracting' → /ə/. Stress: VINtage / HEAven / FASHionistas / HUNT.ing. The weak syllables reduce: 'the' /ðə/, 'is' /ɪz/, 'down' unstressed here.",
-    ipa: "/ðə məˈrɒlz ɪz ˈvɪn.tɪdʒ ˈʃɒp.ɪŋ ˈhev.ən | əˈtrækt.ɪŋ ˌfæʃ.əˈnɪs.təz | ˈhʌnt.ɪŋ daʊn ˈreər ˈaʊt.fɪts/"
-  },
-  {
-    tags: ["Quotation", "Stress"],
-    chunks: [
-      { text: "Retro fashion", cls: "chunk-1" },
-      { text: " has become much more important", cls: "chunk-2" },
-      { text: " in the Marolles over the years,", cls: "chunk-3" },
-      { text: " but there's a difference", cls: "chunk-4" },
-      { text: " between the by-the-kilo stores", cls: "chunk-1" },
-      { text: " and shops like mine.", cls: "chunk-2" }
-    ],
-    vi: "'Thời trang retro đã trở nên quan trọng hơn nhiều ở Marolles qua các năm, nhưng có sự khác biệt giữa các cửa hàng bán theo kí và những cửa hàng như của tôi.'",
-    notes: "Stress on contrast: 'MORE important' / 'BUT there's a DIFference' / 'BY-the-KILO' vs 'shops like MINE'. Quotation intonation: slight rise on 'years', fall-rise on 'difference', strong fall on 'mine'.",
-    ipa: "/ˈret.rəʊ ˈfæʃ.ən | həz bɪˈkʌm mʌtʃ mɔːr ɪmˈpɔː.tənt | ɪn ðə məˈrɒlz ˈəʊ.vər ðə jɪəz | bət ˈðeərz ə ˈdɪf.ər.əns | bɪˈtwiːn ðə ˌbaɪ.ðəˈkɪ.ləʊ stɔːz | ænd ˈʃɒps laɪk ˈmaɪn/"
-  },
-  {
-    tags: ["Linking", "Rhythm"],
-    chunks: [
-      { text: "Wander through the streets", cls: "chunk-1" },
-      { text: " and tunnels", cls: "chunk-2" },
-      { text: " around the old Chapelle train station", cls: "chunk-3" },
-      { text: " and you enter", cls: "chunk-4" },
-      { text: " an unofficial graffiti gallery,", cls: "chunk-1" },
-      { text: " constantly being repaired and updated.", cls: "chunk-2" }
-    ],
-    vi: "Đi dạo qua các con phố và đường hầm quanh ga xe lửa cũ Chapelle, và bạn sẽ bước vào một phòng triển lãm graffiti không chính thức, liên tục được sửa chữa và cập nhật.",
-    notes: "Linking: 'Wander_through', 'streets_and', 'enter_an'. Rhythm: imperative opener 'WANder THROUGH' sets energetic pace. 'constantly being repaired' — schwa in 'being' /biːɪŋ/.",
-    ipa: "/ˈwɒn.dər θruː ðə striːts | ænd ˈtʌn.əlz | əˌraʊnd ði ˌəʊld ʃæˈpel ˈtreɪn ˌsteɪ.ʃən | ænd juː ˈen.tər | ən ʌnəˈfɪʃ.əl ɡrəˈfiː.ti ˈɡæl.ər.i | ˈkɒn.stənt.li biːɪŋ rɪˈpeərd ænd ʌpˈdeɪ.tɪd/"
-  }
-];
-
-// ═══ TAB SWITCHING ═══
-document.querySelectorAll('.tab-btn').forEach(btn => {
-  btn.addEventListener('click', function () {
-    const idx = this.dataset.tab;
-    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-    this.classList.add('active');
-    document.getElementById(`tab-${idx}`).classList.add('active');
-  });
-});
-
-// ═══ NAV + TOGGLE VI (v13 IIFE) ═══
-(function initNav() {
-  const nav    = document.getElementById('tabs-nav');
-  const hero   = document.getElementById('hero-bg');
-  const spacer = document.getElementById('nav-spacer');
-  const btn    = document.getElementById('toggle-vi-btn');
-  const viText = document.getElementById('one-minute-vi');
-  const inner  = document.getElementById('one-minute-inner');
-
-  if (viText) viText.style.display = 'none';
-  if (inner)  inner.classList.remove('vi-open');
-
-  function syncNavVisibility() {
-    const isOpen = viText && viText.style.display !== 'none';
-    if (!isOpen) { nav.classList.remove('vi-hidden'); return; }
-    const navH      = nav.offsetHeight;
-    const innerRect = inner.getBoundingClientRect();
-    const threshold = window.innerHeight - navH * 1.5;
-    if (innerRect.bottom <= threshold) {
-      nav.classList.remove('vi-hidden');
-    } else {
-      nav.classList.add('vi-hidden');
-    }
-  }
-
-  function onScroll() {
-    const heroBottom = hero.getBoundingClientRect().bottom;
-    const navH       = nav.offsetHeight;
-    if (heroBottom <= navH) {
-      if (!nav.classList.contains('is-fixed')) {
-        nav.classList.add('is-fixed');
-        spacer.style.display = 'block';
+    // DATA ARRAYS
+    const bilingualData = [
+      {
+        en: "A dozen writing students perched around a collection of weather-beaten couches, laptops balancing on their knees, ready to discuss their work.",
+        vi: "Khoảng chục sinh viên lớp viết lách ngồi vắt vẻo quanh những chiếc ghế dài dãi dầu sương gió, đặt laptop trên đầu gối, sẵn sàng thảo luận về bài làm của họ."
+      },
+      {
+        en: "It was a scene reminiscent of any creative writing brainstorm happening on any given college campus across the country. But zoom out from the immediate circle of couches, and the gathering's true setting was a barren, windswept plot in the middle of the California desert.",
+        vi: "Đó là một cảnh tượng gợi nhớ đến bất kỳ buổi thảo luận viết sáng tạo nào diễn ra trong một khuôn viên đại học trên cả nước. Nhưng nhìn rộng ra khỏi vòng tròn ghế dài đó, bối cảnh thực sự của buổi tụ tập lại là một mảnh đất cằn cỗi, lộng gió giữa sa mạc California."
+      },
+      {
+        en: "At Mars, unlike a real college, there are no grades, degrees or mandatory attendance. There are no tuition fees or trained professors or even public utilities, like electricity or indoor plumbing.",
+        vi: "Tại Mars, không giống như một trường đại học thực sự, không có điểm số, bằng cấp hay điểm danh bắt buộc. Không có học phí, không có giáo sư được đào tạo hay thậm chí là các tiện ích công cộng, như điện hay hệ thống ống nước trong nhà."
+      },
+      {
+        en: "But as the price of college tuition continues to soar... people of all ages are looking for new, adventurous ways to keep learning, they say.",
+        vi: "Nhưng khi học phí đại học tiếp tục tăng vọt... những người ở mọi lứa tuổi đang tìm kiếm những cách thức mới mẻ, mang tính phiêu lưu để tiếp tục học tập."
+      },
+      {
+        en: "And Mars feels like a college for the end of the world: a dystopian, isolated place where students learn both how to live off the grid and how to use modern AI tools.",
+        vi: "Và Mars cho cảm giác như một ngôi trường dành cho thời kỳ tận thế: một nơi tăm tối, biệt lập, nơi sinh viên vừa học cách sống ngoài lưới điện vừa học cách sử dụng các công cụ AI hiện đại."
+      },
+      {
+        en: "Massive AI data centers proposed for rural areas near Mars College have recently sparked concern over the amount of electricity and water it would take to power them.",
+        vi: "Các trung tâm dữ liệu AI khổng lồ được đề xuất xây dựng ở các vùng nông thôn gần Mars College gần đây đã làm dấy lên mối lo ngại về lượng điện và nước cần thiết để vận hành chúng."
       }
-    } else {
-      if (nav.classList.contains('is-fixed')) {
-        nav.classList.remove('is-fixed');
-        spacer.style.display = 'none';
+    ];
+
+    const vocabData = [
+      { word: "unorthodox", ipa: "/ʌnˈɔːr.θə.dɑːks/", type: "adj", vi: "phi truyền thống", ex: "an unorthodox educational experience" },
+      { word: "flock", ipa: "/flɑːk/", type: "v", vi: "đổ xô đến", ex: "why are people flocking to a college in the desert?" },
+      { word: "off-grid", ipa: "/ˌɔːfˈɡrɪd/", type: "adj", vi: "ngoài lưới điện tự cung tự cấp", ex: "an off-grid community" },
+      { word: "weather-beaten", ipa: "/ˈweð.ɚˌbiː.t̬ən/", type: "adj", vi: "dãi dầu sương gió", ex: "a collection of weather-beaten couches" },
+      { word: "reminiscent", ipa: "/ˌrem.əˈnɪs.ənt/", type: "adj", vi: "gợi nhớ", ex: "a scene reminiscent of any creative writing brainstorm" },
+      { word: "barren", ipa: "/ˈber.ən/", type: "adj", vi: "cằn cỗi", ex: "a barren, windswept plot" },
+      { word: "desolate", ipa: "/ˈdes.əl.ət/", type: "adj", vi: "hoang vắng", ex: "The desolate community's name: Mars College." },
+      { word: "mandatory", ipa: "/ˈmæn.də.tɔːr.i/", type: "adj", vi: "bắt buộc", ex: "there are no grades, degrees or mandatory attendance." },
+      { word: "soar", ipa: "/sɔːr/", type: "v", vi: "tăng vọt", ex: "as the price of college tuition continues to soar" },
+      { word: "dystopian", ipa: "/dɪsˈtoʊ.pi.ən/", type: "adj", vi: "đậm chất hậu tận thế, tăm tối", ex: "a dystopian, isolated place" },
+      { word: "antidote", ipa: "/ˈæn.t̬i.doʊt/", type: "n", vi: "giải pháp khắc phục", ex: "is this really the antidote to the higher education crisis?" },
+      { word: "faint of heart", ipa: "/feɪnt əv hɑːrt/", type: "idiom", vi: "người yếu bóng vía", ex: "aren't for the faint of heart." },
+      { word: "spawn", ipa: "/spɑːn/", type: "v", vi: "sinh ra, tạo ra", ex: "spawning sandstorms that can last hours" },
+      { word: "enclave", ipa: "/ˈen.kleɪv/", type: "n", vi: "vùng đất biệt lập", ex: "the quirky artist enclave on the Salton Sea" },
+      { word: "cohort", ipa: "/ˈkoʊ.hɔːrt/", type: "n", vi: "nhóm người đồng niên", ex: "the first cohort was all of my friends" },
+      { word: "pelting", ipa: "/pelt/", type: "v", vi: "đập mạnh vào", ex: "a vicious windstorm was pelting sand against the walls" },
+      { word: "inherent", ipa: "/ɪnˈhɪr.ənt/", type: "adj", vi: "vốn có, nội tại", ex: "because of the inherent toughness required" },
+      { word: "grapple", ipa: "/ˈɡræp.əl/", type: "v", vi: "vật lộn, đối mặt", ex: "Mars is grappling with some of the same questions" },
+      { word: "expanse", ipa: "/ɪkˈspæns/", type: "n", vi: "dải rộng bao la", ex: "a vast expanse of open desert" },
+      { word: "hallucinogenic", ipa: "/həˌluː.sə.noʊˈdʒen.ɪk/", type: "adj", vi: "gây ảo giác", ex: "a giant, hallucinogenic pancake flipped on a griddle" }
+    ];
+
+    const quizData = [
+      { q: "What is Mars College?", opts: ["A traditional university in Los Angeles", "An off-grid, temporary educational community in the desert", "A training center for astronauts heading to Mars", "A new AI data center"], ans: 1 },
+      { q: "Which of the following is NOT true about Mars College?", opts: ["It charges high tuition fees.", "It does not have mandatory attendance.", "It operates on solar power.", "It is rebuilt and torn down every year."], ans: 0 },
+      { q: "The founders of Mars College originally met or found inspiration at:", opts: ["A Silicon Valley tech conference", "Columbia University", "The Burning Man festival", "A creative writing workshop"], ans: 2 },
+      { q: "What paradox exists at Mars College regarding modern technology?", opts: ["They use modern AI tools but live without indoor plumbing or a stable power grid.", "They build rockets to Mars but use outdated computers.", "They charge high tuition but give students free AI tools.", "They forbid internet use but teach coding classes."], ans: 0 },
+      { q: "According to the article, why are people flocking to this desert 'college'?", opts: ["To escape legal troubles in the city.", "To get a formally recognized degree in AI.", "As an adventurous, low-cost alternative to the soaring prices of traditional colleges.", "Because the climate is comfortable and relaxing."], ans: 2 }
+    ];
+
+    const topicsData = [
+      { question: "Would you ever consider joining an off-grid educational community like Mars College for 3 months? Why or why not?" },
+      { question: "Do you agree with Gene Kogan that the traditional university system is becoming unsustainable due to high tuition costs?" },
+      { question: "How does learning in a harsh, isolated environment (like a desert) change the way people absorb information and bond with each other?" },
+      { question: "Mars College embraces AI tools deeply. Do you think heavily integrating AI into alternative education is beneficial or detrimental?" },
+      { question: "What are the essential differences between 'getting an education' and 'getting a degree' in today's world?" },
+      { question: "If you could teach one subject at a free, experimental college like this, what would it be and why?" }
+    ];
+
+    const phrasesData = [
+      "I completely agree that...", "On the flip side...", "It seems to me that...", "It's highly unorthodox, but...", "The soaring costs of...", "Living off the grid allows you to...", "This reminds me of..."
+    ];
+
+    const writingPromptsData = [
+      { type: "Opinion", target: "200-250 words", level: "B2", en: "Do you believe experimental, off-grid communities like Mars College can solve the modern higher education crisis? Discuss the pros and cons.", vi: "Bạn có tin rằng các cộng đồng thực nghiệm ngoài lưới điện như Mars College có thể giải quyết cuộc khủng hoảng giáo dục đại học hiện đại không? Thảo luận về ưu và nhược điểm." },
+      { type: "Descriptive", target: "150-200 words", level: "B2", en: "Imagine you are a student at Mars College. Describe your typical day, dealing with the harsh desert environment while attending AI and writing workshops.", vi: "Hãy tưởng tượng bạn là một sinh viên tại Mars College. Hãy miêu tả một ngày bình thường của bạn, đối phó với môi trường sa mạc khắc nghiệt trong khi tham gia các hội thảo về AI và viết lách." },
+      { type: "Problem-Solution", target: "200-250 words", level: "B2", en: "As college tuition soars, many young people cannot afford a traditional degree. Propose 2-3 alternative educational models that could provide quality learning without the massive debt.", vi: "Khi học phí đại học tăng vọt, nhiều người trẻ không thể chi trả cho một bằng cấp truyền thống. Đề xuất 2-3 mô hình giáo dục thay thế có thể cung cấp việc học chất lượng mà không gây nợ nần khổng lồ." }
+    ];
+
+    const shadowingData = [
+      {
+        tags: ["Contrast", "Rhythm"],
+        sentence: "<span class='chunk-1'>At Mars,</span> <span class='chunk-2'>unlike a real college,</span> <span class='chunk-3'>there are no grades,</span> <span class='chunk-4'>degrees or mandatory attendance.</span>",
+        vi: "Tại Mars, không giống như một trường đại học thực sự, không có điểm số, bằng cấp hay điểm danh bắt buộc.",
+        notes: "Lên giọng nhẹ ở 'Mars' và 'college' để tạo contrast. Nối âm: 'unlike a' /ʌnˈlaɪk ə/.",
+        ipa: "æt mɑːrz, ʌnˈlaɪk ə riːl ˈkɑːlɪdʒ, ðer ɑːr noʊ ɡreɪdz, dɪˈɡriːz ɔːr ˈmæn.də.tɔːr.i əˈten.dəns."
+      },
+      {
+        tags: ["Intonation", "List"],
+        sentence: "<span class='chunk-1'>There are no tuition fees</span> <span class='chunk-2'>or trained professors</span> <span class='chunk-3'>or even public utilities,</span> <span class='chunk-4'>like electricity or indoor plumbing.</span>",
+        vi: "Không có học phí, không có giáo sư được đào tạo hay thậm chí là các tiện ích công cộng, như điện hay hệ thống ống nước trong nhà.",
+        notes: "Ngữ điệu đi lên ở 'fees', 'professors' và 'utilities' (danh sách liệt kê), đi xuống ở 'plumbing'.",
+        ipa: "ðer ɑːr noʊ tuˈɪʃ.ən fiːz ɔːr treɪnd prəˈfes.ɚz ɔːr ˈiː.vən ˈpʌb.lɪk juːˈtɪl.ə.t̬iz, laɪk iˌlekˈtrɪs.ə.t̬i ɔːr ˈɪn.dɔːr ˈplʌm.ɪŋ."
+      },
+      {
+        tags: ["Schwa", "Linking"],
+        sentence: "<span class='chunk-1'>But as the price of college tuition</span> <span class='chunk-2'>continues to soar,</span> <span class='chunk-3'>people of all ages</span> <span class='chunk-4'>are looking for new ways to keep learning.</span>",
+        vi: "Nhưng khi học phí đại học tiếp tục tăng vọt, những người ở mọi lứa tuổi đang tìm kiếm những cách thức mới để tiếp tục học tập.",
+        notes: "Nối âm: 'people of all ages' /piːpəl əv ɔːl eɪdʒɪz/. Chú ý âm schwa /ə/ trong 'college' và 'tuition'.",
+        ipa: "bʌt æz ðə praɪs əv ˈkɑːlɪdʒ tuˈɪʃ.ən kənˈtɪn.juːz tʊ sɔːr, ˈpiː.pəl əv ɔːl ˈeɪ.dʒɪz ɑːr ˈlʊk.ɪŋ fɔːr nuː weɪz tʊ kiːp ˈlɝː.nɪŋ."
+      },
+      {
+        tags: ["Stress", "Chunking"],
+        sentence: "<span class='chunk-1'>Mars feels like a college</span> <span class='chunk-2'>for the end of the world:</span> <span class='chunk-3'>a dystopian, isolated place.</span>",
+        vi: "Và Mars cho cảm giác như một ngôi trường dành cho thời kỳ tận thế: một nơi tăm tối, biệt lập.",
+        notes: "Nhấn mạnh vào 'end', 'world', 'dystopian' và 'isolated' để tạo hiệu ứng Dramatic.",
+        ipa: "mɑːrz fiːlz laɪk ə ˈkɑːlɪdʒ fɔːr ði end əv ðə wɝːld: ə dɪsˈtoʊ.pi.ən, ˈaɪ.sə.leɪ.t̬ɪd pleɪs."
+      },
+      {
+        tags: ["Quotation", "Rhythm"],
+        sentence: "<span class='chunk-1'>\"Here,</span> <span class='chunk-2'>you can't take anything for granted,\"</span> <span class='chunk-3'>Kogan said.</span>",
+        vi: "\"Ở đây, bạn không thể coi bất cứ điều gì là hiển nhiên,\" Kogan nói.",
+        notes: "Ngắt nghỉ rõ ràng sau 'Here'. 'Take anything for granted' đọc liền một cụm nhịp nhàng.",
+        ipa: "hɪr, ju kænt teɪk ˈen.i.θɪŋ fɔːr ˈɡræn.t̬ɪd, ˈkoʊ.gən sed."
       }
+    ];
+
+    // RENDER FUNCTIONS
+    function renderBilingual() {
+      const container = document.getElementById('bilingual-content');
+      bilingualData.forEach(item => {
+        let highlightedEn = item.en;
+        ['unorthodox', 'flocking', 'off-grid', 'weather-beaten', 'reminiscent', 'barren', 'desolate', 'mandatory', 'soar', 'dystopian', 'antidote'].forEach(word => {
+          const regex = new RegExp(`\\b${word}\\b`, 'gi');
+          highlightedEn = highlightedEn.replace(regex, `<span class="highlight">$&</span>`);
+        });
+        
+        container.innerHTML += `
+          <div class="bilingual-para">
+            <div class="para-en">${highlightedEn}</div>
+            <div class="para-vi">${item.vi}</div>
+          </div>
+        `;
+      });
     }
-    syncNavVisibility();
-  }
 
-  window.addEventListener('scroll', onScroll, { passive: true });
-  window.addEventListener('resize', () => requestAnimationFrame(syncNavVisibility), { passive: true });
-  onScroll();
+    function renderVocab() {
+      const container = document.getElementById('vocab-grid');
+      vocabData.forEach(v => {
+        container.innerHTML += `
+          <div class="vocab-card">
+            <div class="v-word">${v.word}</div>
+            <div class="v-ipa">${v.ipa}</div>
+            <div><span class="v-type">${v.type}</span> <span class="v-meaning">${v.vi}</span></div>
+            <div class="v-example">"${v.ex}"</div>
+          </div>
+        `;
+      });
+    }
 
-  if (!btn || !viText || !inner) return;
-  btn.addEventListener('click', function () {
-    const isOpen = viText.style.display !== 'none';
-    if (isOpen) {
+    function renderQuiz() {
+      const container = document.getElementById('quiz-container');
+      quizData.forEach((q, i) => {
+        let optsHtml = '';
+        q.opts.forEach((opt, j) => {
+          optsHtml += `<li data-q="${i}" data-opt="${j}">${opt}</li>`;
+        });
+        container.innerHTML += `
+          <div class="quiz-question">
+            <div class="q-text">${i+1}. ${q.q}</div>
+            <ul class="q-options" id="q-opts-${i}">
+              ${optsHtml}
+            </ul>
+          </div>
+        `;
+      });
+
+      document.querySelectorAll('.q-options li').forEach(li => {
+        li.addEventListener('click', function() {
+          const qIdx = this.dataset.q;
+          const optIdx = parseInt(this.dataset.opt);
+          const correctIdx = quizData[qIdx].ans;
+          
+          const ul = document.getElementById(`q-opts-${qIdx}`);
+          ul.querySelectorAll('li').forEach(item => { item.style.pointerEvents = 'none'; });
+          
+          if (optIdx === correctIdx) {
+            this.classList.add('correct');
+          } else {
+            this.classList.add('wrong');
+            ul.querySelector(`li[data-opt="${correctIdx}"]`).classList.add('correct');
+          }
+        });
+      });
+    }
+
+    let selectedTopicQuestion = null;
+    function renderTopics() {
+      const container = document.getElementById('topic-btns');
+      
+      const confirmArea = document.createElement('div');
+      confirmArea.id = 'topic-confirm';
+      confirmArea.className = 'topic-confirm-area';
+      confirmArea.style.display = 'none';
+      confirmArea.innerHTML = `
+        <div class="topic-confirm-inner">
+          <p class="topic-confirm-label">Chủ đề đã chọn:</p>
+          <p id="topic-confirm-text" class="topic-confirm-question"></p>
+          <button id="btn-start-discussion" class="btn-start-discussion">💬 Bắt đầu thảo luận với Alex →</button>
+          <p class="topic-confirm-hint">Sẽ mở Claude.ai trong tab mới · ngữ cảnh bài đã được nhúng sẵn</p>
+        </div>
+      `;
+
+      topicsData.forEach((t, i) => {
+        const btn = document.createElement('button');
+        btn.className = 'topic-btn';
+        btn.dataset.question = t.question;
+        btn.innerHTML = `<span class="topic-num">TOPIC ${String(i+1).padStart(2,'0')}</span>${t.question}`;
+        container.appendChild(btn);
+      });
+
+      document.querySelectorAll('.topic-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+          document.querySelectorAll('.topic-btn').forEach(b => b.classList.remove('selected'));
+          this.classList.add('selected');
+          selectedTopicQuestion = this.dataset.question;
+
+          this.insertAdjacentElement('afterend', confirmArea);
+          confirmArea.style.display = 'block';
+          document.getElementById('topic-confirm-text').textContent = selectedTopicQuestion;
+
+          setTimeout(() => confirmArea.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 50);
+        });
+      });
+
+      document.addEventListener('click', function(e) {
+        if (e.target.id === 'btn-start-discussion' && selectedTopicQuestion) {
+          openAlexChat(selectedTopicQuestion);
+        }
+      });
+    }
+
+    function openAlexChat(topicQuestion) {
+      const systemContext = `You are Alex, a warm encouraging English discussion tutor. Student: Vietnamese learner, level ${ARTICLE_LEVEL}. Context: ${ARTICLE_CONTEXT} Each reply: (1) respond to ideas 2-3 sentences, (2) correct errors gently format 💬 "X" → better: "Y" + brief Vietnamese hint, (3) praise something specific, (4) ask one follow-up question. Max 180 words. English only, corrections may use Vietnamese.`;
+      const openingMessage = `[Context for Alex — please keep this role]\n${systemContext}\n\n---\n\nI'd like to discuss this topic: ${topicQuestion}`;
+      window.open(`https://claude.ai/new?q=${encodeURIComponent(openingMessage)}`, '_blank');
+    }
+
+    function renderPhrases() {
+      const container = document.getElementById('phrases-grid');
+      phrasesData.forEach(phrase => {
+        const btn = document.createElement('button');
+        btn.className = 'phrase-pill';
+        btn.textContent = phrase + ' 📋';
+        btn.addEventListener('click', function() { 
+          navigator.clipboard.writeText(phrase).then(() => {
+            const original = btn.innerHTML;
+            btn.textContent = '✓ Copied!';
+            setTimeout(() => { btn.innerHTML = original; }, 1500);
+          });
+        });
+        container.appendChild(btn);
+      });
+    }
+
+    let selectedWritingPrompt = null;
+    function renderWriting() {
+      const container = document.getElementById('writing-prompts');
+      
+      const editorBlock = document.createElement('div');
+      editorBlock.className = 'writing-editor';
+      editorBlock.style.display = 'none';
+      editorBlock.innerHTML = `
+        <div class="editor-header">
+          <span class="editor-label">Bài viết của bạn</span>
+          <span class="word-counter" id="word-counter">0 từ</span>
+        </div>
+        <div class="toolbar" id="writing-toolbar"></div>
+        <textarea id="writing-textarea" placeholder="Bắt đầu viết..."></textarea>
+        <button class="submit-writing" id="submit-writing">🚀 Nhận AI Feedback trên Claude.ai →</button>
+        <div id="feedback-display"></div>
+      `;
+
+      writingPromptsData.forEach((p, i) => {
+        const card = document.createElement('div');
+        card.className = 'writing-prompt-card';
+        card.dataset.idx = i;
+        card.innerHTML = `
+          <div class="wp-meta">${p.type} · ${p.target}</div>
+          <div class="wp-en">${p.en}</div>
+          <div class="wp-vi">${p.vi}</div>
+        `;
+        card.addEventListener('click', function() {
+          document.querySelectorAll('.writing-prompt-card').forEach(c => c.classList.remove('selected'));
+          this.classList.add('selected');
+          selectedWritingPrompt = i;
+
+          this.insertAdjacentElement('afterend', editorBlock);
+          editorBlock.style.display = 'block';
+
+          setTimeout(() => editorBlock.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 50);
+        });
+        container.appendChild(card);
+      });
+
+      const toolbar = editorBlock.querySelector('#writing-toolbar');
+      ["On one hand,", "Furthermore,", "Consequently,", "In conclusion,"].forEach(phrase => {
+        const btn = document.createElement('button');
+        btn.className = 'toolbar-phrase';
+        btn.textContent = phrase;
+        btn.addEventListener('click', function() {
+          const ta = editorBlock.querySelector('#writing-textarea');
+          const pos = ta.selectionStart;
+          ta.value = ta.value.slice(0, pos) + phrase + ' ' + ta.value.slice(pos);
+          ta.focus();
+          updateWordCount(ta.value);
+        });
+        toolbar.appendChild(btn);
+      });
+
+      const ta = editorBlock.querySelector('#writing-textarea');
+      ta.addEventListener('input', () => updateWordCount(ta.value));
+      
+      editorBlock.querySelector('#submit-writing').addEventListener('click', function() {
+        const essay = ta.value.trim();
+        if (!essay || essay.length < 30) {
+          alert('Vui lòng viết ít nhất vài câu (khoảng 30 ký tự) trước!');
+          return;
+        }
+
+        const promptText = writingPromptsData[selectedWritingPrompt].en;
+        const level = writingPromptsData[selectedWritingPrompt].level;
+        
+        const feedbackPrompt = `You are an expert English writing tutor for Vietnamese learners (level ${level}). The student just read this article: ${ARTICLE_CONTEXT}\n\nWriting prompt they were given:\n"${promptText}"\n\nHere is the student's essay:\n---\n${essay}\n---\n\nPlease give structured feedback in this exact format:\n\n📊 SCORES (out of 10)\n• Content: X/10\n• Vocabulary: X/10\n• Grammar: X/10\n• Structure: X/10\n• Overall: X/10\n\n✅ STRENGTHS\nQuote one specific sentence from the essay you liked, then explain why it works well.\n\n🔧 GRAMMAR FIXES (up to 3)\nFor each: ❌ [original] → ✅ [corrected]\n📝 Giải thích ngắn bằng tiếng Việt\n\n💡 VOCABULARY UPGRADES (2–3 suggestions)\n[basic word used] → [stronger alternative] — example sentence using the upgrade\n\n🏗️ STRUCTURE COMMENT\nOne paragraph on how well the essay is organized and how to improve it.\n\n💬 ENCOURAGEMENT\nEnd with one warm, specific sentence of encouragement in English.`;
+
+        window.open(`https://claude.ai/new?q=${encodeURIComponent(feedbackPrompt)}`, '_blank');
+
+        const div = document.getElementById('feedback-display');
+        div.style.display = 'block';
+        div.innerHTML = `
+          <div style="text-align:center;padding:1.5rem;background:var(--bg-alt);border:1px solid var(--border);border-radius:6px;margin-top:0.8rem;">
+            <div style="font-size:2rem;margin-bottom:0.8rem;">🚀</div>
+            <div style="font-family:'Space Mono',monospace;font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-light);margin-bottom:0.5rem;">Đã mở Claude.ai trong tab mới</div>
+            <p style="font-size:0.9rem;color:var(--text);line-height:1.6;">Bài viết của bạn đã được nhúng sẵn vào prompt.<br>Claude sẽ cho feedback ngay — chuyển sang tab mới để xem! 👆</p>
+          </div>
+        `;
+      });
+    }
+
+    function updateWordCount(text) {
+      const count = text.trim() === '' ? 0 : text.trim().split(/\s+/).length;
+      document.getElementById('word-counter').textContent = `${count} từ`;
+    }
+
+    function renderShadowing() {
+      const container = document.getElementById('shadowing-container');
+      shadowingData.forEach((item, i) => {
+        let tagsHtml = item.tags.map(t => `<span class="s-tag">${t}</span>`).join('');
+        container.innerHTML += `
+          <div class="shadowing-card">
+            <div class="s-tags">${tagsHtml}</div>
+            <div class="s-sentence">${item.sentence}</div>
+            <div class="s-vi">${item.vi}</div>
+            <div class="s-notes">💡 ${item.notes}</div>
+            <button class="btn-ipa" onclick="document.getElementById('ipa-${i}').style.display = document.getElementById('ipa-${i}').style.display === 'block' ? 'none' : 'block'">Show/Hide IPA</button>
+            <div class="s-ipa-text" id="ipa-${i}">${item.ipa}</div>
+          </div>
+        `;
+      });
+    }
+
+    // FLASHCARD LOGIC
+    let fcCurrent = 0;
+    let fcWords = [...vocabData];
+
+    function updateFlashcard() {
+      const v = fcWords[fcCurrent];
+      document.getElementById('fc-word').textContent = v.word;
+      document.getElementById('fc-ipa').textContent = v.ipa;
+      document.getElementById('fc-meaning').textContent = v.vi;
+      document.getElementById('fc-example').textContent = `"${v.ex}"`;
+      document.getElementById('fc-inner').classList.remove('is-flipped');
+      document.getElementById('fc-status').style.display = 'none';
+    }
+
+    document.getElementById('fc-inner').addEventListener('click', function() {
+      this.classList.toggle('is-flipped');
+      if(this.classList.contains('is-flipped')) {
+        document.getElementById('fc-status').style.display = 'flex';
+      } else {
+        document.getElementById('fc-status').style.display = 'none';
+      }
+    });
+
+    document.getElementById('btn-fc-prev').addEventListener('click', () => {
+      fcCurrent = (fcCurrent - 1 + fcWords.length) % fcWords.length;
+      updateFlashcard();
+    });
+    
+    document.getElementById('btn-fc-next').addEventListener('click', () => {
+      fcCurrent = (fcCurrent + 1) % fcWords.length;
+      updateFlashcard();
+    });
+    
+    document.getElementById('btn-fc-shuffle').addEventListener('click', () => {
+      fcWords.sort(() => Math.random() - 0.5);
+      fcCurrent = 0;
+      updateFlashcard();
+    });
+
+    // INIT SCROLL & NAV VISIBILITY (v14 logic)
+    (function initNav() {
+      const nav    = document.getElementById('tabs-nav');
+      const hero   = document.getElementById('hero-bg');
+      const spacer = document.getElementById('nav-spacer');
+      const inner  = document.getElementById('one-minute-inner');
+
+      if (!nav || !hero || !spacer || !inner) return;
+
+      function syncNavVisibility() {
+        const innerRect = inner.getBoundingClientRect();
+        const navH      = nav.offsetHeight;
+        const shouldHide = (innerRect.bottom > window.innerHeight - navH * 1.5);
+
+        if (shouldHide) {
+          nav.classList.add('vi-hidden');
+        } else {
+          nav.classList.remove('vi-hidden');
+        }
+      }
+
+      function onScroll() {
+        const heroBottom = hero.getBoundingClientRect().bottom;
+        const navH       = nav.offsetHeight;
+
+        if (heroBottom <= navH) {
+          if (!nav.classList.contains('is-fixed')) {
+            nav.classList.add('is-fixed');
+            spacer.style.display = 'block';
+          }
+        } else {
+          if (nav.classList.contains('is-fixed')) {
+            nav.classList.remove('is-fixed');
+            spacer.style.display = 'none';
+          }
+        }
+        syncNavVisibility(); 
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', () => requestAnimationFrame(syncNavVisibility), { passive: true });
+      onScroll();
+
+      // TOGGLE TIẾNG VIỆT
+      const btn    = document.getElementById('toggle-vi-btn');
+      const viText = document.getElementById('one-minute-vi');
+      
       viText.style.display = 'none';
       inner.classList.remove('vi-open');
-      btn.textContent = 'Xem bản dịch tiếng Việt ▾';
-    } else {
-      viText.style.display = 'block';
-      inner.classList.add('vi-open');
-      btn.textContent = 'Ẩn bản dịch tiếng Việt ▴';
-    }
-    requestAnimationFrame(syncNavVisibility);
-  });
-})();
 
-// ═══ RENDER VOCAB ═══
-(function renderVocab() {
-  const grid = document.getElementById('vocab-grid');
-  vocabData.forEach(v => {
-    const card = document.createElement('div');
-    card.className = 'vocab-card';
-    card.innerHTML = `
-      <div class="vocab-word">${v.word}</div>
-      <div class="vocab-ipa">${v.ipa}</div>
-      <div class="vocab-pos">${v.pos}</div>
-      <div class="vocab-meaning">${v.meaning}</div>
-      <div class="vocab-example">${v.example}</div>
-    `;
-    grid.appendChild(card);
-  });
-})();
+      btn.addEventListener('click', function () {
+        const isOpen = viText.style.display !== 'none';
+        if (isOpen) {
+          viText.style.display = 'none';
+          inner.classList.remove('vi-open');
+          btn.textContent = 'Xem bản dịch tiếng Việt ▾';
+        } else {
+          viText.style.display = 'block';
+          inner.classList.add('vi-open');
+          btn.textContent = 'Ẩn bản dịch tiếng Việt ▴';
+        }
+        requestAnimationFrame(syncNavVisibility);
+      });
+    })();
 
-// ═══ RENDER GRAMMAR ═══
-(function renderGrammar() {
-  const container = document.getElementById('grammar-blocks');
-  grammarData.forEach(g => {
-    const block = document.createElement('div');
-    block.className = 'grammar-block';
-    block.innerHTML = `
-      <div class="grammar-title">${g.title}</div>
-      <div class="grammar-formula">${g.formula}</div>
-      <div class="grammar-example">${g.example}</div>
-      <div class="grammar-note">${g.note}</div>
-    `;
-    container.appendChild(block);
-  });
-})();
-
-// ═══ RENDER EXERCISES ═══
-(function renderExercises() {
-  const container = document.getElementById('exercise-blocks');
-  exerciseData.forEach((ex, idx) => {
-    const block = document.createElement('div');
-    block.className = 'exercise-block';
-    const optionsHTML = ex.options.map((opt, i) => `
-      <label><input type="radio" name="ex${idx}" value="${i}"> ${opt}</label>
-    `).join('');
-    block.innerHTML = `
-      <div class="exercise-num">Exercise ${idx + 1} · ${ex.type}</div>
-      <div class="exercise-q">${ex.q}</div>
-      <div class="options">${optionsHTML}</div>
-      ${ex.correct >= 0 ? `<button class="check-btn" data-idx="${idx}">Kiểm tra</button>` : '<p style="font-size:0.88rem;color:var(--text-light);margin-top:0.5rem;font-style:italic;">Chọn câu bắt đầu bạn thích nhất và dùng để nói về chủ đề của bạn.</p>'}
-      <div class="feedback-msg" id="fb-${idx}"></div>
-    `;
-    container.appendChild(block);
-  });
-
-  document.querySelectorAll('.check-btn').forEach(btn => {
-    btn.addEventListener('click', function () {
-      const i = parseInt(this.dataset.idx);
-      const ex = exerciseData[i];
-      const selected = document.querySelector(`input[name="ex${i}"]:checked`);
-      const fb = document.getElementById(`fb-${i}`);
-      if (!selected) { fb.style.display = 'block'; fb.className = 'feedback-msg wrong'; fb.textContent = 'Hãy chọn một đáp án!'; return; }
-      if (parseInt(selected.value) === ex.correct) {
-        fb.className = 'feedback-msg correct';
-        fb.innerHTML = `✅ Đúng! ${ex.explanation}`;
-      } else {
-        fb.className = 'feedback-msg wrong';
-        fb.innerHTML = `❌ Chưa đúng. ${ex.explanation}`;
-      }
-      fb.style.display = 'block';
-    });
-  });
-})();
-
-// ═══ RENDER DISCUSSION ═══
-(function renderDiscussion() {
-  const container = document.getElementById('topic-btns');
-  let selectedTopicQuestion = null;
-
-  const confirmArea = document.createElement('div');
-  confirmArea.id = 'topic-confirm';
-  confirmArea.className = 'topic-confirm-area';
-  confirmArea.style.display = 'none';
-  const confirmInner = document.createElement('div');
-  confirmInner.className = 'topic-confirm-inner';
-  confirmInner.innerHTML = `
-    <p class="topic-confirm-label">Chủ đề đã chọn:</p>
-    <p id="topic-confirm-text" class="topic-confirm-question"></p>
-    <button id="btn-start-discussion" class="btn-start-discussion">💬 Bắt đầu thảo luận với Alex →</button>
-    <p class="topic-confirm-hint">Sẽ mở Claude.ai trong tab mới · ngữ cảnh bài đã được nhúng sẵn</p>
-  `;
-  confirmArea.appendChild(confirmInner);
-
-  topicsData.forEach((t, i) => {
-    const btn = document.createElement('button');
-    btn.className = 'topic-btn';
-    btn.dataset.question = t.question;
-    const num = document.createElement('span');
-    num.className = 'topic-num';
-    num.textContent = `TOPIC ${String(i + 1).padStart(2, '0')}`;
-    btn.appendChild(num);
-    btn.appendChild(document.createTextNode(t.question));
-    container.appendChild(btn);
-  });
-
-  document.querySelectorAll('.topic-btn').forEach(btn => {
-    btn.addEventListener('click', function () {
-      document.querySelectorAll('.topic-btn').forEach(b => b.classList.remove('selected'));
-      this.classList.add('selected');
-      selectedTopicQuestion = this.dataset.question;
-      this.insertAdjacentElement('afterend', confirmArea);
-      confirmArea.style.display = 'block';
-      document.getElementById('topic-confirm-text').textContent = selectedTopicQuestion;
-      setTimeout(() => confirmArea.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 50);
-    });
-  });
-
-  document.addEventListener('click', function (e) {
-    if (e.target.id === 'btn-start-discussion' && selectedTopicQuestion) {
-      openAlexChat(selectedTopicQuestion);
-    }
-  });
-
-  const phraseGrid = document.getElementById('phrases-grid');
-  phrasesData.forEach(phrase => {
-    const btn = document.createElement('button');
-    btn.className = 'phrase-pill';
-    btn.textContent = phrase + ' 📋';
-    btn.addEventListener('click', function () {
-      navigator.clipboard.writeText(phrase).then(() => {
-        const orig = this.textContent;
-        this.textContent = '✓ Copied!';
-        setTimeout(() => { this.textContent = orig; }, 1500);
+    // TABS SWITCHING
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const idx = this.dataset.tab;
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+        this.classList.add('active');
+        document.getElementById(`tab-${idx}`).classList.add('active');
+        
+        // Cập nhật lại flashcard UI nếu mở tab 8
+        if(idx === '8') updateFlashcard();
       });
     });
-    phraseGrid.appendChild(btn);
-  });
-})();
 
-function openAlexChat(topicQuestion) {
-  const systemContext = `You are Alex, a warm encouraging English discussion tutor.
-Student: Vietnamese learner, level ${ARTICLE_LEVEL}.
-Context: ${ARTICLE_CONTEXT}
-Each reply: (1) respond to ideas 2-3 sentences, (2) correct errors gently format 💬 "X" → better: "Y" + brief Vietnamese hint, (3) praise something specific, (4) ask one follow-up question.
-Max 180 words. English only, corrections may use Vietnamese.`;
-  const openingMessage = topicQuestion
-    ? `[Context for Alex — please keep this role]\n${systemContext}\n\n---\n\nI'd like to discuss this topic: ${topicQuestion}`
-    : `[Context for Alex — please keep this role]\n${systemContext}\n\n---\n\nHi Alex! I just finished reading the article. Can we talk about it?`;
-  window.open(`https://claude.ai/new?q=${encodeURIComponent(openingMessage)}`, '_blank');
-}
+    // INIT ALL
+    window.onload = () => {
+      renderBilingual();
+      renderVocab();
+      renderQuiz();
+      renderTopics();
+      renderPhrases();
+      renderWriting();
+      renderShadowing();
+    };
 
-// ═══ RENDER WRITING ═══
-(function renderWriting() {
-  const container = document.getElementById('writing-prompts');
-  let selectedWritingPromptIdx = null;
-
-  const editorBlock = document.createElement('div');
-  editorBlock.className = 'writing-editor';
-  editorBlock.style.display = 'none';
-  editorBlock.innerHTML = `
-    <div class="editor-header">
-      <span class="editor-label">Bài viết của bạn</span>
-      <span class="word-counter" id="word-counter">0 từ</span>
-    </div>
-    <div class="toolbar" id="writing-toolbar"></div>
-    <textarea id="writing-textarea" placeholder="Bắt đầu viết..."></textarea>
-    <button class="submit-writing" id="submit-writing">🚀 Nhận AI Feedback trên Claude.ai →</button>
-    <div id="feedback-display"></div>
-  `;
-
-  writingPromptsData.forEach((p, i) => {
-    const card = document.createElement('div');
-    card.className = 'writing-prompt-card';
-    card.innerHTML = `
-      <div class="wp-meta">${p.type} · ${p.target}</div>
-      <div class="wp-en">${p.en}</div>
-      <div class="wp-vi">${p.vi}</div>
-    `;
-    card.addEventListener('click', function () {
-      document.querySelectorAll('.writing-prompt-card').forEach(c => c.classList.remove('selected'));
-      this.classList.add('selected');
-      selectedWritingPromptIdx = i;
-      this.insertAdjacentElement('afterend', editorBlock);
-      editorBlock.style.display = 'block';
-      setTimeout(() => editorBlock.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 50);
-    });
-    container.appendChild(card);
-  });
-
-  const toolbar = editorBlock.querySelector('#writing-toolbar');
-  toolbarPhrases.forEach(phrase => {
-    const btn = document.createElement('button');
-    btn.className = 'toolbar-phrase';
-    btn.textContent = phrase;
-    btn.addEventListener('click', function () {
-      const ta = editorBlock.querySelector('#writing-textarea');
-      const pos = ta.selectionStart;
-      ta.value = ta.value.slice(0, pos) + phrase + ' ' + ta.value.slice(pos);
-      ta.focus();
-      updateWordCount();
-    });
-    toolbar.appendChild(btn);
-  });
-
-  editorBlock.querySelector('#writing-textarea').addEventListener('input', updateWordCount);
-  editorBlock.querySelector('#submit-writing').addEventListener('click', submitWriting);
-
-  function updateWordCount() {
-    const ta = editorBlock.querySelector('#writing-textarea');
-    const words = ta.value.trim() ? ta.value.trim().split(/\s+/).length : 0;
-    editorBlock.querySelector('#word-counter').textContent = `${words} từ`;
-  }
-
-  function submitWriting() {
-    const essay = document.getElementById('writing-textarea').value.trim();
-    if (!essay || essay.length < 30) {
-      alert('Vui lòng viết ít nhất vài câu trước!'); return;
-    }
-    const promptText = selectedWritingPromptIdx !== null ? writingPromptsData[selectedWritingPromptIdx].en : "Write your thoughts about the article.";
-    const level = selectedWritingPromptIdx !== null ? writingPromptsData[selectedWritingPromptIdx].level : ARTICLE_LEVEL;
-    const feedbackPrompt =
-`You are an expert English writing tutor for Vietnamese learners (level ${level}).
-
-The student just read this article: ${ARTICLE_CONTEXT}
-
-Writing prompt they were given:
-"${promptText}"
-
-Here is the student's essay:
----
-${essay}
----
-
-Please give structured feedback in this exact format:
-
-📊 SCORES (out of 10)
-• Content: X/10
-• Vocabulary: X/10
-• Grammar: X/10
-• Structure: X/10
-• Overall: X/10
-
-✅ STRENGTHS
-Quote one specific sentence from the essay you liked, then explain why it works well.
-
-🔧 GRAMMAR FIXES (up to 3)
-For each: ❌ [original] → ✅ [corrected]
-📝 Giải thích ngắn bằng tiếng Việt
-
-💡 VOCABULARY UPGRADES (2–3 suggestions)
-[basic word used] → [stronger alternative] — example sentence using the upgrade
-
-🏗️ STRUCTURE COMMENT
-One paragraph on how well the essay is organized and how to improve it.
-
-💬 ENCOURAGEMENT
-End with one warm, specific sentence of encouragement in English.`;
-
-    window.open(`https://claude.ai/new?q=${encodeURIComponent(feedbackPrompt)}`, '_blank');
-    const div = document.getElementById('feedback-display');
-    div.style.display = 'block';
-    div.innerHTML = `<div style="text-align:center;padding:1.5rem;background:var(--bg-alt);border:1px solid var(--border);border-radius:6px;margin-top:0.8rem;"><div style="font-size:2rem;margin-bottom:0.8rem;">🚀</div><div style="font-family:'Space Mono',monospace;font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-light);margin-bottom:0.5rem;">Đã mở Claude.ai trong tab mới</div><p style="font-size:0.9rem;color:var(--text);line-height:1.6;">Bài viết của bạn đã được nhúng sẵn vào prompt.<br>Claude sẽ cho feedback ngay — chuyển sang tab mới để xem! 👆</p><p style="font-size:0.78rem;color:var(--text-light);margin-top:0.8rem;font-style:italic;">Nếu tab không mở được, hãy cho phép popup từ file này trong trình duyệt.</p></div>`;
-  }
-})();
-
-// ═══ RENDER SHADOWING ═══
-(function renderShadowing() {
-  const container = document.getElementById('shadow-cards');
-  shadowData.forEach((s, i) => {
-    const card = document.createElement('div');
-    card.className = 'shadow-card';
-    const tagsHTML = s.tags.map(t => `<span class="shadow-tag">${t}</span>`).join('');
-    const chunksHTML = s.chunks.map(c => `<span class="chunk ${c.cls}">${c.text}</span>`).join('');
-    card.innerHTML = `
-      <div class="shadow-tags">${tagsHTML}</div>
-      <div class="shadow-sentence">${chunksHTML}</div>
-      <div class="shadow-vi">${s.vi}</div>
-      <div class="shadow-notes">${s.notes}</div>
-      <button class="btn-ipa" data-idx="${i}">Show IPA ▾</button>
-      <div class="ipa-block" id="ipa-${i}">${s.ipa}</div>
-    `;
-    container.appendChild(card);
-  });
-
-  document.querySelectorAll('.btn-ipa').forEach(btn => {
-    btn.addEventListener('click', function () {
-      const block = document.getElementById(`ipa-${this.dataset.idx}`);
-      const showing = block.style.display === 'block';
-      block.style.display = showing ? 'none' : 'block';
-      this.textContent = showing ? 'Show IPA ▾' : 'Hide IPA ▴';
-    });
-  });
-})();
-
-// ═══ FLASHCARD ═══
-(function initFlashcard() {
-  let deck = [...vocabData];
-  let current = 0;
-  let mode = 'en-vi'; // 'en-vi' or 'vi-en'
-  let known = 0;
-  let flipped = false;
-
-  const card = document.getElementById('fc-card');
-  const front = document.getElementById('fc-front');
-  const back = document.getElementById('fc-back');
-  const progress = document.getElementById('fc-progress');
-  const stats = document.getElementById('fc-stats');
-
-  function renderCard() {
-    flipped = false;
-    card.classList.remove('flipped');
-    const v = deck[current];
-    if (mode === 'en-vi') {
-      front.innerHTML = `<div class="fc-word">${v.word}</div><div class="fc-ipa">${v.ipa}</div><div class="fc-pos">${v.pos}</div><div class="fc-hint">Click để xem nghĩa</div>`;
-      back.innerHTML = `<div class="fc-meaning">${v.meaning}</div><div class="fc-example">${v.example}</div>`;
-    } else {
-      front.innerHTML = `<div class="fc-word" style="font-size:1.3rem">${v.meaning}</div><div class="fc-hint">Click để xem từ tiếng Anh</div>`;
-      back.innerHTML = `<div class="fc-word">${v.word}</div><div class="fc-ipa">${v.ipa}</div><div class="fc-example">${v.example}</div>`;
-    }
-    progress.textContent = `Card ${current + 1} / ${deck.length}`;
-    stats.textContent = `${known} / ${deck.length} thuộc`;
-  }
-
-  card.addEventListener('click', function () {
-    flipped = !flipped;
-    this.classList.toggle('flipped', flipped);
-  });
-
-  document.getElementById('fc-prev').addEventListener('click', () => { current = (current - 1 + deck.length) % deck.length; renderCard(); });
-  document.getElementById('fc-next').addEventListener('click', () => { current = (current + 1) % deck.length; renderCard(); });
-  document.getElementById('fc-know').addEventListener('click', () => { known = Math.min(known + 1, deck.length); current = (current + 1) % deck.length; renderCard(); });
-  document.getElementById('fc-dont').addEventListener('click', () => { current = (current + 1) % deck.length; renderCard(); });
-  document.getElementById('btn-shuffle').addEventListener('click', () => {
-    for (let i = deck.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [deck[i], deck[j]] = [deck[j], deck[i]]; }
-    current = 0; known = 0; renderCard();
-  });
-  document.getElementById('btn-reset').addEventListener('click', () => { deck = [...vocabData]; current = 0; known = 0; renderCard(); });
-  document.getElementById('btn-en-vi').addEventListener('click', function () {
-    mode = 'en-vi'; this.classList.add('active'); document.getElementById('btn-vi-en').classList.remove('active'); current = 0; known = 0; renderCard();
-  });
-  document.getElementById('btn-vi-en').addEventListener('click', function () {
-    mode = 'vi-en'; this.classList.add('active'); document.getElementById('btn-en-vi').classList.remove('active'); current = 0; known = 0; renderCard();
-  });
-
-  renderCard();
-})();
-</script>
+  </script>
 </body>
 </html>
