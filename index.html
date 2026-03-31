@@ -3,21 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mars College · English Learning</title>
+<title>BBC English Lesson — Got You & Describing Your Job</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
 :root {
-  --accent: #b5541c;
-  --accent-light: #f5e6d8;
-  --bg: #faf6f0;
-  --bg-alt: #f0e8d8;
-  --text: #2e1f0a;
+  --accent: #d4854e;
+  --accent-light: #f5e5d5;
+  --bg: #faf7f3;
+  --bg-alt: #f2e8da;
+  --text: #2e1a08;
   --text-light: #8a6040;
-  --border: #dcc8a8;
+  --border: #e0c9b0;
 }
+
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+
 body {
   font-family: 'Source Serif 4', serif;
   background: var(--bg);
@@ -26,35 +28,34 @@ body {
   line-height: 1.7;
 }
 
-/* ===== HERO ===== */
+/* ══════════════════════════════════════════
+   HERO
+══════════════════════════════════════════ */
 .hero-bg {
-  background-image: url('https://images.unsplash.com/photo-1509316785289-025f5b846b35?auto=format&fit=crop&w=1600&q=80');
+  background-image: url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1600&q=80');
   background-size: cover;
   background-position: center;
 }
 .hero-overlay {
   background: linear-gradient(
     to bottom,
-    rgba(45,20,5,0.50) 0%,
-    rgba(45,20,5,0.40) 40%,
-    rgba(45,20,5,0.60) 80%,
-    rgba(45,20,5,0.72) 100%
+    rgba(40,20,5,0.52) 0%,
+    rgba(40,20,5,0.42) 40%,
+    rgba(40,20,5,0.62) 80%,
+    rgba(40,20,5,0.74) 100%
   );
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
-.masthead {
-  padding: 3rem 1.5rem 2rem;
-}
-.masthead-inner {
-  max-width: 900px;
-  margin: 0 auto;
-}
+
+.masthead { padding: 3rem 1.5rem 2rem; }
+.masthead-inner { max-width: 900px; margin: 0 auto; }
+
 .meta-tag {
   font-family: 'Space Mono', monospace;
-  font-size: 0.7rem;
-  letter-spacing: 0.1em;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: rgba(255,255,255,0.65);
   margin-bottom: 1rem;
@@ -62,32 +63,20 @@ body {
 .article-title {
   font-family: 'Playfair Display', serif;
   font-size: clamp(1.8rem, 5vw, 3.2rem);
+  font-weight: 700;
   color: #fff;
   line-height: 1.2;
   margin-bottom: 1rem;
-  font-weight: 900;
 }
 .subtitle {
   font-family: 'Source Serif 4', serif;
-  font-style: italic;
-  color: rgba(255,255,255,0.82);
   font-size: 1.05rem;
-  line-height: 1.55;
-}
-.level-badge {
-  display: inline-block;
-  font-family: 'Space Mono', monospace;
-  font-size: 0.65rem;
-  letter-spacing: 0.08em;
-  background: rgba(181,84,28,0.75);
-  color: #fff;
-  border-radius: 3px;
-  padding: 0.15rem 0.5rem;
-  margin-left: 0.5rem;
-  vertical-align: middle;
+  color: rgba(255,255,255,0.82);
+  max-width: 680px;
+  line-height: 1.6;
 }
 
-/* ===== 1-MINUTE SUMMARY ===== */
+/* 1-MINUTE SUMMARY */
 .one-minute { padding: 0 1.5rem 3rem; }
 .one-minute-inner {
   max-width: 900px;
@@ -98,7 +87,6 @@ body {
   padding: 1.5rem 2rem;
   transition: background 0.3s ease, border-color 0.3s ease;
   overflow: hidden;
-  box-sizing: border-box;
 }
 .one-minute-inner.vi-open {
   background: rgba(255,255,255,0.22);
@@ -107,46 +95,46 @@ body {
 .one-minute-label {
   font-family: 'Space Mono', monospace;
   font-size: 0.65rem;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(255,220,170,0.85);
-  margin-bottom: 0.8rem;
+  color: rgba(255,255,255,0.60);
+  margin-bottom: 0.75rem;
 }
 .one-minute-text {
   color: rgba(255,255,255,0.92);
   font-size: 0.97rem;
   line-height: 1.75;
+  margin-bottom: 1rem;
 }
 .toggle-vi {
-  display: inline-block;
-  margin-top: 0.9rem;
   font-family: 'Space Mono', monospace;
-  font-size: 0.65rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: rgba(255,220,170,0.9);
-  background: none;
-  border: 1px solid rgba(255,220,170,0.4);
-  border-radius: 3px;
-  padding: 0.3rem 0.8rem;
+  font-size: 0.67rem;
+  letter-spacing: 0.06em;
+  background: rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.80);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 4px;
+  padding: 0.45rem 1rem;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: background 0.2s;
 }
-.toggle-vi:hover { background: rgba(255,220,170,0.12); }
+.toggle-vi:hover { background: rgba(255,255,255,0.22); }
 .one-minute-vi {
   display: none;
-  color: rgba(255,255,255,0.9);
+  color: rgba(255,255,255,0.88);
   font-family: 'Source Serif 4', serif;
-  font-size: 0.95rem;
-  line-height: 1.7;
-  margin-top: 0.75rem;
-  padding-top: 0.75rem;
-  border-top: 1px solid rgba(255,255,255,0.2);
+  font-size: 0.93rem;
+  line-height: 1.75;
+  margin-top: 0.8rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid rgba(255,255,255,0.20);
   width: 100%;
   word-break: break-word;
 }
 
-/* ===== TABS NAV ===== */
+/* ══════════════════════════════════════════
+   NAV
+══════════════════════════════════════════ */
 .tabs-nav {
   position: sticky;
   bottom: 0;
@@ -167,10 +155,10 @@ body {
   right: 0;
   width: 100%;
   bottom: auto;
-  background: rgba(45,20,5,0.96);
+  background: rgba(40,20,5,0.96);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.28);
 }
 .tabs-nav.vi-hidden {
   opacity: 0;
@@ -178,17 +166,16 @@ body {
   visibility: hidden;
   transition: opacity 0.2s ease, visibility 0.2s ease;
 }
-.nav-spacer { height: 44px; }
 .tabs-nav-inner {
   max-width: 900px;
   margin: 0 auto;
   display: flex;
-  padding: 0 1rem;
+  padding: 0 1.5rem;
 }
 .tab-btn {
   font-family: 'Space Mono', monospace;
-  font-size: 0.63rem;
-  letter-spacing: 0.07em;
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: rgba(255,255,255,0.65);
   background: none;
@@ -200,760 +187,793 @@ body {
   transition: all 0.2s;
 }
 .tab-btn:hover { color: rgba(255,255,255,0.9); }
-.tab-btn.active { color: #fff; border-bottom-color: rgba(255,220,150,0.85); }
+.tab-btn.active { color: #fff; border-bottom-color: rgba(255,255,255,0.80); }
 
-/* ===== TAB WRAP ===== */
-.tab-wrap {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 2.5rem 1.5rem 4rem;
-}
+.nav-spacer { height: 44px; }
+
+/* ══════════════════════════════════════════
+   TAB BODY
+══════════════════════════════════════════ */
+.tab-wrap { max-width: 900px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
 .tab-content { display: none; }
 .tab-content.active { display: block; }
+
 .section-title {
   font-family: 'Playfair Display', serif;
   font-size: 1.55rem;
   font-weight: 700;
-  color: var(--accent);
-  margin-bottom: 0.4rem;
-  padding-bottom: 0.6rem;
-  border-bottom: 2px solid var(--border);
+  color: var(--text);
+  margin-bottom: 0.3rem;
 }
 .section-intro {
-  font-size: 0.88rem;
+  font-size: 0.9rem;
   color: var(--text-light);
   font-family: 'Space Mono', monospace;
-  margin-bottom: 1.8rem;
-  letter-spacing: 0.04em;
+  margin-bottom: 2rem;
 }
 
-/* ===== TAB 1 · BILINGUAL ===== */
+/* ── BILINGUAL ── */
 .bilingual-block {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
-  margin-bottom: 1.5rem;
-  border-bottom: 1px solid var(--border);
-  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
-.bilingual-block:last-child { border-bottom: none; }
-.bi-en {
-  font-size: 0.97rem;
-  line-height: 1.75;
-  color: var(--text);
-}
-.bi-vi {
-  font-size: 0.92rem;
-  line-height: 1.75;
+@media(max-width:640px){ .bilingual-block { grid-template-columns: 1fr; } }
+
+.bili-col-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   color: var(--text-light);
-  font-style: italic;
-  border-left: 3px solid var(--accent-light);
-  padding-left: 1rem;
+  margin-bottom: 0.8rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
 }
-@media (max-width: 640px) {
-  .bilingual-block { grid-template-columns: 1fr; }
-  .bi-vi { border-left: none; border-top: 2px solid var(--accent-light); padding-left: 0; padding-top: 0.8rem; }
+.bili-speaker {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  margin: 1rem 0 0.2rem;
+  text-transform: uppercase;
+}
+.bili-speaker:first-child { margin-top: 0; }
+.bili-line { font-size: 0.97rem; line-height: 1.7; color: var(--text); }
+.bili-line-vi { font-size: 0.93rem; line-height: 1.7; color: var(--text-light); font-style: italic; }
+
+.ep-divider {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 2rem 0 1.2rem;
+  padding-left: 0.8rem;
+  border-left: 3px solid var(--accent);
 }
 
-/* ===== TAB 2 · VOCAB ===== */
+/* ── VOCAB ── */
 .vocab-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 1rem;
+  margin-top: 1.5rem;
 }
 .vocab-card {
   background: var(--bg-alt);
   border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
   border-radius: 6px;
   padding: 1rem 1.2rem;
-  border-left: 4px solid var(--accent);
 }
 .vocab-word {
   font-family: 'Playfair Display', serif;
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   font-weight: 700;
-  color: var(--accent);
+  color: var(--text);
 }
 .vocab-ipa {
   font-family: 'Space Mono', monospace;
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   color: var(--text-light);
-  margin: 0.15rem 0 0.5rem;
+  margin-bottom: 0.4rem;
 }
 .vocab-pos {
   display: inline-block;
   font-family: 'Space Mono', monospace;
   font-size: 0.58rem;
-  letter-spacing: 0.06em;
   text-transform: uppercase;
+  letter-spacing: 0.08em;
   background: var(--accent-light);
   color: var(--accent);
   border-radius: 3px;
-  padding: 0.1rem 0.4rem;
+  padding: 0.1rem 0.5rem;
   margin-bottom: 0.5rem;
 }
-.vocab-vi {
-  font-size: 0.9rem;
-  color: var(--text);
-  font-weight: 600;
-  margin-bottom: 0.35rem;
-}
-.vocab-en {
-  font-size: 0.82rem;
-  color: var(--text-light);
-  line-height: 1.5;
-}
-.vocab-example {
-  font-size: 0.82rem;
-  color: var(--text-light);
-  font-style: italic;
-  margin-top: 0.45rem;
-  border-top: 1px solid var(--border);
-  padding-top: 0.45rem;
-  line-height: 1.5;
-}
+.vocab-meaning { font-size: 0.9rem; color: var(--text); margin-bottom: 0.3rem; }
+.vocab-ex { font-size: 0.85rem; color: var(--text-light); font-style: italic; }
 
-/* ===== TAB 3 · GRAMMAR ===== */
+/* ── GRAMMAR ── */
 .grammar-block {
   background: var(--bg-alt);
   border: 1px solid var(--border);
-  border-radius: 6px;
+  border-radius: 8px;
   padding: 1.4rem 1.6rem;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.4rem;
 }
-.grammar-label {
-  font-family: 'Space Mono', monospace;
-  font-size: 0.62rem;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 0.5rem;
-}
-.grammar-title {
+.grammar-rule {
   font-family: 'Playfair Display', serif;
   font-size: 1.1rem;
   font-weight: 700;
   color: var(--text);
-  margin-bottom: 0.7rem;
+  margin-bottom: 0.5rem;
 }
-.grammar-explain {
-  font-size: 0.9rem;
-  color: var(--text);
-  line-height: 1.7;
-  margin-bottom: 0.8rem;
-}
-.grammar-example {
-  background: #fff;
-  border-left: 3px solid var(--accent);
-  padding: 0.6rem 1rem;
-  font-size: 0.9rem;
-  line-height: 1.6;
-  color: var(--text);
-  border-radius: 0 4px 4px 0;
-  margin-bottom: 0.4rem;
-}
-.grammar-example em { color: var(--accent); font-style: normal; font-weight: 600; }
-.grammar-note {
-  font-size: 0.82rem;
-  color: var(--text-light);
-  font-style: italic;
-  margin-top: 0.5rem;
-}
-
-/* ===== QUIZ ===== */
-.quiz-item {
-  background: var(--bg-alt);
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 1.2rem 1.4rem;
-  margin-bottom: 1rem;
-}
-.quiz-q {
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--text);
-  margin-bottom: 0.8rem;
-}
-.quiz-options { display: flex; flex-direction: column; gap: 0.5rem; }
-.quiz-opt {
-  background: #fff;
-  border: 1px solid var(--border);
+.grammar-formula {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.78rem;
+  background: var(--accent-light);
+  color: var(--accent);
   border-radius: 4px;
-  padding: 0.5rem 0.9rem;
-  font-size: 0.88rem;
-  cursor: pointer;
-  text-align: left;
-  color: var(--text);
-  transition: all 0.2s;
+  padding: 0.4rem 0.9rem;
+  display: inline-block;
+  margin-bottom: 0.75rem;
 }
-.quiz-opt:hover { border-color: var(--accent); background: var(--accent-light); }
-.quiz-opt.correct { background: #d4edda; border-color: #28a745; color: #155724; }
-.quiz-opt.wrong { background: #f8d7da; border-color: #dc3545; color: #721c24; }
-.quiz-explanation {
-  display: none;
-  margin-top: 0.7rem;
-  font-size: 0.85rem;
-  color: var(--text-light);
-  border-top: 1px solid var(--border);
-  padding-top: 0.6rem;
-  font-style: italic;
-}
+.grammar-note { font-size: 0.92rem; color: var(--text); line-height: 1.7; margin-bottom: 0.5rem; }
+.grammar-ex { font-size: 0.88rem; color: var(--text-light); font-style: italic; margin-bottom: 0.25rem; }
 
-/* ===== DISCUSSION ===== */
-.discussion-list { display: flex; flex-direction: column; gap: 0.8rem; }
-.topic-card {
-  background: var(--bg-alt);
+/* ── EXERCISES ── */
+.exercise-block { margin-bottom: 2.2rem; }
+.exercise-q-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  margin-bottom: 0.6rem;
+}
+.exercise-q { font-size: 0.97rem; color: var(--text); margin-bottom: 1rem; line-height: 1.65; }
+.mc-options { display: flex; flex-direction: column; gap: 0.5rem; }
+.mc-btn {
+  font-family: 'Source Serif 4', serif;
+  font-size: 0.92rem;
+  text-align: left;
+  padding: 0.65rem 1rem;
   border: 1px solid var(--border);
   border-radius: 6px;
-  padding: 1rem 1.3rem;
+  background: var(--bg);
+  color: var(--text);
   cursor: pointer;
   transition: all 0.2s;
 }
-.topic-card:hover { border-color: var(--accent); background: var(--accent-light); }
-.topic-card.selected { border-color: var(--accent); background: var(--accent-light); }
+.mc-btn:hover { border-color: var(--accent); background: var(--accent-light); }
+.mc-btn.correct { background: #d4edda; border-color: #5cb85c; color: #1a3a1a; }
+.mc-btn.wrong { background: #f8d7da; border-color: #d9534f; color: #3a1a1a; }
+.mc-feedback {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.72rem;
+  margin-top: 0.5rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: 4px;
+  display: none;
+}
+.mc-feedback.show { display: block; }
+.mc-feedback.ok { background: #d4edda; color: #155724; }
+.mc-feedback.bad { background: #f8d7da; color: #721c24; }
+
+/* ── DISCUSSION ── */
+.topic-grid { display: flex; flex-direction: column; gap: 0.6rem; margin-top: 1.5rem; }
+.topic-btn {
+  font-family: 'Source Serif 4', serif;
+  font-size: 0.95rem;
+  text-align: left;
+  padding: 0.9rem 1.2rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.2s;
+  line-height: 1.55;
+}
+.topic-btn:hover { border-color: var(--accent); background: var(--accent-light); }
+.topic-btn.selected { border-color: var(--accent); background: var(--bg-alt); color: var(--accent); }
 .topic-num {
   font-family: 'Space Mono', monospace;
   font-size: 0.58rem;
+  letter-spacing: 0.1em;
+  color: var(--text-light);
+  display: block;
+  margin-bottom: 0.2rem;
+}
+.topic-confirm-area { margin: 0.5rem 0; animation: fadeSlide 0.2s ease; }
+.topic-confirm-inner {
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 6px 6px 0;
+  padding: 1rem 1.4rem;
+}
+.topic-confirm-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.62rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--text-light);
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.35rem;
 }
-.topic-en { font-size: 0.95rem; font-weight: 600; color: var(--text); margin-bottom: 0.2rem; }
-.topic-vi { font-size: 0.85rem; color: var(--text-light); font-style: italic; }
-.topic-confirm {
-  background: #fff;
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 1rem 1.3rem;
-  margin-top: 0.5rem;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  flex-wrap: wrap;
+.topic-confirm-question {
+  font-family: 'Source Serif 4', serif;
+  font-size: 0.92rem;
+  color: var(--text);
+  line-height: 1.5;
+  margin-bottom: 0.8rem;
+  font-style: italic;
 }
-.confirm-text { font-size: 0.88rem; color: var(--text); flex: 1; }
-.btn-discuss {
-  background: var(--accent);
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  padding: 0.5rem 1rem;
+.btn-start-discussion {
   font-family: 'Space Mono', monospace;
-  font-size: 0.68rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 0.6rem 1.3rem;
   cursor: pointer;
-  white-space: nowrap;
   transition: opacity 0.2s;
 }
-.btn-discuss:hover { opacity: 0.85; }
-.btn-freestyle {
-  background: none;
-  color: var(--accent);
-  border: 1px solid var(--accent);
-  border-radius: 4px;
-  padding: 0.5rem 1rem;
+.btn-start-discussion:hover { opacity: 0.85; }
+.topic-confirm-hint {
   font-family: 'Space Mono', monospace;
-  font-size: 0.68rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: all 0.2s;
-  margin-top: 1rem;
+  font-size: 0.6rem;
+  color: var(--text-light);
+  margin-top: 0.5rem;
 }
-.btn-freestyle:hover { background: var(--accent-light); }
 
-/* ===== WRITING ===== */
+/* ── WRITING ── */
+.writing-prompts { display: flex; flex-direction: column; gap: 0.8rem; margin-top: 1.5rem; }
 .writing-prompt-card {
-  background: var(--bg-alt);
+  padding: 1rem 1.2rem;
   border: 1px solid var(--border);
   border-radius: 6px;
-  padding: 1rem 1.3rem;
-  margin-bottom: 0.8rem;
+  background: var(--bg);
   cursor: pointer;
   transition: all 0.2s;
 }
-.writing-prompt-card:hover { border-color: var(--accent); }
-.writing-prompt-card.selected { border-color: var(--accent); background: var(--accent-light); }
+.writing-prompt-card:hover { border-color: var(--accent); background: var(--accent-light); }
+.writing-prompt-card.selected { border-color: var(--accent); background: var(--bg-alt); }
 .wp-meta {
   font-family: 'Space Mono', monospace;
   font-size: 0.6rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--text-light);
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.4rem;
 }
-.wp-en { font-size: 0.95rem; font-weight: 600; color: var(--text); margin-bottom: 0.2rem; }
-.wp-vi { font-size: 0.85rem; color: var(--text-light); font-style: italic; }
-.writing-editor {
-  background: #fff;
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 1.2rem 1.4rem;
-  margin-top: 0.6rem;
-  margin-bottom: 0.8rem;
+.wp-en { font-size: 0.97rem; color: var(--text); margin-bottom: 0.2rem; line-height: 1.55; }
+.wp-vi { font-size: 0.87rem; color: var(--text-light); font-style: italic; }
+
+.writing-editor { margin: 0.8rem 0; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+.editor-header {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 0.65rem 1rem;
+  background: var(--bg-alt);
+  border-bottom: 1px solid var(--border);
 }
-.editor-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.7rem; }
-.editor-label { font-family: 'Space Mono', monospace; font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-light); }
-.word-counter { font-family: 'Space Mono', monospace; font-size: 0.65rem; color: var(--accent); }
-.toolbar { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.7rem; }
+.editor-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-light);
+}
+.word-counter {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--accent);
+}
+.toolbar {
+  display: flex; flex-wrap: wrap; gap: 0.4rem;
+  padding: 0.6rem 0.8rem;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
 .toolbar-phrase {
+  font-family: 'Source Serif 4', serif;
+  font-size: 0.78rem;
+  padding: 0.25rem 0.7rem;
   background: var(--accent-light);
   color: var(--accent);
-  border: none;
-  border-radius: 3px;
-  padding: 0.25rem 0.6rem;
-  font-size: 0.78rem;
+  border: 1px solid var(--border);
+  border-radius: 20px;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: background 0.2s;
 }
-.toolbar-phrase:hover { background: var(--accent); color: #fff; }
+.toolbar-phrase:hover { background: var(--border); }
 #writing-textarea {
   width: 100%;
-  min-height: 160px;
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  padding: 0.8rem;
+  min-height: 180px;
+  padding: 1rem;
   font-family: 'Source Serif 4', serif;
   font-size: 0.95rem;
-  line-height: 1.7;
   color: var(--text);
-  resize: vertical;
+  border: none;
   background: var(--bg);
+  resize: vertical;
+  outline: none;
 }
-#writing-textarea:focus { outline: none; border-color: var(--accent); }
 .submit-writing {
   display: block;
-  width: 100%;
-  margin-top: 0.8rem;
-  background: var(--accent);
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  padding: 0.75rem;
+  width: calc(100% - 2rem);
+  margin: 0.8rem 1rem 1rem;
   font-family: 'Space Mono', monospace;
   font-size: 0.72rem;
   letter-spacing: 0.06em;
-  text-transform: uppercase;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 0.75rem 1.5rem;
   cursor: pointer;
   transition: opacity 0.2s;
 }
-.submit-writing:hover { opacity: 0.88; }
+.submit-writing:hover { opacity: 0.85; }
 
-/* ===== PHRASES ===== */
-.phrases-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.7rem;
-}
-.phrase-pill {
-  background: var(--bg-alt);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 0.45rem 1rem;
-  font-size: 0.88rem;
-  cursor: pointer;
-  transition: all 0.2s;
-  color: var(--text);
-}
-.phrase-pill:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
-
-/* ===== SHADOWING ===== */
+/* ── SHADOWING ── */
 .shadow-card {
   background: var(--bg-alt);
   border: 1px solid var(--border);
-  border-radius: 6px;
+  border-radius: 8px;
   padding: 1.4rem 1.6rem;
   margin-bottom: 1.2rem;
-}
-.shadow-num {
-  font-family: 'Space Mono', monospace;
-  font-size: 0.6rem;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-  color: var(--text-light);
-  margin-bottom: 0.6rem;
 }
 .shadow-tags { display: flex; gap: 0.4rem; margin-bottom: 0.8rem; flex-wrap: wrap; }
 .shadow-tag {
   font-family: 'Space Mono', monospace;
   font-size: 0.58rem;
-  letter-spacing: 0.06em;
   text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.2rem 0.6rem;
+  border-radius: 3px;
   background: var(--accent-light);
   color: var(--accent);
-  border-radius: 3px;
-  padding: 0.1rem 0.45rem;
 }
-.shadow-sentence {
-  font-family: 'Source Serif 4', serif;
-  font-size: 1.05rem;
-  line-height: 1.8;
-  margin-bottom: 0.6rem;
-}
-.chunk { display: inline; padding: 0 2px; border-radius: 2px; }
-.c1 { background: rgba(181,84,28,0.15); }
-.c2 { background: rgba(91,131,56,0.13); }
-.c3 { background: rgba(60,100,160,0.12); }
-.c4 { background: rgba(140,60,120,0.12); }
-.shadow-vi {
-  font-size: 0.88rem;
-  color: var(--text-light);
-  font-style: italic;
-  border-top: 1px solid var(--border);
-  padding-top: 0.6rem;
-  margin-top: 0.4rem;
-}
-.shadow-note {
-  font-size: 0.82rem;
-  color: var(--accent);
-  font-family: 'Space Mono', monospace;
-  margin-top: 0.5rem;
-}
-.ipa-toggle {
-  background: none;
-  border: 1px solid var(--border);
-  border-radius: 3px;
-  padding: 0.2rem 0.6rem;
-  font-family: 'Space Mono', monospace;
-  font-size: 0.6rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--text-light);
-  cursor: pointer;
-  margin-top: 0.5rem;
-  transition: all 0.2s;
-}
-.ipa-toggle:hover { border-color: var(--accent); color: var(--accent); }
-.ipa-text {
-  display: none;
-  font-family: 'Space Mono', monospace;
-  font-size: 0.82rem;
-  color: var(--text-light);
-  margin-top: 0.4rem;
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  border: 1px solid var(--border);
-}
-
-/* ===== FLASHCARD ===== */
-.flash-controls {
-  display: flex;
-  gap: 0.7rem;
-  align-items: center;
-  margin-bottom: 1.5rem;
-  flex-wrap: wrap;
-}
-.flash-btn {
-  background: var(--bg-alt);
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  padding: 0.4rem 0.8rem;
+.shadow-sentence { font-size: 1.05rem; color: var(--text); line-height: 1.75; margin-bottom: 0.5rem; }
+.chunk { padding: 0 2px; border-radius: 2px; }
+.chunk-1 { background: rgba(212,133,78,0.15); }
+.chunk-2 { background: rgba(78,133,212,0.12); }
+.chunk-3 { background: rgba(78,180,100,0.12); }
+.chunk-4 { background: rgba(180,78,130,0.12); }
+.shadow-vi { font-size: 0.88rem; color: var(--text-light); font-style: italic; margin-bottom: 0.7rem; }
+.shadow-notes { font-size: 0.85rem; color: var(--text-light); margin-bottom: 0.7rem; line-height: 1.6; }
+.show-ipa-btn {
   font-family: 'Space Mono', monospace;
   font-size: 0.65rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text-light);
+  border-radius: 4px;
+  padding: 0.3rem 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.show-ipa-btn:hover { border-color: var(--accent); color: var(--accent); }
+.shadow-ipa {
+  display: none;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.78rem;
+  color: var(--accent);
+  margin-top: 0.5rem;
+  padding: 0.5rem 0.8rem;
+  background: var(--accent-light);
+  border-radius: 4px;
+  line-height: 1.8;
+}
+
+/* ── PHRASES ── */
+.phrases-grid { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.5rem; }
+.phrase-pill {
+  font-family: 'Source Serif 4', serif;
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 20px;
   color: var(--text);
   cursor: pointer;
   transition: all 0.2s;
 }
-.flash-btn:hover, .flash-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
-.flash-stats {
+.phrase-pill:hover { border-color: var(--accent); background: var(--accent-light); color: var(--accent); }
+
+/* ── FLASHCARD ── */
+.flashcard-controls { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+.fc-ctrl-btn {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.06em;
+  padding: 0.45rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  background: var(--bg);
+  color: var(--text-light);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.fc-ctrl-btn:hover, .fc-ctrl-btn.active-mode { border-color: var(--accent); background: var(--accent-light); color: var(--accent); }
+.fc-stats {
   font-family: 'Space Mono', monospace;
   font-size: 0.65rem;
   color: var(--text-light);
-  margin-left: auto;
+  margin-bottom: 1rem;
 }
-.flash-scene {
-  width: 100%;
-  max-width: 460px;
-  height: 240px;
+.flashcard-scene {
   perspective: 1000px;
+  width: 100%;
+  max-width: 480px;
+  height: 220px;
   margin: 0 auto 1.5rem;
   cursor: pointer;
 }
-.flash-inner {
+.flashcard-inner {
+  position: relative;
   width: 100%;
   height: 100%;
-  position: relative;
   transform-style: preserve-3d;
   transition: transform 0.5s ease;
 }
-.flash-inner.flipped { transform: rotateY(180deg); }
-.flash-face {
+.flashcard-scene.flipped .flashcard-inner { transform: rotateY(180deg); }
+.fc-face {
   position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 8px;
+  inset: 0;
   backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 1.5rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
   text-align: center;
 }
-.flash-front {
-  background: var(--bg-alt);
-  border: 2px solid var(--accent);
-}
-.flash-back {
-  background: var(--accent);
-  transform: rotateY(180deg);
-}
-.flash-word { font-family: 'Playfair Display', serif; font-size: 1.9rem; font-weight: 700; color: var(--accent); }
-.flash-ipa-small { font-family: 'Space Mono', monospace; font-size: 0.72rem; color: var(--text-light); margin-top: 0.2rem; }
-.flash-hint { font-family: 'Space Mono', monospace; font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-light); margin-top: 1rem; }
-.flash-back-word { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; color: #fff; margin-bottom: 0.3rem; }
-.flash-back-meaning { font-size: 1rem; color: rgba(255,255,255,0.85); margin-bottom: 0.4rem; }
-.flash-back-example { font-size: 0.82rem; color: rgba(255,255,255,0.7); font-style: italic; line-height: 1.5; }
-.flash-nav { display: flex; justify-content: center; gap: 1rem; align-items: center; }
-.flash-nav button {
-  background: var(--bg-alt);
-  border: 1px solid var(--border);
-  border-radius: 50%;
-  width: 42px;
-  height: 42px;
-  font-size: 1.2rem;
-  cursor: pointer;
-  transition: all 0.2s;
-  color: var(--text);
-}
-.flash-nav button:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
-.flash-counter { font-family: 'Space Mono', monospace; font-size: 0.72rem; color: var(--text-light); }
-.flash-answer-btns { display: flex; justify-content: center; gap: 1rem; margin-top: 1rem; }
-.flash-know, .flash-no {
-  border: none;
-  border-radius: 4px;
-  padding: 0.5rem 1.2rem;
+.fc-front { background: var(--bg-alt); }
+.fc-back { background: var(--accent); color: #fff; transform: rotateY(180deg); }
+.fc-hint {
   font-family: 'Space Mono', monospace;
-  font-size: 0.65rem;
-  letter-spacing: 0.06em;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  cursor: pointer;
-  transition: all 0.2s;
+  color: var(--text-light);
+  margin-bottom: 0.8rem;
 }
-.flash-know { background: #28a745; color: #fff; }
-.flash-no { background: #dc3545; color: #fff; }
-.flash-know:hover { opacity: 0.88; }
-.flash-no:hover { opacity: 0.88; }
-
-/* ===== TOAST ===== */
-.toast {
-  position: fixed;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--accent);
-  color: #fff;
-  padding: 0.6rem 1.4rem;
-  border-radius: 20px;
+.fc-back .fc-hint { color: rgba(255,255,255,0.65); }
+.fc-word {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.3rem;
+}
+.fc-back .fc-word { color: #fff; }
+.fc-ipa {
   font-family: 'Space Mono', monospace;
-  font-size: 0.72rem;
-  letter-spacing: 0.06em;
-  z-index: 9999;
-  opacity: 0;
-  transition: opacity 0.3s;
-  pointer-events: none;
+  font-size: 0.75rem;
+  color: var(--text-light);
+  margin-bottom: 0.4rem;
 }
-.toast.show { opacity: 1; }
+.fc-back .fc-ipa { color: rgba(255,255,255,0.75); }
+.fc-pos {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  background: var(--accent-light);
+  color: var(--accent);
+  border-radius: 3px;
+  padding: 0.15rem 0.5rem;
+}
+.fc-back .fc-pos { background: rgba(255,255,255,0.2); color: #fff; }
+.fc-meaning { font-size: 1.05rem; color: #fff; margin-bottom: 0.5rem; }
+.fc-example { font-size: 0.85rem; color: rgba(255,255,255,0.82); font-style: italic; }
+.fc-tap { font-family:'Space Mono',monospace; font-size:0.6rem; color:var(--text-light); text-align:center; margin-bottom:0.8rem; }
+.fc-nav { display:flex; gap:0.8rem; justify-content:center; align-items:center; margin-bottom:0.8rem; }
+.fc-nav-btn {
+  font-family:'Space Mono',monospace;
+  font-size:0.68rem;
+  padding:0.5rem 1.2rem;
+  border:1px solid var(--border);
+  border-radius:5px;
+  background:var(--bg);
+  color:var(--text);
+  cursor:pointer;
+  transition:all 0.2s;
+}
+.fc-nav-btn:hover { border-color:var(--accent); }
+.fc-counter { font-family:'Space Mono',monospace; font-size:0.72rem; color:var(--text-light); }
+.fc-know-btns { display:flex; gap:0.6rem; justify-content:center; }
+.fc-know-btn {
+  font-family:'Space Mono',monospace;
+  font-size:0.68rem;
+  padding:0.45rem 1.1rem;
+  border-radius:5px;
+  border:none;
+  cursor:pointer;
+  transition:opacity 0.2s;
+}
+.fc-know-btn:hover { opacity:0.85; }
+.fc-know-yes { background:#5cb85c; color:#fff; }
+.fc-know-no  { background:#d9534f; color:#fff; }
+
+@keyframes fadeSlide {
+  from { opacity:0; transform:translateY(-5px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+
+/* toast */
+.toast {
+  position:fixed; bottom:2rem; left:50%; transform:translateX(-50%);
+  background: var(--text); color:#fff;
+  font-family:'Space Mono',monospace; font-size:0.72rem;
+  padding:0.6rem 1.4rem; border-radius:20px;
+  opacity:0; transition:opacity 0.3s; pointer-events:none; z-index:9999;
+}
+.toast.show { opacity:1; }
 </style>
 </head>
 <body>
 
-<!-- ===== HERO ===== -->
+<!-- HERO -->
 <div class="hero-bg" id="hero-bg">
   <div class="hero-overlay">
-
     <header class="masthead">
       <div class="masthead-inner">
-        <p class="meta-tag">Education · Society · The Guardian · Mar 29 2026 <span class="level-badge">B2</span></p>
-        <h1 class="article-title">No tuition, no grades, no power grid: why are people flocking to a 'college' in the middle of the desert?</h1>
-        <p class="subtitle">Two hundred miles from LA, an off-grid community with roots in Burning Man offers an unorthodox educational experience — is Mars College the future?</p>
+        <p class="meta-tag">BBC Learning English · Everyday Expression + Office English · March 2026 · B1–B2</p>
+        <h1 class="article-title">"I've got you" &amp; Describing Your Job</h1>
+        <p class="subtitle">Two BBC English lessons: learn a warm expression of support, and master the language of talking about what you do at work.</p>
       </div>
     </header>
 
     <section class="one-minute">
       <div class="one-minute-inner" id="one-minute-inner">
-        <p class="one-minute-label">⏱ 1-minute summary — introduce this to someone</p>
-        <p class="one-minute-text">Mars College is an unconventional learning community located in the California desert, about 200 miles from Los Angeles near a small settlement called Bombay Beach. Founded by Gene Kogan and Freeman — a programmer and a former Silicon Valley engineer — it runs for three months each year, from January to April. Students live in trailers, tents and sheds with no electricity, no plumbing, and no nearby grocery store. There are no grades, no tuition fees, and no mandatory attendance. Anyone who wants to teach can offer a class, and the subjects range from creative writing and knot theory to solar panel installation and AI-generated art. The campus itself is built from plywood and metal frames at the start of each season, then torn down every April. The college has drawn around 60 students of diverse backgrounds — from microbiologists to Balinese priests — who are all looking for an alternative to expensive, credential-focused higher education. Its founders see it not as a replacement for university, but as an experiment in how communities might live and learn together in the future.</p>
+        <p class="one-minute-label">⏱ 1-minute summary — introduce it to a friend</p>
+        <p class="one-minute-text">Today we cover two BBC lessons. In the first, from <em>The English We Speak</em>, hosts Feifei and Becca explore the colloquial expression "I've got you." It comes from "I've got your back" — meaning you will support or help someone. It's used informally: "Don't worry, I've got you." It can also be contracted to "gotcha" in British speech, though never in formal writing. In the second lesson, from <em>Office English</em>, hosts Phil and Pippa discuss how to describe your job clearly — to colleagues, to friends, to clients, and in job applications. They introduce phrases like "I look after sales," "I report to," "I have a background in," and the concept of "transferable skills" — skills from one job you can apply to another role entirely.</p>
         <button class="toggle-vi" id="toggle-vi-btn">Xem bản dịch tiếng Việt ▾</button>
-        <p class="one-minute-vi" id="one-minute-vi">Mars College là một cộng đồng học tập độc đáo nằm giữa sa mạc California, cách Los Angeles khoảng 200 dặm, gần một khu dân cư nhỏ tên Bombay Beach. Được thành lập bởi Gene Kogan và Freeman — một lập trình viên và một kỹ sư cũ từ Thung lũng Silicon — trường hoạt động ba tháng mỗi năm, từ tháng Một đến tháng Tư. Sinh viên sống trong các xe kéo, lều và nhà kho không có điện, không có hệ thống nước, và không có cửa hàng thực phẩm gần đó. Không có điểm số, không có học phí, và không có yêu cầu điểm danh bắt buộc. Bất kỳ ai muốn dạy đều có thể mở lớp, với các chủ đề đa dạng từ viết sáng tạo và lý thuyết nút thắt đến lắp đặt tấm pin mặt trời và nghệ thuật AI. Cơ sở vật chất được xây dựng từ ván ép và khung kim loại vào đầu mỗi mùa, rồi tháo dỡ mỗi tháng Tư. Trường đã thu hút khoảng 60 sinh viên đến từ nhiều nền tảng khác nhau — từ nhà vi sinh vật học đến tu sĩ Bali — tất cả đang tìm kiếm lựa chọn thay thế cho nền giáo dục đại học đắt đỏ và nặng về bằng cấp. Những người sáng lập không xem đây là sự thay thế cho đại học, mà là một thí nghiệm về cách cộng đồng có thể cùng sống và học tập trong tương lai.</p>
+        <p class="one-minute-vi" id="one-minute-vi">Hôm nay chúng ta học hai bài từ BBC. Bài đầu tiên, từ <em>The English We Speak</em>, hai MC Feifei và Becca giải thích cụm từ thông dụng "I've got you" — nghĩa là tôi sẽ hỗ trợ hoặc giúp bạn, xuất phát từ "I've got your back" (tôi che lưng cho bạn). Cụm này dùng trong hội thoại thân mật: "Đừng lo, mình lo cho bạn." Trong tiếng Anh Anh, nó còn được phát âm tắt thành "gotcha", nhưng tuyệt đối không dùng trong văn viết trang trọng. Bài thứ hai, từ <em>Office English</em>, Phil và Pippa hướng dẫn cách mô tả công việc của bạn rõ ràng — với đồng nghiệp, bạn bè, khách hàng, và trong đơn xin việc. Các cụm từ quan trọng gồm: "I look after sales" (tôi phụ trách mảng bán hàng), "I report to" (tôi báo cáo cho), "I have a background in" (tôi có nền tảng về), và khái niệm "transferable skills" — kỹ năng từ công việc cũ có thể áp dụng sang vai trò mới.</p>
       </div>
     </section>
 
     <nav class="tabs-nav" id="tabs-nav">
       <div class="tabs-nav-inner">
-        <button class="tab-btn active" data-tab="1">📖 Bài đọc</button>
-        <button class="tab-btn" data-tab="2">📚 Từ vựng</button>
-        <button class="tab-btn" data-tab="3">✏️ Ngữ pháp</button>
+        <button class="tab-btn active" data-tab="0">📖 Bài đọc</button>
+        <button class="tab-btn" data-tab="1">📚 Từ vựng</button>
+        <button class="tab-btn" data-tab="2">🔤 Ngữ pháp</button>
+        <button class="tab-btn" data-tab="3">✏️ Bài tập</button>
         <button class="tab-btn" data-tab="4">💬 Thảo luận</button>
         <button class="tab-btn" data-tab="5">✍️ Writing</button>
-        <button class="tab-btn" data-tab="6">🔤 Phrases</button>
-        <button class="tab-btn" data-tab="7">🎙️ Shadowing</button>
-        <button class="tab-btn" data-tab="8">🃏 Flashcard</button>
+        <button class="tab-btn" data-tab="6">🎙️ Shadowing</button>
+        <button class="tab-btn" data-tab="7">🃏 Flashcard</button>
       </div>
     </nav>
   </div>
 </div>
-
 <div class="nav-spacer" id="nav-spacer" style="display:none;"></div>
 
 <main class="tab-wrap">
 
-  <!-- TAB 1 · BILINGUAL -->
-  <div class="tab-content active" id="tab-1">
+  <!-- TAB 0: BILINGUAL -->
+  <div class="tab-content active" id="tab-0">
     <h2 class="section-title">Bài đọc song ngữ</h2>
-    <p class="section-intro">EN trái · VI phải — đọc từng đoạn song song</p>
+    <p class="section-intro">BBC Learning English · Two episodes · Read & compare EN ↔ VI</p>
 
+    <div class="ep-divider">Episode 1 — The English We Speak: Got You</div>
     <div class="bilingual-block">
-      <div class="bi-en">A dozen writing students perched around a collection of weather-beaten couches, laptops balancing on their knees, ready to discuss their work. Next up to read was Ira Birch, a poet sporting black boots and a shag haircut.</div>
-      <div class="bi-vi">Một chục sinh viên viết lách ngồi vây quanh những chiếc sofa cũ mòn vì thời tiết, laptop đặt trên đầu gối, sẵn sàng thảo luận về tác phẩm. Người tiếp theo đọc là Ira Birch, một nhà thơ mang giày bốt đen và để kiểu tóc xù.</div>
+      <div>
+        <p class="bili-col-label">🇬🇧 English</p>
+        <p class="bili-speaker">Feifei</p>
+        <p class="bili-line">Hello and welcome to The English We Speak, where we explain phrases and expressions used by fluent English speakers so that you can use them too. I'm Feifei, and here with me is Becca. Becca! I've just realised I forgot to bring a pen today.</p>
+        <p class="bili-speaker">Becca</p>
+        <p class="bili-line">Hey, no worries, Feifei, I've got you. You can borrow one of mine.</p>
+        <p class="bili-speaker">Feifei</p>
+        <p class="bili-line">Hmm… you've got me?</p>
+        <p class="bili-speaker">Becca</p>
+        <p class="bili-line">'I've got you' comes from the phrase 'I've got your back', which, if you think about it literally, means to support someone. Imagine coming down a ladder and your friend is behind you, helping to hold you up. We often use the colloquial expression 'I've got you' metaphorically to show support or offer help.</p>
+        <p class="bili-speaker">Feifei</p>
+        <p class="bili-line">Like the other day when I saw you looking a little bit lost looking for the meeting room, I could've responded with 'I've got you', which means 'I'll help you find the way'.</p>
+        <p class="bili-speaker">Becca</p>
+        <p class="bili-line">Exactly! Oh, and I didn't take any notes for the first few minutes of that meeting because I was lost!</p>
+        <p class="bili-speaker">Feifei</p>
+        <p class="bili-line">Don't worry, Becca. I can help you with the notes. I've got you.</p>
+        <p class="bili-speaker">Becca</p>
+        <p class="bili-line">Sometimes 'got you' can be pronounced as 'gotchu', especially in some British English accents. It happens when the letter 't' is followed by a /j/ sound, like in 'Tuesday', 'tuna' and 'nature'.</p>
+        <p class="bili-speaker">Feifei</p>
+        <p class="bili-line">So we can say it like 'gotchu' — hey, I think I gotchu!</p>
+        <p class="bili-speaker">Becca</p>
+        <p class="bili-line">I will add, though, that we only say it like this. It shouldn't be used in formal writing. I wouldn't reply to a work email with gotchu!</p>
+      </div>
+      <div>
+        <p class="bili-col-label">🇻🇳 Tiếng Việt</p>
+        <p class="bili-speaker">Feifei</p>
+        <p class="bili-line-vi">Xin chào và chào mừng đến với The English We Speak, nơi chúng tôi giải thích các cụm từ và biểu đạt mà người nói tiếng Anh thành thạo hay dùng. Tôi là Feifei, và đây là Becca. Becca ơi! Tôi vừa nhận ra mình quên mang bút hôm nay.</p>
+        <p class="bili-speaker">Becca</p>
+        <p class="bili-line-vi">Không sao, Feifei, mình lo cho bạn nhé. Bạn có thể mượn bút của mình.</p>
+        <p class="bili-speaker">Feifei</p>
+        <p class="bili-line-vi">Hmm… "bạn lo cho tôi"?</p>
+        <p class="bili-speaker">Becca</p>
+        <p class="bili-line-vi">"I've got you" xuất phát từ cụm "I've got your back" — nghĩa đen là hỗ trợ ai đó. Hãy tưởng tượng bạn leo xuống thang và người bạn đứng sau giữ cho bạn khỏi ngã. Chúng ta thường dùng cụm thông dụng "I've got you" theo nghĩa bóng để thể hiện sự hỗ trợ hoặc sẵn sàng giúp đỡ.</p>
+        <p class="bili-speaker">Feifei</p>
+        <p class="bili-line-vi">Như hôm trước khi tôi thấy bạn trông có vẻ lạc lối đang tìm phòng họp, tôi đã có thể đáp lại bằng "I've got you" — nghĩa là "Để mình chỉ đường cho bạn."</p>
+        <p class="bili-speaker">Becca</p>
+        <p class="bili-line-vi">Đúng vậy! Ôi, và tôi đã không ghi chép gì trong vài phút đầu của buổi họp đó vì bị lạc!</p>
+        <p class="bili-speaker">Feifei</p>
+        <p class="bili-line-vi">Đừng lo, Becca. Mình có thể giúp bạn với phần ghi chú. Mình lo cho bạn.</p>
+        <p class="bili-speaker">Becca</p>
+        <p class="bili-line-vi">Đôi khi "got you" còn được phát âm là "gotchu", đặc biệt trong một số giọng Anh Anh. Điều này xảy ra khi chữ 't' đứng trước âm /j/, như trong "Tuesday", "tuna" và "nature".</p>
+        <p class="bili-speaker">Feifei</p>
+        <p class="bili-line-vi">Vậy chúng ta có thể nói "gotchu" — này, tôi nghĩ tôi hiểu rồi đấy!</p>
+        <p class="bili-speaker">Becca</p>
+        <p class="bili-line-vi">Tuy nhiên tôi cần nói thêm là chúng ta chỉ nói kiểu đó, không nên dùng trong văn viết trang trọng. Tôi sẽ không trả lời email công việc bằng "gotchu" đâu!</p>
+      </div>
     </div>
 
+    <div class="ep-divider">Episode 2 — Office English: Describing Your Job</div>
     <div class="bilingual-block">
-      <div class="bi-en">"I told myself I was gonna share today," Birch said nervously, looking around the circle. "But there are a lot more people here." The leader of the workshop, Amy Brown Carver, stepped in to help, reading a few of Birch's poems aloud for them.</div>
-      <div class="bi-vi">"Tôi đã tự nhủ sẽ chia sẻ hôm nay," Birch nói một cách lo lắng, nhìn quanh vòng tròn. "Nhưng có nhiều người hơn tôi nghĩ." Người dẫn dắt workshop, Amy Brown Carver, bước vào giúp đỡ, đọc to một vài bài thơ của Birch cho cả nhóm nghe.</div>
-    </div>
-
-    <div class="bilingual-block">
-      <div class="bi-en">It was a scene reminiscent of any creative writing brainstorm happening on any given college campus across the country. But zoom out from the immediate circle of couches, and the gathering's true setting was a barren, windswept plot in the middle of the California desert, roughly 200 miles from Los Angeles, 40 miles from the nearest grocery store and a mile from the tiny settlement of Bombay Beach.</div>
-      <div class="bi-vi">Đó là một cảnh tượng gợi nhớ đến bất kỳ buổi brainstorm viết sáng tạo nào trên bất kỳ khuôn viên đại học nào trong cả nước. Nhưng nếu thu góc nhìn ra xa hơn vòng tròn sofa, khung cảnh thực sự của buổi họp mặt là một vùng đất khô cằn, bị gió quét ở giữa sa mạc California, cách Los Angeles khoảng 200 dặm, cách cửa hàng tạp hóa gần nhất 40 dặm và cách khu dân cư nhỏ Bombay Beach một dặm.</div>
-    </div>
-
-    <div class="bilingual-block">
-      <div class="bi-en">At Mars, unlike a real college, there are no grades, degrees or mandatory attendance. There are no tuition fees or trained professors or even public utilities, like electricity or indoor plumbing. Most power to the camp comes from a towering wall of solar panels.</div>
-      <div class="bi-vi">Tại Mars, không giống một trường đại học thực sự, không có điểm số, bằng cấp hay điểm danh bắt buộc. Không có học phí, giáo sư được đào tạo hay thậm chí các tiện ích công cộng như điện hay hệ thống nước trong nhà. Phần lớn điện năng cho khu trại đến từ một bức tường tấm pin mặt trời cao sừng sững.</div>
-    </div>
-
-    <div class="bilingual-block">
-      <div class="bi-en">But there are daily classes taught by anyone who has something to teach, ranging from the writers' workshop, to the mathematical theory of shapes, to the proper way to install solar panels, to the creation of AI-inspired art. All classes are held within a cluster of plywood-and-metal structures, which are built right before the beginning of the "semester" in January, and then torn down again every year in April.</div>
-      <div class="bi-vi">Nhưng có các lớp học hàng ngày do bất kỳ ai có điều gì đó muốn dạy phụ trách, từ workshop viết lách, lý thuyết toán học về hình dạng, cách lắp đặt tấm pin mặt trời đúng cách, đến việc tạo ra nghệ thuật lấy cảm hứng từ AI. Tất cả các lớp học được tổ chức trong một cụm cấu trúc bằng ván ép và kim loại, được xây dựng ngay trước khi "học kỳ" bắt đầu vào tháng Một, rồi lại bị tháo dỡ mỗi năm vào tháng Tư.</div>
-    </div>
-
-    <div class="bilingual-block">
-      <div class="bi-en">Mars is clearly not collegiate in a traditional sense, its founders argue; it's more like a low-cost experimental community. But as the price of college tuition continues to soar, and the college educated now see more long-term unemployment than in decades past, people of all ages are looking for new, adventurous ways to keep learning, they say.</div>
-      <div class="bi-vi">Mars rõ ràng không phải là một trường đại học theo nghĩa truyền thống, những người sáng lập lập luận; nó giống một cộng đồng thực nghiệm chi phí thấp hơn. Nhưng khi học phí đại học tiếp tục tăng vọt, và những người được đào tạo đại học nay phải đối mặt với tỷ lệ thất nghiệp dài hạn cao hơn nhiều thập kỷ trước, người thuộc mọi lứa tuổi đang tìm kiếm những cách học tập mới, phiêu lưu hơn.</div>
-    </div>
-
-    <div class="bilingual-block">
-      <div class="bi-en">The seed for Mars College was planted years ago at an event with a much bigger profile, tens of thousands more attendees, and far more parties: Burning Man. It was at the Nevada desert festival that Freeman, a former Silicon Valley software engineer and entrepreneur, starting building huge, temporary structures out of pallet racks.</div>
-      <div class="bi-vi">Hạt giống của Mars College được gieo từ nhiều năm trước tại một sự kiện có quy mô lớn hơn nhiều, với hàng chục nghìn người tham dự, và nhiều bữa tiệc hơn: Burning Man. Chính tại lễ hội sa mạc Nevada này mà Freeman, một kỹ sư phần mềm và doanh nhân cựu Thung lũng Silicon, bắt đầu xây dựng những công trình tạm thời khổng lồ từ giá kệ pallet.</div>
-    </div>
-
-    <div class="bilingual-block">
-      <div class="bi-en">There are about 60 students in total: the largest group that the experimental college has seen thus far. The youngest is 25, the oldest 60. There have been attendees from Brazil, India, China, different parts of Europe and every corner of the US. To join Mars, prospective students have to formally apply, although Kogan admits that the admission process is "very self-selective" because of the inherent toughness required to live in the desert for three months with virtually no immediate resources.</div>
-      <div class="bi-vi">Có tổng cộng khoảng 60 sinh viên: nhóm lớn nhất mà trường thực nghiệm từng có cho đến nay. Người trẻ nhất là 25 tuổi, người lớn tuổi nhất là 60. Đã có người tham gia từ Brazil, Ấn Độ, Trung Quốc, các vùng khác nhau của châu Âu và mọi góc của nước Mỹ. Để tham gia Mars, sinh viên tiềm năng phải nộp đơn chính thức, mặc dù Kogan thừa nhận rằng quá trình tuyển sinh "rất tự chọn lọc" vì sự khắc nghiệt vốn có khi sống trong sa mạc ba tháng với hầu như không có tài nguyên ngay lập tức.</div>
+      <div>
+        <p class="bili-col-label">🇬🇧 English</p>
+        <p class="bili-speaker">Pippa</p>
+        <p class="bili-line">There's often a lot of jargon or generic words used for people's job titles. "Producer", "project manager", "consultant" — these could mean a lot of different things.</p>
+        <p class="bili-speaker">Phil</p>
+        <p class="bili-line">I find it quite difficult to explain my own job to people who don't work in the same industry. The job title says very little, so I tend to describe the things I do every day and hope people work it out from there.</p>
+        <p class="bili-speaker">Pippa</p>
+        <p class="bili-line">Think about what you do rather than just your job title. You could say "I look after sales" or "I handle client complaints" — those phrases basically mean "I'm responsible for this area."</p>
+        <p class="bili-speaker">Phil</p>
+        <p class="bili-line">It can also be helpful to give context: talk about how your job relates to other people and departments. You might say "I work a lot with [department]", or "I report to [manager name]."</p>
+        <p class="bili-speaker">Pippa</p>
+        <p class="bili-line">In a meeting, it's useful to tell people when they should contact you. You could say, "If you ever have any questions about this, you should email me."</p>
+        <p class="bili-speaker">Phil</p>
+        <p class="bili-line">If you're meeting a client or at a conference, keep things formal. You might say "I represent [company name]" and "I'm responsible for [area]."</p>
+        <p class="bili-speaker">Pippa</p>
+        <p class="bili-line">With friends, you can be more casual — "I mostly work on X" or find a relatable comparison: "Do you know this company? My work is similar to that."</p>
+        <p class="bili-speaker">Phil</p>
+        <p class="bili-line">When applying for a new job, especially a career change, you want to say what you do then give more detail. Use "I have a background in [area], which in practice means [day-to-day tasks]."</p>
+        <p class="bili-speaker">Pippa</p>
+        <p class="bili-line">And a really useful expression: transferable skills — skills from a current or past job that you can apply to a different role. For example: "I have a lot of experience with sales and persuading clients, so I think I'd be useful in this role."</p>
+        <p class="bili-speaker">Phil</p>
+        <p class="bili-line">You could also acknowledge the change openly: "I'd like to apply my skills to a new challenge." That way you're not hiding your different background.</p>
+      </div>
+      <div>
+        <p class="bili-col-label">🇻🇳 Tiếng Việt</p>
+        <p class="bili-speaker">Pippa</p>
+        <p class="bili-line-vi">Thường có rất nhiều thuật ngữ chuyên ngành hoặc từ chung chung trong tên chức danh. "Nhà sản xuất", "quản lý dự án", "tư vấn viên" — những từ này có thể có rất nhiều nghĩa khác nhau.</p>
+        <p class="bili-speaker">Phil</p>
+        <p class="bili-line-vi">Tôi thấy khá khó để giải thích công việc của mình cho người không làm cùng ngành. Chức danh nói rất ít, nên tôi thường mô tả những việc mình làm hàng ngày và hy vọng người nghe tự suy ra.</p>
+        <p class="bili-speaker">Pippa</p>
+        <p class="bili-line-vi">Hãy nghĩ về những gì bạn làm thay vì chỉ nêu chức danh. Bạn có thể nói "I look after sales" (tôi phụ trách mảng bán hàng) hoặc "I handle client complaints" (tôi xử lý khiếu nại từ khách hàng) — những cụm này về cơ bản có nghĩa "tôi chịu trách nhiệm lĩnh vực này."</p>
+        <p class="bili-speaker">Phil</p>
+        <p class="bili-line-vi">Cũng hữu ích khi cung cấp bối cảnh: nói về công việc của bạn liên quan đến những người khác và bộ phận khác như thế nào. Bạn có thể nói "I work a lot with [bộ phận]" hoặc "I report to [tên quản lý]."</p>
+        <p class="bili-speaker">Pippa</p>
+        <p class="bili-line-vi">Trong một cuộc họp, hữu ích khi nói cho mọi người biết khi nào họ nên liên hệ với bạn. Ví dụ: "Nếu bạn có bất kỳ câu hỏi nào về vấn đề này, hãy gửi email cho tôi."</p>
+        <p class="bili-speaker">Phil</p>
+        <p class="bili-line-vi">Nếu gặp khách hàng hoặc tại hội nghị, hãy giữ tông nghiêm túc. Bạn có thể nói "Tôi đại diện cho [tên công ty]" và "Tôi chịu trách nhiệm về [lĩnh vực]."</p>
+        <p class="bili-speaker">Pippa</p>
+        <p class="bili-line-vi">Với bạn bè, bạn có thể thoải mái hơn — "Tôi chủ yếu làm X" hoặc tìm một ví dụ dễ liên tưởng: "Bạn có biết công ty này không? Công việc của mình tương tự như vậy."</p>
+        <p class="bili-speaker">Phil</p>
+        <p class="bili-line-vi">Khi xin việc mới, đặc biệt khi chuyển ngành, hãy nêu những gì bạn làm rồi đi vào chi tiết hơn. Dùng cụm "Tôi có nền tảng về [lĩnh vực], điều đó trong thực tế có nghĩa là [công việc hàng ngày]."</p>
+        <p class="bili-speaker">Pippa</p>
+        <p class="bili-line-vi">Và một cụm từ rất hữu ích: transferable skills (kỹ năng chuyển tiếp) — kỹ năng từ công việc hiện tại hoặc trước đây mà bạn có thể áp dụng sang vai trò khác. Ví dụ: "Tôi có nhiều kinh nghiệm bán hàng và thuyết phục khách hàng, vì vậy tôi nghĩ tôi sẽ có ích trong vị trí này."</p>
+        <p class="bili-speaker">Phil</p>
+        <p class="bili-line-vi">Bạn cũng có thể thẳng thắn thừa nhận sự thay đổi: "Tôi muốn áp dụng kỹ năng của mình vào một thử thách mới." Như vậy bạn không cố che giấu nền tảng khác của mình.</p>
+      </div>
     </div>
   </div>
 
-  <!-- TAB 2 · VOCAB -->
-  <div class="tab-content" id="tab-2">
-    <h2 class="section-title">Từ vựng nổi bật</h2>
-    <p class="section-intro">18 từ/cụm từ từ bài — click để xem ví dụ</p>
+  <!-- TAB 1: VOCAB -->
+  <div class="tab-content" id="tab-1">
+    <h2 class="section-title">Từ vựng</h2>
+    <p class="section-intro">20 từ và cụm từ chính từ hai bài học · Click để xem ví dụ</p>
     <div class="vocab-grid" id="vocab-grid"></div>
   </div>
 
-  <!-- TAB 3 · GRAMMAR -->
+  <!-- TAB 2: GRAMMAR -->
+  <div class="tab-content" id="tab-2">
+    <h2 class="section-title">Ngữ pháp</h2>
+    <p class="section-intro">Các cấu trúc ngữ pháp quan trọng trong hai bài học</p>
+
+    <div class="grammar-block">
+      <p class="grammar-rule">1. "I've got you" — Present Perfect as Colloquial Offer</p>
+      <span class="grammar-formula">Subject + have/has + got + object</span>
+      <p class="grammar-note">Cụm "I've got you" dùng thì hiện tại hoàn thành như một lời đề nghị giúp đỡ ngay lúc đó. Không diễn tả hành động đã xảy ra trong quá khứ mà mang nghĩa "Tôi đang sẵn sàng hỗ trợ bạn." Đây là cách dùng rất thông dụng (colloquial) và chỉ dùng trong ngữ cảnh thân mật.</p>
+      <p class="grammar-ex">"Don't worry, I've got you." (Đừng lo, mình lo cho bạn.)</p>
+      <p class="grammar-ex">"She forgot her wallet, but I've got her." (Cô ấy quên ví nhưng tôi lo cho cô ấy.)</p>
+    </div>
+
+    <div class="grammar-block">
+      <p class="grammar-rule">2. "Could have + past participle" — Missed Opportunity</p>
+      <span class="grammar-formula">Subject + could have + past participle</span>
+      <p class="grammar-note">"Could have responded" diễn tả hành động có thể đã xảy ra trong quá khứ nhưng không xảy ra. Dùng để nói về khả năng bị bỏ lỡ. Trong bài, Feifei nói cô ấy "could've responded with 'I've got you'" — cô ấy có thể đã nói vậy nhưng không nói.</p>
+      <p class="grammar-ex">"I could've responded with 'I've got you'." (Lẽ ra tôi có thể nói 'I've got you'.)</p>
+      <p class="grammar-ex">"You could have described your role more clearly." (Bạn lẽ ra có thể mô tả vai trò của mình rõ hơn.)</p>
+    </div>
+
+    <div class="grammar-block">
+      <p class="grammar-rule">3. "I look after / I handle / I'm responsible for" — Job Description Phrases</p>
+      <span class="grammar-formula">I + verb phrase + [area of work]</span>
+      <p class="grammar-note">Đây là ba cách phổ biến để mô tả phạm vi công việc của bạn mà không cần chức danh. "Look after" mang sắc thái chăm lo; "handle" nhấn mạnh việc xử lý; "responsible for" có tính chính thức nhất. Cả ba đều chấp nhận noun phrase hoặc gerund phrase theo sau.</p>
+      <p class="grammar-ex">"I look after sales in the northern region."</p>
+      <p class="grammar-ex">"I handle client complaints and escalations."</p>
+      <p class="grammar-ex">"I'm responsible for content strategy."</p>
+    </div>
+
+    <div class="grammar-block">
+      <p class="grammar-rule">4. "I have a background in ... which in practice means ..."</p>
+      <span class="grammar-formula">I have a background in [field], which in practice means [daily tasks]</span>
+      <p class="grammar-note">Cấu trúc hai vế này rất hữu ích khi xin việc hoặc chuyển ngành. Vế đầu nêu nền tảng chuyên môn (có thể khác ngành mới); vế sau ("which in practice means") giải thích những gì bạn thực sự làm hàng ngày. Mệnh đề quan hệ "which" ở đây bổ nghĩa cho cả ý trong vế đầu.</p>
+      <p class="grammar-ex">"I have a background in journalism, which in practice means I write, edit and fact-check content daily."</p>
+      <p class="grammar-ex">"I have a background in engineering, which in practice means I manage technical teams and timelines."</p>
+    </div>
+
+    <div class="grammar-block">
+      <p class="grammar-rule">5. Yod-coalescence — /tj/ → /tʃ/ (gotchu, Tuesday, nature)</p>
+      <span class="grammar-formula">/t/ + /j/ → /tʃ/</span>
+      <p class="grammar-note">Khi âm /t/ đứng trước âm /j/, trong nhiều giọng Anh Anh (và Anh Mỹ không chính thức), chúng hòa âm thành /tʃ/. Đây gọi là yod-coalescence. Ví dụ: "got you" → /ˈɡɒtʃu/, "Tuesday" → /ˈtʃuːzdeɪ/, "nature" → /ˈneɪtʃə/. Hiện tượng này chỉ xảy ra trong lời nói, không dùng trong văn viết trang trọng.</p>
+      <p class="grammar-ex">"I gotchu." (khẩu ngữ thân mật, không dùng trong email công việc)</p>
+      <p class="grammar-ex">Khác: "Did you?" → /ˈdɪdʒə/, "would you?" → /ˈwʊdʒə/</p>
+    </div>
+  </div>
+
+  <!-- TAB 3: EXERCISES -->
   <div class="tab-content" id="tab-3">
-    <h2 class="section-title">Điểm ngữ pháp & bài tập</h2>
-    <p class="section-intro">3 cấu trúc rút ra từ bài · quiz bên dưới</p>
-
-    <div class="grammar-block">
-      <div class="grammar-label">Cấu trúc 1 · Participle phrase (mệnh đề phân từ)</div>
-      <div class="grammar-title">Ving / Vpp đứng đầu câu để tạo ảnh</div>
-      <div class="grammar-explain">Trong văn báo chí, mệnh đề phân từ rút gọn thường được đặt ở đầu câu để mô tả hành động xảy ra đồng thời hoặc ngay trước hành động chính. Cấu trúc này tạo ra hình ảnh sinh động và compact hơn mệnh đề quan hệ thông thường.</div>
-      <div class="grammar-example"><em>Perched</em> around a collection of weather-beaten couches, the students discussed their work. → Ngồi vây quanh những chiếc sofa cũ mòn, các sinh viên thảo luận về tác phẩm.</div>
-      <div class="grammar-example"><em>Sporting</em> black boots and a shag haircut, Ira Birch stepped up to read. → Mang giày bốt đen và để tóc xù, Ira Birch bước lên đọc.</div>
-      <div class="grammar-note">💡 Chú ý: chủ thể của phân từ phải trùng với chủ thể của mệnh đề chính — tránh "dangling participle".</div>
-    </div>
-
-    <div class="grammar-block">
-      <div class="grammar-label">Cấu trúc 2 · Inversion sau negative adverbials</div>
-      <div class="grammar-title">"There are no X or Y or even Z" — liệt kê phủ định nhấn mạnh</div>
-      <div class="grammar-explain">Bài báo dùng cấu trúc phủ định liệt kê để nhấn mạnh sự vắng mặt của những thứ mà người đọc mặc định là có. Mỗi lần thêm "or" tăng thêm mức độ bất ngờ.</div>
-      <div class="grammar-example">There are <em>no grades, degrees or mandatory attendance</em>. There are <em>no tuition fees or trained professors or even public utilities</em>.</div>
-      <div class="grammar-example">Cấu trúc tương tự trong văn nói: "There's no wifi, no hot water, not even a proper toilet."</div>
-      <div class="grammar-note">💡 "or even" luôn đứng trước mục cuối — thứ ít ai ngờ nhất, tăng hiệu ứng nhấn mạnh.</div>
-    </div>
-
-    <div class="grammar-block">
-      <div class="grammar-label">Cấu trúc 3 · It was at... that... (cleft sentence)</div>
-      <div class="grammar-title">Câu chẻ — nhấn mạnh địa điểm hoặc thời điểm</div>
-      <div class="grammar-explain">Câu chẻ (cleft sentence) tách thông tin muốn nhấn mạnh ra khỏi phần còn lại của câu. "It was at [place] that [event]" đặt trọng tâm vào địa điểm — rất phổ biến trong văn tường thuật báo chí.</div>
-      <div class="grammar-example">It was <em>at the Nevada desert festival</em> that Freeman started building temporary structures. → Chính tại lễ hội sa mạc Nevada đó mà Freeman bắt đầu xây dựng các công trình tạm thời.</div>
-      <div class="grammar-example">It was <em>during the pandemic</em> that Kogan realized the limitations of traditional universities.</div>
-      <div class="grammar-note">💡 Biến thể: "It was [person] who...", "It was [time] that...", "It is [concept] that..."</div>
-    </div>
-
-    <h3 style="font-family:'Playfair Display',serif;font-size:1.1rem;margin:2rem 0 1rem;color:var(--accent);">Bài tập kiểm tra</h3>
-    <div id="quiz-container"></div>
+    <h2 class="section-title">Bài tập</h2>
+    <p class="section-intro">Trắc nghiệm kiểm tra hiểu bài · Chọn đáp án đúng</p>
+    <div id="exercises-container"></div>
   </div>
 
-  <!-- TAB 4 · DISCUSSION -->
+  <!-- TAB 4: DISCUSSION -->
   <div class="tab-content" id="tab-4">
-    <h2 class="section-title">Thảo luận với AI Tutor</h2>
-    <p class="section-intro">Chọn chủ đề → thảo luận với Alex trên Claude.ai</p>
-    <div class="discussion-list" id="discussion-list"></div>
-    <button class="btn-freestyle" id="btn-freestyle">💬 Tự do thảo luận không theo chủ đề</button>
+    <h2 class="section-title">Thảo luận</h2>
+    <p class="section-intro">Chọn một chủ đề → luyện nói với AI tutor Alex trên Claude.ai</p>
+    <div class="topic-grid" id="topic-btns"></div>
   </div>
 
-  <!-- TAB 5 · WRITING -->
+  <!-- TAB 5: WRITING -->
   <div class="tab-content" id="tab-5">
     <h2 class="section-title">Writing</h2>
-    <p class="section-intro">Chọn đề → viết → nhận AI Feedback ngay</p>
-    <div id="writing-prompts"></div>
+    <p class="section-intro">Chọn một đề → viết → nhận AI feedback ngay lập tức</p>
+    <div class="writing-prompts" id="writing-prompts"></div>
   </div>
 
-  <!-- TAB 6 · PHRASES -->
+  <!-- TAB 6: SHADOWING -->
   <div class="tab-content" id="tab-6">
-    <h2 class="section-title">12 Useful Phrases</h2>
-    <p class="section-intro">Click để copy — dùng trong nói chuyện & writing</p>
-    <div class="phrases-grid" id="phrases-grid"></div>
-  </div>
-
-  <!-- TAB 7 · SHADOWING -->
-  <div class="tab-content" id="tab-7">
     <h2 class="section-title">Shadowing</h2>
-    <p class="section-intro">5 câu chọn lọc · chunk màu · ghi chú phát âm</p>
-    <div id="shadow-list"></div>
+    <p class="section-intro">5 câu hay nhất từ hai bài · Luyện phát âm theo chunk</p>
+    <div id="shadow-container"></div>
   </div>
 
-  <!-- TAB 8 · FLASHCARD -->
-  <div class="tab-content" id="tab-8">
+  <!-- TAB 7: FLASHCARD -->
+  <div class="tab-content" id="tab-7">
     <h2 class="section-title">Flashcard</h2>
-    <p class="section-intro">18 từ · flip để xem nghĩa · theo dõi tiến độ</p>
-    <div class="flash-controls">
-      <button class="flash-btn active" id="mode-en-vi">EN → VI</button>
-      <button class="flash-btn" id="mode-vi-en">VI → EN</button>
-      <button class="flash-btn" id="btn-shuffle">🔀 Shuffle</button>
-      <button class="flash-btn" id="btn-reset">↺ Reset</button>
-      <span class="flash-stats" id="flash-stats">✅ 0 · ❌ 0</span>
+    <p class="section-intro">20 từ · Click để lật · Luyện đến khi thuộc hết</p>
+    <div class="flashcard-controls">
+      <button class="fc-ctrl-btn" id="fc-shuffle">🔀 Shuffle</button>
+      <button class="fc-ctrl-btn" id="fc-reset">↺ Reset</button>
+      <button class="fc-ctrl-btn active-mode" id="fc-mode">EN → VN</button>
     </div>
-    <div class="flash-scene" id="flash-scene">
-      <div class="flash-inner" id="flash-inner">
-        <div class="flash-face flash-front" id="flash-front">
-          <div class="flash-word" id="fl-word">—</div>
-          <div class="flash-ipa-small" id="fl-ipa">—</div>
-          <div class="flash-hint">👆 click để lật</div>
-        </div>
-        <div class="flash-face flash-back" id="flash-back">
-          <div class="flash-back-word" id="fl-back-word">—</div>
-          <div class="flash-back-meaning" id="fl-back-meaning">—</div>
-          <div class="flash-back-example" id="fl-back-example">—</div>
-        </div>
+    <div class="fc-stats" id="fc-stats">✅ Thuộc: 0 &nbsp;|&nbsp; ❌ Chưa: 0 &nbsp;|&nbsp; Còn lại: 20</div>
+    <p class="fc-tap">Click vào thẻ để lật</p>
+    <div class="flashcard-scene" id="fc-scene">
+      <div class="flashcard-inner" id="fc-inner">
+        <div class="fc-face fc-front" id="fc-front"></div>
+        <div class="fc-face fc-back" id="fc-back"></div>
       </div>
     </div>
-    <div class="flash-answer-btns" id="flash-answer-btns" style="display:none;">
-      <button class="flash-no" id="btn-no">❌ Chưa thuộc</button>
-      <button class="flash-know" id="btn-know">✅ Thuộc rồi</button>
+    <div class="fc-nav">
+      <button class="fc-nav-btn" id="fc-prev">← Trước</button>
+      <span class="fc-counter" id="fc-counter">1 / 20</span>
+      <button class="fc-nav-btn" id="fc-next">Tiếp →</button>
     </div>
-    <div class="flash-nav">
-      <button id="btn-prev">←</button>
-      <span class="flash-counter" id="flash-counter">1 / 18</span>
-      <button id="btn-next">→</button>
+    <div class="fc-know-btns">
+      <button class="fc-know-btn fc-know-yes" id="fc-yes">✅ Thuộc rồi</button>
+      <button class="fc-know-btn fc-know-no" id="fc-no">❌ Chưa thuộc</button>
     </div>
   </div>
 
@@ -962,265 +982,324 @@ body {
 <div class="toast" id="toast"></div>
 
 <script>
-// ===== DATA =====
-const ARTICLE_CONTEXT = "Mars College is a free, off-grid experimental learning community in the California desert, 200 miles from LA. Founded by Gene Kogan and Freeman, it runs January–April each year with no grades, tuition, or electricity. Around 60 students live in tents/trailers and attend classes taught by anyone willing to teach, covering topics from creative writing to AI art and solar installation.";
-const ARTICLE_LEVEL = "B2";
+// ═══════════════════════════════════════
+// DATA
+// ═══════════════════════════════════════
+const ARTICLE_CONTEXT = "Two BBC English lessons: (1) The colloquial expression 'I've got you' meaning 'I will support you', from The English We Speak; (2) How to describe your job clearly to colleagues, clients and in job applications, from Office English — covering phrases like 'I look after X', 'I report to', 'I have a background in', and the concept of transferable skills.";
+const ARTICLE_LEVEL = "B1-B2";
 
 const vocabData = [
-  { word: "perch", ipa: "/pɜːrtʃ/", pos: "v", vi: "ngồi chênh vênh / đặt mình", en: "to sit on something narrow or high", example: "Students perched on the edge of the couches, laptops balanced on their knees." },
-  { word: "weather-beaten", ipa: "/ˈweðər ˌbiːtən/", pos: "adj", vi: "cũ mòn vì thời tiết", en: "damaged or worn by exposure to weather", example: "The weather-beaten furniture looked like it had survived many desert storms." },
-  { word: "brainstorm", ipa: "/ˈbreɪnstɔːrm/", pos: "n/v", vi: "buổi động não / suy nghĩ tập thể", en: "a group session to generate ideas", example: "The workshop was a creative brainstorm, with everyone pitching in ideas." },
-  { word: "windswept", ipa: "/ˈwɪndswept/", pos: "adj", vi: "bị gió quét, trống trải", en: "exposed to strong winds, bare and desolate", example: "The windswept desert campus felt both harsh and freeing." },
-  { word: "barren", ipa: "/ˈbærən/", pos: "adj", vi: "khô cằn, trơ trọi", en: "too dry or infertile to produce vegetation", example: "A barren plot of land became the unlikely home of an experimental college." },
-  { word: "mandatory", ipa: "/ˈmændətɔːri/", pos: "adj", vi: "bắt buộc", en: "required by law or rules; compulsory", example: "Unlike traditional universities, Mars College has no mandatory attendance policy." },
-  { word: "tuition", ipa: "/tjuːˈɪʃən/", pos: "n", vi: "học phí", en: "money paid for instruction at a school", example: "With tuition at some US universities exceeding $80,000 a year, many students seek alternatives." },
-  { word: "plywood", ipa: "/ˈplaɪwʊd/", pos: "n", vi: "gỗ ván ép", en: "board made from layers of wood glued together", example: "The buildings were constructed from plywood and metal frames." },
-  { word: "unconventional", ipa: "/ˌʌnkənˈvenʃənl/", pos: "adj", vi: "không truyền thống, phi thường quy", en: "not following what is usual; different", example: "Mars College is an unconventional experiment in living and learning." },
-  { word: "soar", ipa: "/sɔːr/", pos: "v", vi: "tăng vọt, bay cao", en: "to rise very rapidly to a high level", example: "As college tuition continues to soar, students question the value of a degree." },
-  { word: "self-selective", ipa: "/self sɪˈlektɪv/", pos: "adj", vi: "tự chọn lọc", en: "drawing in only those already suited or motivated", example: "Living in a desert with no resources makes the program very self-selective." },
-  { word: "reminiscent", ipa: "/ˌremɪˈnɪsnt/", pos: "adj", vi: "gợi nhớ đến, tương tự", en: "tending to remind you of something else", example: "The writing circle was reminiscent of any workshop on a typical college campus." },
-  { word: "pallet rack", ipa: "/ˈpælɪt ræk/", pos: "n", vi: "giá kệ pallet (kho hàng)", en: "heavy-duty metal storage scaffolding used in warehouses", example: "Freeman built futuristic lodgings from pallet racks at Burning Man." },
-  { word: "prospective", ipa: "/prəˈspektɪv/", pos: "adj", vi: "tiềm năng, tương lai", en: "expected or expecting to be something in the future", example: "Prospective students must formally apply to join the Mars community." },
-  { word: "cohort", ipa: "/ˈkoʊhɔːrt/", pos: "n", vi: "nhóm học cùng khóa, đồng đội", en: "a group sharing a common characteristic or experience", example: "The first cohort of Mars students was mostly Kogan's personal friends." },
-  { word: "communal", ipa: "/kəˈmjuːnl/", pos: "adj", vi: "chung, cộng đồng", en: "shared by or used by all members of a community", example: "Students pay a few hundred dollars for communal services like wifi and meals." },
-  { word: "collegiate", ipa: "/kəˈliːdʒɪət/", pos: "adj", vi: "mang tính đại học, như trường đại học", en: "relating to or typical of a college or its students", example: "Mars is not collegiate in the traditional sense — it has no degrees or exams." },
-  { word: "dystopian", ipa: "/dɪˈstoʊpiən/", pos: "adj", vi: "phản địa đàng, ảm đạm về tương lai", en: "relating to an imagined society where things have gone wrong", example: "The founders describe Mars as a college for the end of the world — dystopian, but inspiring." }
+  { word:"I've got you", ipa:"/aɪv ɡɒt juː/", pos:"phrase", vi:"Mình lo cho bạn / Mình hỗ trợ bạn", ex:"Don't worry about the report, I've got you." },
+  { word:"colloquial", ipa:"/kəˈləʊkwiəl/", pos:"adj", vi:"thông dụng, khẩu ngữ", ex:"'Gotcha' is a very colloquial way to say 'I understand'." },
+  { word:"metaphorically", ipa:"/ˌmetəˈfɒrɪkli/", pos:"adv", vi:"theo nghĩa bóng", ex:"We use 'I've got your back' metaphorically to show support." },
+  { word:"jargon", ipa:"/ˈdʒɑːɡən/", pos:"noun", vi:"thuật ngữ chuyên ngành", ex:"Avoid using technical jargon when explaining your job to friends." },
+  { word:"generic", ipa:"/dʒəˈnerɪk/", pos:"adj", vi:"chung chung, không cụ thể", ex:"Job titles like 'manager' can be very generic and mean different things." },
+  { word:"look after", ipa:"/lʊk ˈɑːftə/", pos:"phrasal v", vi:"phụ trách, chăm lo", ex:"I look after marketing for the Asia-Pacific region." },
+  { word:"handle", ipa:"/ˈhændl/", pos:"verb", vi:"xử lý, đảm nhận", ex:"She handles all client complaints and escalations." },
+  { word:"report to", ipa:"/rɪˈpɔːt tuː/", pos:"phrase", vi:"báo cáo cho (ai đó là quản lý)", ex:"I report to the Head of Operations." },
+  { word:"where you sit", ipa:"/weə juː sɪt/", pos:"phrase", vi:"vị trí/chỗ đứng trong tổ chức", ex:"It helps to explain where you sit within the organisation." },
+  { word:"internal jargon", ipa:"/ɪnˈtɜːnl ˈdʒɑːɡən/", pos:"phrase", vi:"thuật ngữ nội bộ công ty", ex:"New employees may not understand our internal jargon yet." },
+  { word:"represent", ipa:"/ˌreprɪˈzent/", pos:"verb", vi:"đại diện cho", ex:"I represent TechCorp in all client-facing meetings." },
+  { word:"career change", ipa:"/kəˈrɪər tʃeɪndʒ/", pos:"noun", vi:"thay đổi nghề nghiệp / chuyển ngành", ex:"Making a career change can be challenging but very rewarding." },
+  { word:"background in", ipa:"/ˈbækɡraʊnd ɪn/", pos:"phrase", vi:"có nền tảng về, xuất phát từ ngành...", ex:"I have a background in finance, which helps in my current role." },
+  { word:"in practice", ipa:"/ɪn ˈpræktɪs/", pos:"phrase", vi:"trong thực tế, trên thực tiễn", ex:"The title is 'coordinator', which in practice means I manage schedules and budgets." },
+  { word:"transferable skills", ipa:"/trænsˈfɜːrəbl skɪlz/", pos:"phrase", vi:"kỹ năng có thể chuyển sang công việc khác", ex:"Communication and problem-solving are valuable transferable skills." },
+  { word:"apply my skills to", ipa:"/əˈplaɪ maɪ skɪlz tuː/", pos:"phrase", vi:"áp dụng kỹ năng của mình vào...", ex:"I'd love to apply my skills to a new challenge in the tech sector." },
+  { word:"acknowledge", ipa:"/əkˈnɒlɪdʒ/", pos:"verb", vi:"thừa nhận, công nhận", ex:"Acknowledge that you've worked in a different area when changing careers." },
+  { word:"yod-coalescence", ipa:"/jɒd kəʊˈælesns/", pos:"noun", vi:"hiện tượng hòa âm /t/+/j/ → /tʃ/", ex:"Yod-coalescence turns 'got you' into 'gotcha' in natural speech." },
+  { word:"no worries", ipa:"/nəʊ ˈwʌriz/", pos:"phrase", vi:"không sao cả, không vấn đề gì", ex:"No worries, I'll cover your shift tomorrow." },
+  { word:"work it out", ipa:"/wɜːk ɪt aʊt/", pos:"phrasal v", vi:"tự tìm ra, tự suy ra", ex:"I just describe what I do and hope people can work it out." },
 ];
 
-const quizData = [
+const exercisesData = [
   {
-    q: "Which sentence correctly uses a participle phrase?",
-    options: [
-      "Sporting a shag haircut, the students admired Ira Birch.",
-      "Sporting a shag haircut, Ira Birch stepped up to read.",
-      "Ira Birch stepped up to read, sporting a shag haircut was visible.",
-      "Having sport a shag haircut, Ira Birch read the poem."
-    ],
+    q: "Feifei forgot to bring a pen. Becca says 'I've got you.' What does this mean?",
+    opts: ["I understand you.", "I will help/support you.", "I found you.", "I agree with you."],
     correct: 1,
-    explanation: "The participle 'Sporting' must share its subject with the main clause. Ira Birch is both sporting the haircut and stepping up to read. Option A has the wrong subject (students). Options C and D have grammatical errors."
+    feedback: "✅ Đúng! 'I've got you' ở đây nghĩa là 'Mình hỗ trợ bạn' — Becca sẽ cho Feifei mượn bút."
   },
   {
-    q: "Choose the sentence that correctly uses 'or even' for emphasis:",
-    options: [
-      "There are no grades, even or degrees.",
-      "There are no grades, degrees, or even mandatory attendance.",
-      "There are no grades or even degrees or attendance.",
-      "There are even no grades, degrees, or attendance."
-    ],
+    q: "Which sentence correctly describes a job role in a professional context?",
+    opts: ["I mostly just do stuff with data.", "I represent TechCorp and I'm responsible for client accounts.", "Gotcha — I handle clients!", "My job is kind of hard to explain, you know."],
     correct: 1,
-    explanation: "'Or even' comes before the final, most surprising item in the list. In this case, the lack of mandatory attendance is the most striking detail — saved for last for maximum impact."
+    feedback: "✅ Đúng! Câu này dùng 'represent' và 'responsible for' — ngôn ngữ trang trọng phù hợp khi gặp khách hàng."
   },
   {
-    q: "Which is the correct cleft sentence emphasising 'Burning Man'?",
-    options: [
-      "Freeman started building at Burning Man structures.",
-      "It was Burning Man that Freeman, started building structures.",
-      "It was at Burning Man that Freeman started building huge structures.",
-      "It was at Burning Man where Freeman started building huge structures."
-    ],
-    correct: 2,
-    explanation: "The cleft sentence structure is: 'It was + [focus] + that + [rest of sentence]'. We use 'that' (not 'where') even when referring to a place. Option D uses 'where' which is incorrect in this structure."
+    q: "'I've got your back' literally means:",
+    opts: ["You are standing behind someone.", "You will support or help someone.", "You are watching someone.", "You will carry something for someone."],
+    correct: 1,
+    feedback: "✅ Đúng! Nghĩa đen là đứng sau và giữ cho người kia khỏi ngã — nhưng nghĩa bóng là hỗ trợ, giúp đỡ."
   },
   {
-    q: "What does 'self-selective' mean in context?",
-    options: [
-      "The college selects students based on their grades",
-      "Students are screened by a committee of professors",
-      "The difficulty of the experience naturally filters for those who are suited",
-      "Students must apply online through a competitive process"
-    ],
+    q: "Phil says 'I report to the Head of Department.' What does 'report to' mean?",
+    opts: ["I write reports for the department.", "The Head of Department is my direct manager.", "I present results every month.", "I work independently without a manager."],
+    correct: 1,
+    feedback: "✅ Đúng! 'I report to X' nghĩa là X là quản lý trực tiếp của bạn — bạn làm việc dưới sự giám sát của X."
+  },
+  {
+    q: "Which of these is an example of a 'transferable skill'?",
+    opts: ["Knowing a specific software only used in your current company.", "Strong written communication skills applicable to any industry.", "Your company ID card.", "Knowledge of your company's internal jargon."],
+    correct: 1,
+    feedback: "✅ Đúng! Transferable skills là những kỹ năng như giao tiếp, thuyết phục, tổ chức — có thể áp dụng ở nhiều ngành khác nhau."
+  },
+  {
+    q: "When is it appropriate to say 'gotchu' instead of 'I've got you'?",
+    opts: ["In a formal email to your manager.", "In a job application letter.", "In casual spoken conversation with a friend.", "When presenting to a client."],
     correct: 2,
-    explanation: "Kogan says the process is 'very self-selective because of the inherent toughness required to live in the desert.' The extreme conditions themselves filter out anyone who isn't genuinely committed — no committee needed."
+    feedback: "✅ Đúng! 'Gotchu' là cách phát âm thông thường (yod-coalescence) chỉ dùng trong lời nói thân mật, không bao giờ dùng trong văn viết trang trọng."
+  },
+  {
+    q: "Pippa says: 'I have a background in journalism, ___ means I write and edit content daily.'",
+    opts: ["that in practice", "which in practice", "what in practice", "this in practice"],
+    correct: 1,
+    feedback: "✅ Đúng! Dùng 'which in practice means' để giải thích ý nghĩa thực tế của nền tảng chuyên môn — 'which' là đại từ quan hệ, không thay được bằng 'that' hay 'what' ở đây."
+  },
+  {
+    q: "If you want to introduce yourself at a conference professionally, which phrase fits best?",
+    opts: ["I mostly do some marketing-ish stuff.", "I look after things for the company.", "I represent MegaCorp and I'm responsible for regional partnerships.", "Gotcha — I do sales!"],
+    correct: 2,
+    feedback: "✅ Đúng! 'I represent [company] and I'm responsible for [area]' là cách giới thiệu chuyên nghiệp, chính xác và phù hợp với bối cảnh hội nghị."
   }
 ];
 
-const discussionData = [
-  {
-    en: "Mars College charges no tuition but still requires students to pay for communal services. Is this a genuinely free education, or does 'free' mean something different here?",
-    vi: "Mars College không thu học phí nhưng vẫn yêu cầu sinh viên trả tiền cho các dịch vụ chung. Đây có thực sự là giáo dục miễn phí không, hay 'miễn phí' có ý nghĩa khác ở đây?"
-  },
-  {
-    en: "The article says Mars 'feels like a college for the end of the world.' What does this phrase suggest about attitudes toward mainstream higher education?",
-    vi: "Bài báo nói Mars 'cảm giác như một trường đại học cho tận thế.' Cụm này gợi lên điều gì về thái độ đối với giáo dục đại học truyền thống?"
-  },
-  {
-    en: "Classes at Mars are taught by anyone who has something to share — no credentials required. What are the potential benefits and risks of this approach compared to traditional teaching?",
-    vi: "Các lớp học tại Mars do bất kỳ ai có điều gì muốn chia sẻ giảng dạy — không cần bằng cấp. Ưu và nhược điểm của cách tiếp cận này so với dạy học truyền thống là gì?"
-  },
-  {
-    en: "Kogan says: 'In the future, I don't see how the university system as it is now can sustain itself.' Do you agree? What would a sustainable university system look like?",
-    vi: "Kogan nói: 'Trong tương lai, tôi không thấy hệ thống đại học như hiện tại có thể tự duy trì.' Bạn có đồng ý không? Hệ thống đại học bền vững trông như thế nào?"
-  },
-  {
-    en: "Mars College attracts people from microbiologists to Balinese priests. What does this diversity reveal about who feels underserved by conventional education?",
-    vi: "Mars College thu hút mọi người từ nhà vi sinh vật học đến tu sĩ Bali. Sự đa dạng này tiết lộ điều gì về những ai cảm thấy không được phục vụ đúng mức bởi giáo dục thông thường?"
-  },
-  {
-    en: "Every April, the entire campus is torn down and built again in January. What does this cycle of destruction and rebuilding say about how Mars values permanence and progress?",
-    vi: "Mỗi tháng Tư, toàn bộ khuôn viên bị tháo dỡ và xây lại vào tháng Một. Chu kỳ phá hủy và xây dựng lại này nói lên điều gì về cách Mars đánh giá sự lâu bền và tiến bộ?"
-  }
+const topicsData = [
+  { question: "Think of a time someone 'had your back'. What happened and how did it make you feel? Use 'I've got you' in your answer." },
+  { question: "Describe your current job (or dream job) using at least three phrases from the lesson: 'I look after', 'I handle', 'I report to', or 'I'm responsible for'." },
+  { question: "Have you ever found it difficult to explain your job (or studies) to someone outside your field? What did you say, and what could you say differently?" },
+  { question: "What are your top three transferable skills? How could you use them in a different industry? Give specific examples." },
+  { question: "Phil says job titles 'say very little'. Do you agree? Should companies replace job titles with descriptions of what people actually do? Why or why not?" },
+  { question: "When is it better to say 'I've got you' versus 'I'll help you'? Are there situations where one sounds more natural? Discuss with examples." },
 ];
 
 const writingPromptsData = [
   {
-    type: "Opinion Essay",
-    target: "B2 · 150–200 words",
-    level: "B2",
-    en: "Mars College exists because its founders believe the traditional university system is broken. Write an essay arguing whether unconventional alternatives like Mars are a genuine solution or simply an escape from deeper systemic problems.",
-    vi: "Mars College tồn tại vì những người sáng lập tin rằng hệ thống đại học truyền thống đã hỏng. Viết bài luận lập luận liệu các giải pháp thay thế phi thông thường như Mars có phải là giải pháp thực sự hay chỉ là sự trốn tránh các vấn đề hệ thống sâu xa hơn."
+    type:"📝 Email", target:"B1–B2", level:"B1",
+    en:"Write a short introduction email (80–120 words) to a new colleague describing who you are, your role, and how your work might overlap with theirs. Use at least three job-description phrases from the lesson.",
+    vi:"Viết email giới thiệu ngắn (80–120 từ) gửi đồng nghiệp mới, mô tả bạn là ai, vai trò của bạn, và công việc của hai người có thể liên quan nhau như thế nào. Dùng ít nhất 3 cụm từ mô tả công việc từ bài học."
   },
   {
-    type: "Descriptive Writing",
-    target: "B2 · 150–180 words",
-    level: "B2",
-    en: "Imagine you wake up on your first morning at Mars College. Describe what you see, hear, and feel — and what surprises you most about this place compared to your expectations.",
-    vi: "Hãy tưởng tượng bạn thức dậy vào buổi sáng đầu tiên tại Mars College. Mô tả những gì bạn thấy, nghe và cảm nhận — và điều gì khiến bạn ngạc nhiên nhất về nơi này so với mong đợi của bạn."
+    type:"📣 Speech", target:"B2", level:"B2",
+    en:"Write a 2-minute introduction speech (100–150 words) you would give at a professional networking event. Describe your background, your current role, your transferable skills, and one goal you have. Make it natural and engaging.",
+    vi:"Viết bài phát biểu giới thiệu 2 phút (100–150 từ) bạn sẽ dùng tại một sự kiện kết nối chuyên nghiệp. Mô tả nền tảng, vai trò hiện tại, kỹ năng chuyển tiếp và một mục tiêu của bạn. Viết tự nhiên và thu hút."
   },
   {
-    type: "Comparative Essay",
-    target: "B2–C1 · 200–250 words",
-    level: "B2",
-    en: "Compare the educational philosophy of Mars College with that of a traditional university in your country. Consider cost, community, learning outcomes, and social value. Which model do you think prepares people better for an uncertain future, and why?",
-    vi: "So sánh triết lý giáo dục của Mars College với triết lý của một trường đại học truyền thống ở nước bạn. Xem xét chi phí, cộng đồng, kết quả học tập và giá trị xã hội. Mô hình nào bạn nghĩ chuẩn bị tốt hơn cho con người đối mặt với tương lai bất định, và tại sao?"
-  }
+    type:"💭 Reflection", target:"B2–C1", level:"B2",
+    en:"Reflect on the idea that 'I've got you' is more than just helping — it's about trust and reliability. Write 120–160 words about a relationship in your life (personal or professional) where someone truly 'had your back'. What made that support meaningful?",
+    vi:"Suy ngẫm về ý tưởng rằng 'I've got you' không chỉ là giúp đỡ — đó còn là niềm tin và sự đáng tin cậy. Viết 120–160 từ về một mối quan hệ trong cuộc sống của bạn (cá nhân hay công việc) nơi ai đó thực sự 'lo cho bạn'. Điều gì khiến sự hỗ trợ đó trở nên có ý nghĩa?"
+  },
 ];
 
-const phrasesData = [
-  "reminiscent of something",
-  "zoom out from the immediate",
-  "barren and windswept",
-  "unconventional experiment in living",
-  "as X continues to soar",
-  "looking for adventurous ways to",
-  "self-selective by nature",
-  "a broad cohort of",
-  "torn down and built back up",
-  "grappling with broader questions",
-  "in a lot of ways it's an alternative to",
-  "the inherent toughness required to"
-];
+const toolbarPhrases = ["I've got you", "I look after", "I'm responsible for", "I have a background in", "in practice means", "transferable skills", "I report to", "I'd like to apply my skills to"];
 
 const shadowData = [
   {
-    tags: ["Rhythm", "Intonation"],
-    chunks: ["A dozen writing students", "perched around", "a collection of weather-beaten couches,", "laptops balancing on their knees."],
-    vi: "Một chục sinh viên viết lách ngồi chênh vênh xung quanh những chiếc sofa cũ mòn, laptop đặt cân bằng trên đầu gối.",
-    note: "🎙️ Stress: 'WEA-ther-bea-ten' (3 syllables stress pattern). 'laptops BALancing' — 'balancing' drops quickly.",
-    ipa: "/ə ˌdʌzn ˈraɪtɪŋ ˈstjuːdənts pɜːrtʃt əˈraʊnd ə kəˌlekʃən əv ˈweðər ˌbiːtən ˈkaʊtʃɪz ˈlæptɒps ˈbælənsɪŋ ɒn ðeər niːz/"
+    tags:["Linking", "Schwa"],
+    sentence: [
+      {text:"We often use ", cls:"chunk-1"},
+      {text:"the colloquial expression ", cls:"chunk-2"},
+      {text:"'I've got you' ", cls:"chunk-3"},
+      {text:"metaphorically ", cls:"chunk-4"},
+      {text:"to show support ", cls:"chunk-1"},
+      {text:"or offer help.", cls:"chunk-2"},
+    ],
+    vi: "Chúng ta thường dùng cụm khẩu ngữ 'I've got you' theo nghĩa bóng để thể hiện sự hỗ trợ hoặc đề nghị giúp đỡ.",
+    notes: "⚡ Linking: 'we_often', 'the_expression'. Schwa: 'to' /tə/, 'or' /ə/. Stress rơi vào 'colloquial' và 'metaphorically'.",
+    ipa: "/wiː ˈɒfən juːz ðə kəˈləʊkwiəl ɪkˈspreʃən aɪv ɡɒt juː ˌmetəˈfɒrɪkli tə ʃəʊ səˈpɔːt ɔː ˈɒfə help/"
   },
   {
-    tags: ["Schwa", "Linking"],
-    chunks: ["It was a scene", "reminiscent of", "any creative writing brainstorm", "happening on any given college campus."],
-    vi: "Đó là một cảnh tượng gợi nhớ đến bất kỳ buổi brainstorm viết sáng tạo nào diễn ra trên bất kỳ khuôn viên đại học nào.",
-    note: "🎙️ Schwa in 'reminiscent' /rɪˈmɪnɪsnt/ — 4 syllables. Link 'any_creative' as one breath group.",
-    ipa: "/ɪt wɒz ə siːn ˌremɪˈnɪsnt əv ˈeni kriˈeɪtɪv ˈraɪtɪŋ ˈbreɪnstɔːrm ˈhæpənɪŋ ɒn ˈeni ˌɡɪvən ˈkɒlɪdʒ ˈkæmpəs/"
+    tags:["Intonation", "Contrast"],
+    sentence: [
+      {text:"I wouldn't reply ", cls:"chunk-1"},
+      {text:"to a work email ", cls:"chunk-2"},
+      {text:"with gotchu!", cls:"chunk-3"},
+    ],
+    vi: "Tôi sẽ không trả lời email công việc bằng 'gotchu'!",
+    notes: "⚡ Intonation: giọng lên ở 'gotchu' thể hiện sự ngạc nhiên/đùa vui. Stress mạnh 'work email' để nhấn đối lập với khẩu ngữ. Linking: 'reply_to'.",
+    ipa: "/aɪ ˈwʊdnt rɪˈplaɪ tə ə ˈwɜːk ˈiːmeɪl wɪð ˈɡɒtʃuː/"
   },
   {
-    tags: ["Contrast", "Stress"],
-    chunks: ["There are no grades,", "degrees or mandatory attendance.", "There are no tuition fees", "or trained professors", "or even public utilities."],
-    vi: "Không có điểm số, bằng cấp hay điểm danh bắt buộc. Không có học phí, giáo sư được đào tạo hay thậm chí các tiện ích công cộng.",
-    note: "🎙️ Each 'no' gets a micro-stress. The list builds to 'or EVEN' — stress 'even' hard for surprise effect.",
-    ipa: "/ðeər ər noʊ ɡreɪdz dɪˈɡriːz ɔːr ˈmændətɔːri əˈtendəns ðeər ər noʊ tjuːˈɪʃən fiːz ɔːr treɪnd prəˈfesərz ɔːr ˈiːvən ˈpʌblɪk juːˈtɪlɪtiz/"
+    tags:["Rhythm", "Schwa"],
+    sentence: [
+      {text:"Think about ", cls:"chunk-1"},
+      {text:"what you do ", cls:"chunk-2"},
+      {text:"rather than ", cls:"chunk-3"},
+      {text:"just your job title.", cls:"chunk-4"},
+    ],
+    vi: "Hãy nghĩ về những gì bạn làm thay vì chỉ tập trung vào chức danh.",
+    notes: "⚡ Rhythm: câu có nhịp 4 nhịp rõ ràng. Schwa: 'about' /əˈbaʊt/, 'than' /ðən/. Stress chính: 'think', 'do', 'job title'. Đây là câu lý tưởng để cảm nhận rhythm tiếng Anh.",
+    ipa: "/θɪŋk əˈbaʊt wɒt juː duː ˈrɑːðə ðən dʒʌst jɔː ˈdʒɒb ˌtaɪtl/"
   },
   {
-    tags: ["Rhythm", "Linking"],
-    chunks: ["As the price of college tuition", "continues to soar,", "people of all ages", "are looking for new,", "adventurous ways", "to keep learning."],
-    vi: "Khi học phí đại học tiếp tục tăng vọt, người thuộc mọi lứa tuổi đang tìm kiếm những cách học tập mới, phiêu lưu hơn.",
-    note: "🎙️'continues_to soar' — link smoothly. 'adventurous' = /ədˈventʃərəs/ 4 syllables, don't rush.",
-    ipa: "/æz ðə praɪs əv ˈkɒlɪdʒ tjuːˈɪʃən kənˈtɪnjuːz tə sɔːr ˈpiːpl əv ɔːl ˈeɪdʒɪz ər ˈlʊkɪŋ fər njuː ədˈventʃərəs weɪz tə kiːp ˈlɜːrnɪŋ/"
+    tags:["Linking", "Stress"],
+    sentence: [
+      {text:"I have a background in ", cls:"chunk-1"},
+      {text:"journalism, ", cls:"chunk-2"},
+      {text:"which in practice means ", cls:"chunk-3"},
+      {text:"I write, edit ", cls:"chunk-4"},
+      {text:"and fact-check content daily.", cls:"chunk-1"},
+    ],
+    vi: "Tôi có nền tảng về báo chí, điều đó trong thực tế có nghĩa là tôi viết, biên tập và kiểm tra dữ liệu hàng ngày.",
+    notes: "⚡ Linking: 'background_in', 'practice_means'. Stress mạnh vào 'background', 'practice', các động từ 'write', 'edit', 'fact-check'. Nhịp câu dài — đọc theo cụm, đừng dừng giữa chunk.",
+    ipa: "/aɪ həv ə ˈbækɡraʊnd ɪn ˈdʒɜːnəlɪzəm wɪtʃ ɪn ˈpræktɪs miːnz aɪ raɪt ˈedɪt ənd ˈfæktʃek ˈkɒntent ˈdeɪli/"
   },
   {
-    tags: ["Quotation", "Intonation"],
-    chunks: ["In the age of the internet,", "you can get educational content", "for free.", "But the thing that you can't get for free", "is provide a place", "for young people", "to go through this learning phase", "together."],
-    vi: "Trong thời đại internet, bạn có thể lấy nội dung giáo dục miễn phí. Nhưng điều bạn không thể có miễn phí là một nơi để người trẻ cùng nhau trải qua giai đoạn học tập này.",
-    note: "🎙️ Emphatic stress on 'FREE' (rising, then fall on 'But'). 'together' ends with warm falling intonation.",
-    ipa: "/ɪn ðə eɪdʒ əv ðə ˈɪntərnet juː kæn ɡet ˌedjʊˈkeɪʃənl ˈkɒntent fər friː bʌt ðə θɪŋ ðæt juː kɑːnt ɡet fər friː ɪz prəˈvaɪd ə pleɪs fər jʌŋ ˈpiːpl tə ɡoʊ θruː ðɪs ˈlɜːrnɪŋ feɪz təˈɡeðər/"
-  }
+    tags:["Quotation", "Intonation"],
+    sentence: [
+      {text:"I'd like to ", cls:"chunk-1"},
+      {text:"apply my skills ", cls:"chunk-2"},
+      {text:"to a new challenge,", cls:"chunk-3"},
+      {text:"and then you're not just ", cls:"chunk-1"},
+      {text:"trying to hide ", cls:"chunk-2"},
+      {text:"that you haven't worked ", cls:"chunk-3"},
+      {text:"in this area before.", cls:"chunk-4"},
+    ],
+    vi: "Tôi muốn áp dụng kỹ năng của mình vào một thử thách mới — và như vậy bạn không chỉ đang cố che giấu việc chưa làm trong lĩnh vực này trước đây.",
+    notes: "⚡ Intonation: câu đầu lên giọng nhẹ ở 'challenge' (chưa kết thúc ý); câu sau xuống giọng ở 'before'. Stress: 'apply', 'skills', 'challenge', 'hide'. Từ 'just' nhấn nhẹ để thêm nghĩa 'chỉ là'.",
+    ipa: "/aɪd laɪk tə əˈplaɪ maɪ skɪlz tə ə njuː ˈtʃælɪndʒ ənd ðen jɔː nɒt dʒʌst ˈtraɪɪŋ tə haɪd ðæt juː hævnt wɜːkt ɪn ðɪs ˈeəriə bɪˈfɔː/"
+  },
 ];
 
-// ===== RENDER FUNCTIONS =====
+// ═══════════════════════════════════════
+// HELPERS
+// ═══════════════════════════════════════
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2200);
+}
+
+function openAlexChat(topicQuestion = null) {
+  const sys = `You are Alex, a warm encouraging English discussion tutor.
+Student: Vietnamese learner, level ${ARTICLE_LEVEL}.
+Context: ${ARTICLE_CONTEXT}
+Each reply: (1) respond to ideas 2-3 sentences, (2) correct errors gently format 💬 "X" → better: "Y" + brief Vietnamese hint, (3) praise something specific, (4) ask one follow-up question.
+Max 180 words. English only, corrections may use Vietnamese.`;
+  const msg = topicQuestion
+    ? `[Context for Alex — please keep this role]\n${sys}\n\n---\n\nI'd like to discuss this topic: ${topicQuestion}`
+    : `[Context for Alex — please keep this role]\n${sys}\n\n---\n\nHi Alex! I just finished reading the article. Can we talk about it?`;
+  window.open(`https://claude.ai/new?q=${encodeURIComponent(msg)}`, '_blank');
+}
+
+// ═══════════════════════════════════════
+// RENDER VOCAB
+// ═══════════════════════════════════════
 function renderVocab() {
-  const g = document.getElementById('vocab-grid');
+  const grid = document.getElementById('vocab-grid');
   vocabData.forEach(v => {
-    const c = document.createElement('div');
-    c.className = 'vocab-card';
-    c.innerHTML = `<div class="vocab-word">${v.word}</div>
+    const card = document.createElement('div');
+    card.className = 'vocab-card';
+    card.innerHTML = `
+      <div class="vocab-word">${v.word}</div>
       <div class="vocab-ipa">${v.ipa}</div>
-      <div><span class="vocab-pos">${v.pos}</span></div>
-      <div class="vocab-vi">${v.vi}</div>
-      <div class="vocab-en">${v.en}</div>
-      <div class="vocab-example">"${v.example}"</div>`;
-    g.appendChild(c);
+      <span class="vocab-pos">${v.pos}</span>
+      <p class="vocab-meaning">${v.vi}</p>
+      <p class="vocab-ex">"${v.ex}"</p>
+    `;
+    grid.appendChild(card);
   });
 }
 
-function renderQuiz() {
-  const c = document.getElementById('quiz-container');
-  quizData.forEach((q, qi) => {
-    const div = document.createElement('div');
-    div.className = 'quiz-item';
-    const qEl = document.createElement('div');
-    qEl.className = 'quiz-q';
-    qEl.textContent = `${qi + 1}. ${q.q}`;
-    div.appendChild(qEl);
+// ═══════════════════════════════════════
+// RENDER EXERCISES
+// ═══════════════════════════════════════
+function renderExercises() {
+  const container = document.getElementById('exercises-container');
+  exercisesData.forEach((ex, qi) => {
+    const block = document.createElement('div');
+    block.className = 'exercise-block';
+    const label = document.createElement('p');
+    label.className = 'exercise-q-label';
+    label.textContent = `Câu ${qi+1}`;
+    const q = document.createElement('p');
+    q.className = 'exercise-q';
+    q.textContent = ex.q;
     const opts = document.createElement('div');
-    opts.className = 'quiz-options';
-    q.options.forEach((opt, oi) => {
+    opts.className = 'mc-options';
+    const fb = document.createElement('div');
+    fb.className = 'mc-feedback';
+
+    ex.opts.forEach((opt, oi) => {
       const btn = document.createElement('button');
-      btn.className = 'quiz-opt';
-      btn.textContent = opt;
+      btn.className = 'mc-btn';
+      btn.textContent = `${String.fromCharCode(65+oi)}. ${opt}`;
       btn.addEventListener('click', function() {
-        if (div.dataset.answered) return;
-        div.dataset.answered = '1';
-        opts.querySelectorAll('.quiz-opt').forEach((b, bi) => {
-          b.disabled = true;
-          if (bi === q.correct) b.classList.add('correct');
-          else if (bi === oi && oi !== q.correct) b.classList.add('wrong');
+        if (block.dataset.answered) return;
+        block.dataset.answered = '1';
+        const btns = opts.querySelectorAll('.mc-btn');
+        btns.forEach((b,bi) => {
+          if (bi === ex.correct) b.classList.add('correct');
+          else b.classList.add('wrong');
+          b.style.cursor = 'default';
         });
-        exp.style.display = 'block';
+        fb.textContent = oi === ex.correct ? ex.feedback : `❌ Chưa đúng. Đáp án đúng: ${String.fromCharCode(65+ex.correct)}. ${ex.feedback}`;
+        fb.className = `mc-feedback show ${oi === ex.correct ? 'ok' : 'bad'}`;
       });
       opts.appendChild(btn);
     });
-    div.appendChild(opts);
-    const exp = document.createElement('div');
-    exp.className = 'quiz-explanation';
-    exp.textContent = '💡 ' + q.explanation;
-    div.appendChild(exp);
-    c.appendChild(div);
+
+    block.appendChild(label);
+    block.appendChild(q);
+    block.appendChild(opts);
+    block.appendChild(fb);
+    container.appendChild(block);
   });
 }
 
-function renderDiscussion() {
-  const list = document.getElementById('discussion-list');
-  discussionData.forEach((t, i) => {
-    const card = document.createElement('div');
-    card.className = 'topic-card';
-    card.dataset.idx = i;
-    card.innerHTML = `<div class="topic-num">Chủ đề ${i + 1}</div>
-      <div class="topic-en">${t.en}</div>
-      <div class="topic-vi">${t.vi}</div>`;
-    card.addEventListener('click', function() {
-      const existing = document.querySelector('.topic-confirm');
-      if (existing) existing.remove();
-      document.querySelectorAll('.topic-card').forEach(c => c.classList.remove('selected'));
+// ═══════════════════════════════════════
+// RENDER TOPICS
+// ═══════════════════════════════════════
+function renderTopics() {
+  const container = document.getElementById('topic-btns');
+  let selectedTopicQuestion = null;
+
+  const confirmArea = document.createElement('div');
+  confirmArea.id = 'topic-confirm';
+  confirmArea.className = 'topic-confirm-area';
+  confirmArea.style.display = 'none';
+  confirmArea.innerHTML = `
+    <div class="topic-confirm-inner">
+      <p class="topic-confirm-label">Chủ đề đã chọn:</p>
+      <p id="topic-confirm-text" class="topic-confirm-question"></p>
+      <button id="btn-start-discussion" class="btn-start-discussion">💬 Bắt đầu thảo luận với Alex →</button>
+      <p class="topic-confirm-hint">Sẽ mở Claude.ai trong tab mới · ngữ cảnh bài đã được nhúng sẵn</p>
+    </div>
+  `;
+
+  topicsData.forEach((t, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'topic-btn';
+    btn.dataset.question = t.question;
+    btn.innerHTML = `<span class="topic-num">TOPIC ${String(i+1).padStart(2,'0')}</span>${t.question}`;
+    container.appendChild(btn);
+  });
+
+  container.querySelectorAll('.topic-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      container.querySelectorAll('.topic-btn').forEach(b => b.classList.remove('selected'));
       this.classList.add('selected');
-
-      const conf = document.createElement('div');
-      conf.className = 'topic-confirm';
-      conf.innerHTML = `<div class="confirm-text">Sẵn sàng thảo luận chủ đề này với Alex?</div>
-        <button class="btn-discuss" id="conf-btn-${i}">💬 Bắt đầu với Alex →</button>`;
-      this.insertAdjacentElement('afterend', conf);
-      conf.querySelector(`#conf-btn-${i}`).addEventListener('click', () => openAlexChat(t.en));
-      setTimeout(() => conf.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 50);
+      selectedTopicQuestion = this.dataset.question;
+      this.insertAdjacentElement('afterend', confirmArea);
+      confirmArea.style.display = 'block';
+      document.getElementById('topic-confirm-text').textContent = selectedTopicQuestion;
+      setTimeout(() => confirmArea.scrollIntoView({ behavior:'smooth', block:'nearest' }), 50);
     });
-    list.appendChild(card);
   });
 
-  document.getElementById('btn-freestyle').addEventListener('click', () => openAlexChat(null));
+  document.addEventListener('click', function(e) {
+    if (e.target.id === 'btn-start-discussion' && selectedTopicQuestion) {
+      openAlexChat(selectedTopicQuestion);
+    }
+  });
 }
 
+// ═══════════════════════════════════════
+// RENDER WRITING
+// ═══════════════════════════════════════
 function renderWriting() {
   const container = document.getElementById('writing-prompts');
+  let selectedWritingPrompt = null;
+
   const editorBlock = document.createElement('div');
   editorBlock.className = 'writing-editor';
   editorBlock.style.display = 'none';
@@ -1235,27 +1314,26 @@ function renderWriting() {
     <div id="feedback-display"></div>
   `;
 
-  let selectedIdx = null;
-
   writingPromptsData.forEach((p, i) => {
     const card = document.createElement('div');
     card.className = 'writing-prompt-card';
     card.dataset.idx = i;
-    card.innerHTML = `<div class="wp-meta">${p.type} · ${p.target}</div>
+    card.innerHTML = `
+      <div class="wp-meta">${p.type} · ${p.target}</div>
       <div class="wp-en">${p.en}</div>
-      <div class="wp-vi">${p.vi}</div>`;
+      <div class="wp-vi">${p.vi}</div>
+    `;
     card.addEventListener('click', function() {
-      document.querySelectorAll('.writing-prompt-card').forEach(c => c.classList.remove('selected'));
+      container.querySelectorAll('.writing-prompt-card').forEach(c => c.classList.remove('selected'));
       this.classList.add('selected');
-      selectedIdx = i;
+      selectedWritingPrompt = i;
       this.insertAdjacentElement('afterend', editorBlock);
       editorBlock.style.display = 'block';
-      setTimeout(() => editorBlock.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 50);
+      setTimeout(() => editorBlock.scrollIntoView({ behavior:'smooth', block:'nearest' }), 50);
     });
     container.appendChild(card);
   });
 
-  const toolbarPhrases = ["In contrast to", "Furthermore,", "It can be argued that", "One striking aspect is", "This raises the question of"];
   const toolbar = editorBlock.querySelector('#writing-toolbar');
   toolbarPhrases.forEach(phrase => {
     const btn = document.createElement('button');
@@ -1272,126 +1350,132 @@ function renderWriting() {
   });
 
   function updateWordCount() {
-    const ta = editorBlock.querySelector('#writing-textarea');
-    const words = ta.value.trim().split(/\s+/).filter(w => w).length;
-    editorBlock.querySelector('#word-counter').textContent = `${words} từ`;
+    const val = editorBlock.querySelector('#writing-textarea').value.trim();
+    const wc = val ? val.split(/\s+/).length : 0;
+    editorBlock.querySelector('#word-counter').textContent = wc + ' từ';
   }
 
   editorBlock.querySelector('#writing-textarea').addEventListener('input', updateWordCount);
   editorBlock.querySelector('#submit-writing').addEventListener('click', function() {
     const essay = editorBlock.querySelector('#writing-textarea').value.trim();
     if (!essay || essay.length < 30) { showToast('Vui lòng viết ít nhất vài câu trước!'); return; }
-    const promptText = selectedIdx !== null ? writingPromptsData[selectedIdx].en : "Write your thoughts about the article.";
-    const level = selectedIdx !== null ? writingPromptsData[selectedIdx].level : ARTICLE_LEVEL;
-    const feedbackPrompt = `You are an expert English writing tutor for Vietnamese learners (level ${level}).\n\nThe student just read this article: ${ARTICLE_CONTEXT}\n\nWriting prompt they were given:\n"${promptText}"\n\nHere is the student's essay:\n---\n${essay}\n---\n\nPlease give structured feedback:\n\n📊 SCORES (out of 10)\n• Content: X/10\n• Vocabulary: X/10\n• Grammar: X/10\n• Structure: X/10\n• Overall: X/10\n\n✅ STRENGTHS\nQuote one specific sentence you liked and explain why.\n\n🔧 GRAMMAR FIXES (up to 3)\n❌ [original] → ✅ [corrected]\n📝 Giải thích ngắn bằng tiếng Việt\n\n💡 VOCABULARY UPGRADES (2–3)\n[basic word] → [stronger] — example sentence\n\n🏗️ STRUCTURE COMMENT\nOne paragraph on organization and how to improve.\n\n💬 ENCOURAGEMENT\nOne warm, specific sentence in English.`;
+    const promptText = selectedWritingPrompt !== null ? writingPromptsData[selectedWritingPrompt].en : "Write about the topic.";
+    const level = selectedWritingPrompt !== null ? writingPromptsData[selectedWritingPrompt].level : ARTICLE_LEVEL;
+    const feedbackPrompt = `You are an expert English writing tutor for Vietnamese learners (level ${level}).\n\nThe student just read: ${ARTICLE_CONTEXT}\n\nWriting prompt: "${promptText}"\n\nStudent's essay:\n---\n${essay}\n---\n\nPlease give structured feedback:\n\n📊 SCORES (out of 10)\n• Content: X/10\n• Vocabulary: X/10\n• Grammar: X/10\n• Structure: X/10\n• Overall: X/10\n\n✅ STRENGTHS\nQuote one specific sentence you liked and explain why.\n\n🔧 GRAMMAR FIXES (up to 3)\n❌ [original] → ✅ [corrected]\n📝 Giải thích ngắn bằng tiếng Việt\n\n💡 VOCABULARY UPGRADES (2–3)\n[basic word] → [stronger] — example sentence\n\n🏗️ STRUCTURE COMMENT\nOne paragraph on organization and how to improve.\n\n💬 ENCOURAGEMENT\nOne warm, specific sentence of encouragement.`;
     window.open(`https://claude.ai/new?q=${encodeURIComponent(feedbackPrompt)}`, '_blank');
-    const fd = editorBlock.querySelector('#feedback-display');
-    fd.style.display = 'block';
-    fd.innerHTML = `<div style="text-align:center;padding:1.5rem;background:var(--bg-alt);border:1px solid var(--border);border-radius:6px;margin-top:0.8rem;"><div style="font-size:2rem;margin-bottom:0.8rem;">🚀</div><div style="font-family:'Space Mono',monospace;font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-light);margin-bottom:0.5rem;">Đã mở Claude.ai trong tab mới</div><p style="font-size:0.9rem;color:var(--text);line-height:1.6;">Bài viết của bạn đã được nhúng sẵn vào prompt.<br>Claude sẽ cho feedback ngay — chuyển sang tab mới để xem! 👆</p></div>`;
+    const div = editorBlock.querySelector('#feedback-display');
+    div.style.display = 'block';
+    div.innerHTML = `<div style="text-align:center;padding:1.5rem;background:var(--bg-alt);border:1px solid var(--border);border-radius:6px;margin-top:0.8rem;"><div style="font-size:2rem;margin-bottom:0.8rem;">🚀</div><div style="font-family:'Space Mono',monospace;font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-light);margin-bottom:0.5rem;">Đã mở Claude.ai trong tab mới</div><p style="font-size:0.9rem;color:var(--text);line-height:1.6;">Bài viết của bạn đã được nhúng sẵn vào prompt.<br>Claude sẽ cho feedback ngay — chuyển sang tab mới để xem! 👆</p></div>`;
   });
 }
 
-function renderPhrases() {
-  const g = document.getElementById('phrases-grid');
-  phrasesData.forEach(phrase => {
-    const btn = document.createElement('button');
-    btn.className = 'phrase-pill';
-    btn.textContent = phrase + ' 📋';
-    btn.addEventListener('click', function() {
-      navigator.clipboard.writeText(phrase).then(() => {
-        const orig = this.textContent;
-        this.textContent = '✓ Đã copy!';
-        setTimeout(() => { this.textContent = orig; }, 1500);
-      });
-    });
-    g.appendChild(btn);
-  });
-}
-
+// ═══════════════════════════════════════
+// RENDER SHADOWING
+// ═══════════════════════════════════════
 function renderShadowing() {
-  const colors = ['c1', 'c2', 'c3', 'c4'];
-  const list = document.getElementById('shadow-list');
+  const container = document.getElementById('shadow-container');
   shadowData.forEach((s, i) => {
-    const div = document.createElement('div');
-    div.className = 'shadow-card';
+    const card = document.createElement('div');
+    card.className = 'shadow-card';
     const tags = s.tags.map(t => `<span class="shadow-tag">${t}</span>`).join('');
-    const sentence = s.chunks.map((ch, ci) => `<span class="chunk ${colors[ci % 4]}">${ch}</span>`).join(' ');
-    div.innerHTML = `<div class="shadow-num">Câu ${i + 1}</div>
+    const sentenceHtml = s.sentence.map(p => `<span class="chunk ${p.cls}">${p.text}</span>`).join('');
+    card.innerHTML = `
       <div class="shadow-tags">${tags}</div>
-      <div class="shadow-sentence">${sentence}</div>
-      <div class="shadow-vi">${s.vi}</div>
-      <div class="shadow-note">${s.note}</div>
-      <button class="ipa-toggle" data-ipa="${i}">Show IPA</button>
-      <div class="ipa-text" id="ipa-${i}">${s.ipa}</div>`;
-    list.appendChild(div);
-    div.querySelector('.ipa-toggle').addEventListener('click', function() {
-      const el = document.getElementById(`ipa-${i}`);
-      const showing = el.style.display === 'block';
-      el.style.display = showing ? 'none' : 'block';
-      this.textContent = showing ? 'Show IPA' : 'Hide IPA';
+      <p class="shadow-sentence">${sentenceHtml}</p>
+      <p class="shadow-vi">${s.vi}</p>
+      <p class="shadow-notes">${s.notes}</p>
+      <button class="show-ipa-btn">Show IPA</button>
+      <div class="shadow-ipa">${s.ipa}</div>
+    `;
+    card.querySelector('.show-ipa-btn').addEventListener('click', function() {
+      const ipa = card.querySelector('.shadow-ipa');
+      const isVisible = ipa.style.display === 'block';
+      ipa.style.display = isVisible ? 'none' : 'block';
+      this.textContent = isVisible ? 'Show IPA' : 'Hide IPA';
     });
+    container.appendChild(card);
   });
 }
 
-// ===== FLASHCARD =====
-let flashCards = [...vocabData];
-let flashIdx = 0;
-let flashMode = 'en-vi';
-let known = 0, unknown = 0;
-let flipped = false;
+// ═══════════════════════════════════════
+// FLASHCARD
+// ═══════════════════════════════════════
+function initFlashcard() {
+  let cards = [...vocabData];
+  let idx = 0;
+  let flipped = false;
+  let mode = 'en-vi'; // or 'vi-en'
+  let known = 0, unknown = 0;
 
-function renderFlashCard() {
-  const card = flashCards[flashIdx];
-  const inner = document.getElementById('flash-inner');
-  inner.classList.remove('flipped');
-  flipped = false;
-  document.getElementById('flash-answer-btns').style.display = 'none';
+  const scene = document.getElementById('fc-scene');
+  const front = document.getElementById('fc-front');
+  const back  = document.getElementById('fc-back');
+  const counter = document.getElementById('fc-counter');
+  const stats = document.getElementById('fc-stats');
+  const modeBtn = document.getElementById('fc-mode');
 
-  if (flashMode === 'en-vi') {
-    document.getElementById('fl-word').textContent = card.word;
-    document.getElementById('fl-ipa').textContent = card.ipa;
-    document.getElementById('fl-back-word').textContent = card.vi;
-    document.getElementById('fl-back-meaning').textContent = card.pos.toUpperCase();
-    document.getElementById('fl-back-example').textContent = card.example;
-  } else {
-    document.getElementById('fl-word').textContent = card.vi;
-    document.getElementById('fl-ipa').textContent = card.pos.toUpperCase();
-    document.getElementById('fl-back-word').textContent = card.word;
-    document.getElementById('fl-back-meaning').textContent = card.ipa;
-    document.getElementById('fl-back-example').textContent = card.example;
+  function render() {
+    const c = cards[idx];
+    flipped = false;
+    scene.classList.remove('flipped');
+    if (mode === 'en-vi') {
+      front.innerHTML = `<p class="fc-hint">English</p><p class="fc-word">${c.word}</p><p class="fc-ipa">${c.ipa}</p><span class="fc-pos">${c.pos}</span>`;
+      back.innerHTML  = `<p class="fc-hint">Tiếng Việt + Example</p><p class="fc-meaning">${c.vi}</p><p class="fc-example">"${c.ex}"</p>`;
+    } else {
+      front.innerHTML = `<p class="fc-hint">Tiếng Việt</p><p class="fc-word" style="font-size:1.2rem;">${c.vi}</p>`;
+      back.innerHTML  = `<p class="fc-hint">English</p><p class="fc-word">${c.word}</p><p class="fc-ipa">${c.ipa}</p><span class="fc-pos">${c.pos}</span><p class="fc-example" style="margin-top:0.5rem;">"${c.ex}"</p>`;
+    }
+    counter.textContent = `${idx+1} / ${cards.length}`;
+    stats.innerHTML = `✅ Thuộc: ${known} &nbsp;|&nbsp; ❌ Chưa: ${unknown} &nbsp;|&nbsp; Còn lại: ${cards.length - idx}`;
   }
-  document.getElementById('flash-counter').textContent = `${flashIdx + 1} / ${flashCards.length}`;
-  document.getElementById('flash-stats').textContent = `✅ ${known} · ❌ ${unknown}`;
+
+  scene.addEventListener('click', () => {
+    flipped = !flipped;
+    scene.classList.toggle('flipped', flipped);
+  });
+
+  document.getElementById('fc-prev').addEventListener('click', () => {
+    if (idx > 0) { idx--; render(); }
+  });
+  document.getElementById('fc-next').addEventListener('click', () => {
+    if (idx < cards.length-1) { idx++; render(); }
+  });
+  document.getElementById('fc-yes').addEventListener('click', () => {
+    known++; if (idx < cards.length-1) { idx++; render(); } else { showToast('🎉 Hết thẻ! Reset để ôn lại.'); stats.innerHTML = `✅ Thuộc: ${known} &nbsp;|&nbsp; ❌ Chưa: ${unknown} &nbsp;|&nbsp; Còn lại: 0`; }
+  });
+  document.getElementById('fc-no').addEventListener('click', () => {
+    unknown++; if (idx < cards.length-1) { idx++; render(); } else { showToast('Reset để ôn lại nhé!'); }
+  });
+  document.getElementById('fc-shuffle').addEventListener('click', () => {
+    cards = cards.sort(() => Math.random()-0.5); idx=0; known=0; unknown=0; render(); showToast('🔀 Đã xáo thẻ!');
+  });
+  document.getElementById('fc-reset').addEventListener('click', () => {
+    cards = [...vocabData]; idx=0; known=0; unknown=0; render(); showToast('↺ Đã reset!');
+  });
+  modeBtn.addEventListener('click', () => {
+    mode = mode === 'en-vi' ? 'vi-en' : 'en-vi';
+    modeBtn.textContent = mode === 'en-vi' ? 'EN → VN' : 'VN → EN';
+    idx=0; known=0; unknown=0; render();
+  });
+
+  render();
 }
 
-document.getElementById('flash-scene').addEventListener('click', function() {
-  const inner = document.getElementById('flash-inner');
-  inner.classList.toggle('flipped');
-  flipped = !flipped;
-  document.getElementById('flash-answer-btns').style.display = flipped ? 'flex' : 'none';
-});
-
-document.getElementById('btn-next').addEventListener('click', () => { flashIdx = (flashIdx + 1) % flashCards.length; renderFlashCard(); });
-document.getElementById('btn-prev').addEventListener('click', () => { flashIdx = (flashIdx - 1 + flashCards.length) % flashCards.length; renderFlashCard(); });
-document.getElementById('btn-shuffle').addEventListener('click', () => { flashCards = [...flashCards].sort(() => Math.random() - 0.5); flashIdx = 0; renderFlashCard(); });
-document.getElementById('btn-reset').addEventListener('click', () => { flashCards = [...vocabData]; flashIdx = 0; known = 0; unknown = 0; renderFlashCard(); });
-document.getElementById('mode-en-vi').addEventListener('click', function() { flashMode = 'en-vi'; this.classList.add('active'); document.getElementById('mode-vi-en').classList.remove('active'); renderFlashCard(); });
-document.getElementById('mode-vi-en').addEventListener('click', function() { flashMode = 'vi-en'; this.classList.add('active'); document.getElementById('mode-en-vi').classList.remove('active'); renderFlashCard(); });
-document.getElementById('btn-know').addEventListener('click', () => { known++; flashIdx = (flashIdx + 1) % flashCards.length; renderFlashCard(); });
-document.getElementById('btn-no').addEventListener('click', () => { unknown++; flashIdx = (flashIdx + 1) % flashCards.length; renderFlashCard(); });
-
-// ===== TAB SWITCHING =====
+// ═══════════════════════════════════════
+// TAB SWITCHING
+// ═══════════════════════════════════════
 document.querySelectorAll('.tab-btn').forEach(btn => {
   btn.addEventListener('click', function() {
-    const idx = this.dataset.tab;
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
     document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
     this.classList.add('active');
-    document.getElementById(`tab-${idx}`).classList.add('active');
+    document.getElementById(`tab-${this.dataset.tab}`).classList.add('active');
   });
 });
 
-// ===== NAV STICKY→FIXED + SMART HIDE (v14) =====
+// ═══════════════════════════════════════
+// NAV SCROLL LOGIC (v14)
+// ═══════════════════════════════════════
 (function initNav() {
   const nav    = document.getElementById('tabs-nav');
   const hero   = document.getElementById('hero-bg');
@@ -1401,25 +1485,25 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
 
   function syncNavVisibility() {
     const innerRect = inner.getBoundingClientRect();
-    const navH      = nav.offsetHeight;
-    const shouldHide = (innerRect.bottom > window.innerHeight - navH * 1.5);
+    const navH = nav.offsetHeight;
+    const shouldHide = innerRect.bottom > window.innerHeight - navH * 1.5;
     if (shouldHide) nav.classList.add('vi-hidden');
     else nav.classList.remove('vi-hidden');
   }
 
   function onScroll() {
     const heroBottom = hero.getBoundingClientRect().bottom;
-    const navH       = nav.offsetHeight;
+    const navH = nav.offsetHeight;
     if (heroBottom <= navH) {
-      if (!nav.classList.contains('is-fixed')) { nav.classList.add('is-fixed'); spacer.style.display = 'block'; }
+      if (!nav.classList.contains('is-fixed')) { nav.classList.add('is-fixed'); spacer.style.display='block'; }
     } else {
-      if (nav.classList.contains('is-fixed')) { nav.classList.remove('is-fixed'); spacer.style.display = 'none'; }
+      if (nav.classList.contains('is-fixed')) { nav.classList.remove('is-fixed'); spacer.style.display='none'; }
     }
     syncNavVisibility();
   }
 
-  window.addEventListener('scroll', onScroll, { passive: true });
-  window.addEventListener('resize', () => requestAnimationFrame(syncNavVisibility), { passive: true });
+  window.addEventListener('scroll', onScroll, { passive:true });
+  window.addEventListener('resize', () => requestAnimationFrame(syncNavVisibility), { passive:true });
   onScroll();
 
   const btn    = document.getElementById('toggle-vi-btn');
@@ -1429,37 +1513,29 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
     inner.classList.remove('vi-open');
     btn.addEventListener('click', function() {
       const isOpen = viText.style.display !== 'none';
-      if (isOpen) { viText.style.display = 'none'; inner.classList.remove('vi-open'); btn.textContent = 'Xem bản dịch tiếng Việt ▾'; }
-      else { viText.style.display = 'block'; inner.classList.add('vi-open'); btn.textContent = 'Ẩn bản dịch tiếng Việt ▴'; }
+      if (isOpen) {
+        viText.style.display = 'none';
+        inner.classList.remove('vi-open');
+        btn.textContent = 'Xem bản dịch tiếng Việt ▾';
+      } else {
+        viText.style.display = 'block';
+        inner.classList.add('vi-open');
+        btn.textContent = 'Ẩn bản dịch tiếng Việt ▴';
+      }
       requestAnimationFrame(syncNavVisibility);
     });
   }
 })();
 
-// ===== HELPERS =====
-function openAlexChat(topicQuestion) {
-  const systemContext = `You are Alex, a warm encouraging English discussion tutor.\nStudent: Vietnamese learner, level ${ARTICLE_LEVEL}.\nContext: ${ARTICLE_CONTEXT}\nEach reply: (1) respond to ideas 2-3 sentences, (2) correct errors gently format 💬 "X" → better: "Y" + brief Vietnamese hint, (3) praise something specific, (4) ask one follow-up question.\nMax 180 words. English only, corrections may use Vietnamese.`;
-  const openingMessage = topicQuestion
-    ? `[Context for Alex — please keep this role]\n${systemContext}\n\n---\n\nI'd like to discuss this topic: ${topicQuestion}`
-    : `[Context for Alex — please keep this role]\n${systemContext}\n\n---\n\nHi Alex! I just finished reading the article about Mars College. Can we talk about it?`;
-  window.open(`https://claude.ai/new?q=${encodeURIComponent(openingMessage)}`, '_blank');
-}
-
-function showToast(msg) {
-  const t = document.getElementById('toast');
-  t.textContent = msg;
-  t.classList.add('show');
-  setTimeout(() => t.classList.remove('show'), 2500);
-}
-
-// ===== INIT =====
+// ═══════════════════════════════════════
+// INIT ALL
+// ═══════════════════════════════════════
 renderVocab();
-renderQuiz();
-renderDiscussion();
+renderExercises();
+renderTopics();
 renderWriting();
-renderPhrases();
 renderShadowing();
-renderFlashCard();
+initFlashcard();
 </script>
 </body>
 </html>
